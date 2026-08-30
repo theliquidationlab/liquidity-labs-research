@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T18:47:20.718089+00:00",
+  "generated_utc": "2026-08-30T18:54:09.680882+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_PRECURSOR_BROKER_SCREEN_V1"
   },
   "progress": {
-    "overall": 67.0,
+    "overall": 67.1,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -38,7 +38,7 @@
   },
   "broker": {
     "broker_stage": "anchor_block1",
-    "broker_progress": 17.0,
+    "broker_progress": 18.0,
     "broker_conditions": 733848,
     "broker_geometries": 1638,
     "broker_anchor_survivors": 0,
@@ -46,7 +46,7 @@
     "broker_exact98_finalists": 0,
     "broker_health": "HEALTHY",
     "broker_error_bytes": 0,
-    "days_complete": 7,
+    "days_complete": 8,
     "days_total": 30
   },
   "stages": [
@@ -134,10 +134,10 @@
     {
       "name": "Exact MT5 broker replay",
       "state": "working",
-      "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 7/30 days complete",
+      "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 8/30 days complete",
       "weight": 6,
-      "fraction": 0.17,
-      "percent": 17.0,
+      "fraction": 0.18,
+      "percent": 18.0,
       "finding": "Corrected 733,848 precursor masks are screened across the full 1,638-geometry PU Prime grid; final families require exact chronological one-position \u226598% certification.",
       "subchecklist": {
         "conditions": 733848,
