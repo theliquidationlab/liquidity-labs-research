@@ -11,15 +11,17 @@ def test_stage_cards_render_explicit_percent():
 def test_stage_cards_render_subchecklist_percentages():
     assert 'subchecklist' in JS and 'subcheck-row' in JS and 'subcheck-row' in CSS
 
-def test_dashboard_has_live_broker_certification_panel():
+def test_dashboard_has_live_structure_mapping_panel():
     html=(ROOT/'index.html').read_text(encoding='utf-8')
-    for token in ('brokerStage','brokerProgress','brokerConditions','brokerAnchors','brokerRaw95','brokerFinal98','brokerHealth','brokerError'):
+    for token in ('structureStage','structureProgress','structureDays','structureTicks','structureEvents','structureSuccess','structureCoverage','structureHealth','structureError'):
         assert f'id="{token}"' in html
-    for token in ('broker_stage','broker_progress','broker_conditions','broker_anchor_survivors','broker_raw95_survivors','broker_exact98_finalists'):
+    for token in ('structure_stage','structure_progress','structure_days','structure_ticks','structure_events','structure_success_rows','structure_coverage'):
         assert token in JS
 
-def test_signal_build_up_stage_precedes_binance():
-    assert EXPORT.index('MT5 signal build-up construction') < EXPORT.index('Binance strength cross-reference')
+def test_full_structure_mapping_precedes_broker_and_microstructure():
+    assert EXPORT.index('MT5 full causal structure mapping') < EXPORT.index('MT5 structural family broker replay')
+    assert EXPORT.index('MT5 structural family broker replay') < EXPORT.index('Microstructure entry timing')
+    assert EXPORT.index('Microstructure entry timing') < EXPORT.index('Binance strength cross-reference')
 
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]

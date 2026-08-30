@@ -54,6 +54,19 @@ def test_broker_stage_complete_reports_exact_finalists():
     state,fraction,detail,sub=m.broker_stage_state({},final,'',False,0)
     assert state=='complete' and fraction==1.0 and '3' in detail and sub['exact_98_finalists']==3
 
+def test_structure_stage_reports_lossless_live_progress():
+    progress={'state':'RUNNING','active_stage':'structure_days','percent':25.5,'days_complete':62,'days_total':183,'ticks':11000000,'success_rows_mapped':12000000,'events_confirmed':8000000,'success_population_target':35975633,'all_successes_preserved':True}
+    state,fraction,detail,sub=m.structure_stage_state(progress,{},'MT5_CAUSAL_STRUCTURE_MAP_V1',True,0)
+    assert state=='working' and abs(fraction-.255)<1e-9
+    assert '62/183' in detail and sub['success_target']==35975633
+    assert sub['success_rows_mapped']==12000000 and sub['stderr_bytes']==0
+
+def test_structure_stage_complete_reports_group_counts():
+    final={'complete':True,'corrected_discovery_ticks':33488805,'success_source_direction_rows':35975633,'structural_events':123456,'fine_groups':100,'topology_groups':70,'macro_groups':40}
+    state,fraction,detail,sub=m.structure_stage_state({},final,'',False,0)
+    assert state=='complete' and fraction==1.0
+    assert sub['success_rows_mapped']==35975633 and sub['fine_groups']==100
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()

@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-30T19:35:59.912305+00:00",
+  "generated_utc": "2026-08-30T19:37:13.697684+00:00",
   "system": {
-    "working": false,
-    "label": "READY FOR NEXT STAGE",
-    "active_stage": "MT5 precursor discovery complete; broker certification ready",
+    "working": true,
+    "label": "WORKING",
+    "active_stage": "MT5 full causal structure mapping: structure days",
     "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
-    "overall": 72.7,
+    "overall": 73.1,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -35,6 +35,22 @@
     "broker_anchor_survivors": 0,
     "broker_raw95_survivors": 0,
     "broker_exact98_finalists": 0
+  },
+  "structure": {
+    "structure_stage": "structure_days",
+    "structure_progress": 72.54,
+    "structure_days": 177,
+    "structure_days_total": 183,
+    "structure_ticks": 32041381,
+    "structure_events": 41887168,
+    "structure_success_rows": 34453591,
+    "structure_success_target": 35975633,
+    "structure_coverage": 95.7692,
+    "structure_health": "HEALTHY",
+    "structure_error_bytes": 0,
+    "fine_groups": 0,
+    "topology_groups": 0,
+    "macro_groups": 0
   },
   "broker": {
     "broker_stage": "anchor_block1",
@@ -134,17 +150,17 @@
     {
       "name": "MT5 full causal structure mapping",
       "state": "working",
-      "detail": "structure days; 172/183 Discovery days; 30,054,514 ticks mapped; 31,690,344/35,975,633 $1-success rows mapped (88.09% lossless coverage)",
+      "detail": "structure days; 177/183 Discovery days; 32,041,381 ticks mapped; 34,453,591/35,975,633 $1-success rows mapped (95.77% lossless coverage)",
       "weight": 18,
-      "fraction": 0.7049,
-      "percent": 70.49,
+      "fraction": 0.7254,
+      "percent": 72.54,
       "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
         "success_target": 35975633,
-        "success_rows_mapped": 31690344,
-        "coverage_percent": 88.0884,
-        "ticks_mapped": 30054514,
-        "structural_events": 38739474,
+        "success_rows_mapped": 34453591,
+        "coverage_percent": 95.7692,
+        "ticks_mapped": 32041381,
+        "structural_events": 41887168,
         "fine_groups": 0,
         "topology_groups": 0,
         "macro_groups": 0,

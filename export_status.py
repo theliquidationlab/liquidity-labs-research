@@ -25,6 +25,9 @@ BROKER_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_PRECURSOR_BROKER_SCREEN_V1" / "00_
 BROKER_WORK_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_PRECURSOR_BROKER_SCREEN_V1_WORK" / "PROGRESS.json"
 BROKER_FINAL_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_PRECURSOR_BROKER_SCREEN_V1" / "PROGRESS.json"
 BROKER_STDERR = ROOT / "RUNS" / "mt5_precursor_broker_screen_v1.stderr.log"
+STRUCTURE_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_CAUSAL_STRUCTURE_MAP_V1" / "00_STATUS.json"
+STRUCTURE_WORK_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_CAUSAL_STRUCTURE_MAP_V1_WORK" / "PROGRESS.json"
+STRUCTURE_STDERR = ROOT / "RUNS" / "mt5_causal_structure_map_v1.stderr.log"
 
 def load_json(path):
     try:
@@ -101,6 +104,23 @@ def precursor_stage_state(frontier_final, seq_progress, seq_final, active_phase,
         return "working",fraction,f"{done}/{total} Discovery days screening {n:,} ordered 1s/2s/5s MT5 transitions/persistence candidates.",sub
     return "pending",fraction,f"Pair frontier complete; temporal frontier is {seq_pct:.2f}% complete.",sub
 
+def structure_stage_state(progress, final_status, active_phase, running, stderr_bytes):
+    target=int(final_status.get("success_source_direction_rows",progress.get("success_population_target",35975633)) or 35975633)
+    mapped=int(final_status.get("success_source_direction_rows",progress.get("success_rows_mapped",0)) or 0)
+    ticks=int(final_status.get("corrected_discovery_ticks",progress.get("ticks",0)) or 0)
+    events=int(final_status.get("structural_events",progress.get("events_confirmed",0)) or 0)
+    fine=int(final_status.get("fine_groups",0) or 0); topo=int(final_status.get("topology_groups",0) or 0); macro=int(final_status.get("macro_groups",0) or 0)
+    coverage=100.0*float(mapped)/float(target) if target else 0.0
+    sub={"success_target":target,"success_rows_mapped":mapped,"coverage_percent":round(coverage,4),"ticks_mapped":ticks,"structural_events":events,"fine_groups":fine,"topology_groups":topo,"macro_groups":macro,"stderr_bytes":int(stderr_bytes or 0)}
+    if final_status.get("complete"):
+        return "complete",1.0,f"Lossless causal structure mapping complete: {mapped:,}/{target:,} $1-success source-direction rows mapped across {ticks:,} corrected Discovery ticks; fine/topology/macro groups are frozen.",sub
+    pctv=max(0.0,min(100.0,float(progress.get("percent",0.0) or 0.0)))
+    done=int(progress.get("days_complete",0) or 0); total=int(progress.get("days_total",183) or 183); stage_name=str(progress.get("active_stage","structure_days")).replace("_"," ")
+    detail=f"{stage_name}; {done}/{total} Discovery days; {ticks:,} ticks mapped; {mapped:,}/{target:,} $1-success rows mapped ({coverage:.2f}% lossless coverage)"
+    if active_phase=="MT5_CAUSAL_STRUCTURE_MAP_V1" and running:
+        return "working",pctv/100.0,detail,sub
+    return "pending",pctv/100.0,detail+"; structure worker is not currently active.",sub
+
 def broker_stage_state(progress, final_status, active_phase, running, stderr_bytes):
     cond=int(final_status.get("conditions_total",progress.get("conditions_total",733848)) or 733848)
     geom=int(final_status.get("geometry_total",progress.get("geometry_total",1638)) or 1638)
@@ -129,6 +149,8 @@ def build_status():
     corrected_seq = load_json(CORRECTED_SEQ_FINAL)
     broker_final = load_json(BROKER_FINAL)
     broker_progress = load_json(BROKER_FINAL_PROGRESS) or load_json(BROKER_WORK_PROGRESS)
+    structure_final = load_json(STRUCTURE_FINAL)
+    structure_progress = load_json(STRUCTURE_WORK_PROGRESS)
     bin_days, total_days, feature_done = feature_progress()
     active = load_json(ACTIVE_WORKER)
     active_phase = str(active.get("phase", ""))
@@ -155,6 +177,10 @@ def build_status():
     except Exception: broker_stderr_bytes=0
     broker_running=(active_phase=="MT5_PRECURSOR_BROKER_SCREEN_V1" and str(broker_progress.get("state","")).upper()=="RUNNING") or process_running("mt5_precursor_broker_screen_v1.py")
     broker_state,broker_fraction,broker_detail,broker_subchecklist=broker_stage_state(broker_progress,broker_final,active_phase,broker_running,broker_stderr_bytes)
+    try: structure_stderr_bytes=STRUCTURE_STDERR.stat().st_size
+    except Exception: structure_stderr_bytes=0
+    structure_running=(active_phase=="MT5_CAUSAL_STRUCTURE_MAP_V1" and str(structure_progress.get("state","")).upper()=="RUNNING") or process_running("mt5_causal_structure_map_v1.py")
+    structure_state,structure_fraction,structure_detail,structure_subchecklist=structure_stage_state(structure_progress,structure_final,active_phase,structure_running,structure_stderr_bytes)
 
     best=broker_final.get("best_finalist",{}) or broker_final.get("branch_decision",{}).get("best_finalist",{}) or {}
     mt5_wr = pct(best.get("full_wr")) if best else None
@@ -172,15 +198,17 @@ def build_status():
         stage("Backward mining of +$1 winners", mining_state, mining_detail, 12, mining_fraction,
               finding="All 810 exact MT5 states are measured against hit and non-hit controls across both directions, nine horizons and six Discovery blocks.",
               subchecklist=mining_subchecklist),
-        stage("MT5 precursor discovery", precursor_state, precursor_detail, 10, precursor_fraction,
-              finding="Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
+        stage("MT5 microstructure precursor inventory (audit)", precursor_state, precursor_detail, 4, precursor_fraction,
+              finding="The earlier single/pair/1s/2s/5s inventory is preserved for audit and later entry timing; it is no longer the structural signal foundation.",
               subchecklist=precursor_subchecklist),
-        stage("Exact MT5 broker replay", broker_state, broker_detail, 6, broker_fraction,
-              finding="Corrected 733,848 precursor masks are screened across the full 1,638-geometry PU Prime grid; final families require exact chronological one-position ≥98% certification.",
-              subchecklist=broker_subchecklist),
-        stage("MT5 signal build-up construction", "pending", "Combine broker-certified current/1s/2s/5s precursor pieces into exact causal build-up definitions, then broker-replay the completed sequences before Binance.", 4, 0.0,
-              finding="This stage answers what forms first, what confirms next, and the exact terminal MT5 state that turns a build-up into a proper entry."),
-        stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 precursor and signal-build-up rules are frozen.", 6, 0.0, finding="Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥98% rules."),
+        stage("MT5 full causal structure mapping", structure_state, structure_detail, 18, structure_fraction,
+              finding="Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
+              subchecklist=structure_subchecklist),
+        stage("MT5 structural family broker replay", "pending" if not structure_final.get("complete") else "pending",
+              "Begins only after the lossless structural map is result-locked; exact PU Prime replay will determine which structural families are valid entries.", 14, 0.0,
+              finding="The interrupted 1s/2s/5s broker screen is audit-only and does not qualify structural signals."),
+        stage("Microstructure entry timing", "pending", "After a structural entry is valid, use short-horizon tick behavior only to select the entry tick that avoids immediate adverse movement beyond normal bid/ask spread mechanics.", 8, 0.0),
+        stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 structural families and microstructure timing rules are frozen.", 6, 0.0),
         stage("Combined high-precision union", "pending", "Preserve ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥98% families and combine non-conflicting executable trades.", 6, 0.0),
         stage("Robustness / delays / friction", "pending", "Re-test surviving combined rules under execution stress scenarios.", 4, 0.0),
         stage("Confirmation", "pending", "73 untouched chronological days.", 3, 0.0),
@@ -191,9 +219,11 @@ def build_status():
     overall = sum(s["weight"] * s["fraction"] for s in stages)
     data_progress = (4.0 + feature_fraction) / 5.0 * 100.0
     validation_progress = 0.0
-    working = broker_state == "working" or precursor_state == "working" or frontier_state == "working" or mining_state == "working"
-    if broker_state == "working": active_stage = "MT5 broker certification: " + str(broker_progress.get("active_stage","working")).replace("_"," ")
-    elif broker_state == "complete": active_stage = "MT5 broker certification complete"
+    working = structure_state == "working" or broker_state == "working" or precursor_state == "working" or frontier_state == "working" or mining_state == "working"
+    if structure_state == "working": active_stage = "MT5 full causal structure mapping: " + str(structure_progress.get("active_stage","working")).replace("_"," ")
+    elif structure_state == "complete": active_stage = "MT5 causal structure mapping complete"
+    elif broker_state == "working": active_stage = "MT5 audit broker screen: " + str(broker_progress.get("active_stage","working")).replace("_"," ")
+    elif broker_state == "complete": active_stage = "MT5 audit broker screen complete"
     elif precursor_state == "working" and active_phase == "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1": active_stage = "MT5 sequence / persistence frontier"
     elif frontier_state == "working": active_stage = "MT5 precursor concurrent-pair frontier"
     elif mining_state == "working": active_stage = "MT5 tick backward winner mining"
@@ -222,6 +252,20 @@ def build_status():
                    "broker_anchor_survivors": int(broker_subchecklist.get("anchor_b1_survivors",0)),
                    "broker_raw95_survivors": int(broker_subchecklist.get("raw_95_survivors",0)),
                    "broker_exact98_finalists": int(broker_subchecklist.get("exact_98_finalists",0))},
+        "structure": {"structure_stage": str(structure_progress.get("active_stage","complete" if structure_final.get("complete") else "pending")),
+                   "structure_progress": round(structure_fraction*100.0,2),
+                   "structure_days": int(structure_progress.get("days_complete",183 if structure_final.get("complete") else 0) or 0),
+                   "structure_days_total": int(structure_progress.get("days_total",183) or 183),
+                   "structure_ticks": int(structure_subchecklist.get("ticks_mapped",0)),
+                   "structure_events": int(structure_subchecklist.get("structural_events",0)),
+                   "structure_success_rows": int(structure_subchecklist.get("success_rows_mapped",0)),
+                   "structure_success_target": int(structure_subchecklist.get("success_target",35975633)),
+                   "structure_coverage": float(structure_subchecklist.get("coverage_percent",0.0)),
+                   "structure_health": "HEALTHY" if (structure_final.get("complete") or (structure_running and structure_stderr_bytes==0)) else ("ERROR" if structure_stderr_bytes else "WAITING"),
+                   "structure_error_bytes": int(structure_stderr_bytes),
+                   "fine_groups": int(structure_subchecklist.get("fine_groups",0)),
+                   "topology_groups": int(structure_subchecklist.get("topology_groups",0)),
+                   "macro_groups": int(structure_subchecklist.get("macro_groups",0))},
         "broker": {"broker_stage": str(broker_progress.get("active_stage","complete" if broker_final.get("complete") else "pending")),
                    "broker_progress": round(broker_fraction*100.0,2),
                    "broker_conditions": int(broker_subchecklist.get("conditions",733848)),
