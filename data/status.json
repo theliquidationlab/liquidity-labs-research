@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T05:07:02.405338+00:00",
+  "generated_utc": "2026-08-30T05:13:18.816267+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_TICK_PRECURSOR_FRONTIER_V1"
   },
   "progress": {
-    "overall": 60.6,
+    "overall": 64.0,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -101,14 +101,14 @@
     {
       "name": "MT5 precursor discovery",
       "state": "pending",
-      "detail": "84/183 pair-screen days complete; frontier worker is not currently active.",
+      "detail": "146/183 pair-screen days complete; frontier worker is not currently active.",
       "weight": 10,
-      "fraction": 0.45899999999999996,
-      "percent": 45.9,
+      "fraction": 0.7978000000000001,
+      "percent": 79.78,
       "finding": "Exhaustive concurrent-pair frontier preserves all 572,000 legal retained pairs from the 4,402 stable single-state seeds; raw target hits are not final trade wins.",
       "subchecklist": {
         "authority_and_pair_catalog": 100.0,
-        "discovery_pair_shards": 45.9,
+        "discovery_pair_shards": 79.78,
         "block_aggregation": 0.0,
         "pair_metrics": 0.0,
         "stable_enrichment_gate": 0.0,
