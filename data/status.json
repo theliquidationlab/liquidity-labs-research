@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-08-30T05:18:45.191951+00:00",
+  "generated_utc": "2026-08-30T05:23:55.282296+00:00",
   "system": {
-    "working": true,
-    "label": "WORKING",
-    "active_stage": "MT5 precursor concurrent-pair frontier",
+    "working": false,
+    "label": "READY FOR NEXT STAGE",
+    "active_stage": "MT5 precursor pair frontier complete",
     "active_phase": "MT5_TICK_PRECURSOR_FRONTIER_V1"
   },
   "progress": {
@@ -100,8 +100,8 @@
     },
     {
       "name": "MT5 precursor discovery",
-      "state": "working",
-      "detail": "183/183 Discovery days screening 572,000 retained concurrent MT5 pairs.",
+      "state": "complete",
+      "detail": "183/183 Discovery days pair-screened; 572,000 retained pairs measured; 540,687 stable-enriched pairs preserved.",
       "weight": 10,
       "fraction": 1.0,
       "percent": 100.0,
@@ -109,10 +109,10 @@
       "subchecklist": {
         "authority_and_pair_catalog": 100.0,
         "discovery_pair_shards": 100.0,
-        "block_aggregation": 0.0,
-        "pair_metrics": 0.0,
-        "stable_enrichment_gate": 0.0,
-        "finalization": 0.0
+        "block_aggregation": 100.0,
+        "pair_metrics": 100.0,
+        "stable_enrichment_gate": 100.0,
+        "finalization": 100.0
       }
     },
     {
