@@ -1,12 +1,13 @@
 {
-  "generated_utc": "2026-08-30T04:36:43.367988+00:00",
+  "generated_utc": "2026-08-30T04:41:46.094550+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
-    "active_stage": "Awaiting next research stage"
+    "active_stage": "MT5 backward mining complete",
+    "active_phase": ""
   },
   "progress": {
-    "overall": 44.0,
+    "overall": 56.0,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -37,7 +38,9 @@
       "detail": "365/365 BTCUSD days cached from PUPrime-Demo.",
       "weight": 8,
       "fraction": 1.0,
-      "finding": "62,299,358 historical bid/ask ticks available."
+      "percent": 100.0,
+      "finding": "62,299,358 historical bid/ask ticks available.",
+      "subchecklist": {}
     },
     {
       "name": "+$1-at-0.01 MT5 outcome atlas",
@@ -45,7 +48,9 @@
       "detail": "Every tick labeled for a +$100 BTC move using executable bid/ask sides.",
       "weight": 12,
       "fraction": 1.0,
-      "finding": "BUY ask\u2192future bid; SELL bid\u2192future ask; 900-second forward path."
+      "percent": 100.0,
+      "finding": "BUY ask\u2192future bid; SELL bid\u2192future ask; 900-second forward path.",
+      "subchecklist": {}
     },
     {
       "name": "MT5 causal tick feature engine",
@@ -53,7 +58,9 @@
       "detail": "81 causal tick-level broker features built and regression tested.",
       "weight": 6,
       "fraction": 1.0,
-      "finding": "Uses bid/ask microstructure, spread, velocity, range, efficiency, pressure and range position."
+      "percent": 100.0,
+      "finding": "Uses bid/ask microstructure, spread, velocity, range, efficiency, pressure and range position.",
+      "subchecklist": {}
     },
     {
       "name": "Discovery threshold fitting",
@@ -61,7 +68,9 @@
       "detail": "Thresholds fitted only on the 183-day Discovery period.",
       "weight": 6,
       "fraction": 1.0,
-      "finding": "Untouched Confirmation/Hard/Holdout outcomes were not used for fitting."
+      "percent": 100.0,
+      "finding": "Untouched Confirmation/Hard/Holdout outcomes were not used for fitting.",
+      "subchecklist": {}
     },
     {
       "name": "Full-year MT5 state matrix",
@@ -69,15 +78,25 @@
       "detail": "365/365 days binned with frozen MT5 thresholds.",
       "weight": 12,
       "fraction": 1.0,
-      "finding": "This creates the searchable MT5 state infrastructure for backward winner mining."
+      "percent": 100.0,
+      "finding": "This creates the searchable MT5 state infrastructure for backward winner mining.",
+      "subchecklist": {}
     },
     {
       "name": "Backward mining of +$1 winners",
-      "state": "pending",
-      "detail": "Mine the causal MT5 tick path before profitable +$100 moves.",
+      "state": "complete",
+      "detail": "183/183 Discovery days mined; single-state enrichment census complete.",
       "weight": 12,
-      "fraction": 0.0,
-      "finding": "This is the next research stage after the state matrix finishes."
+      "fraction": 1.0,
+      "percent": 100.0,
+      "finding": "All 810 exact MT5 states are measured against hit and non-hit controls across both directions, nine horizons and six Discovery blocks.",
+      "subchecklist": {
+        "authority_and_join": 100.0,
+        "discovery_day_mining": 100.0,
+        "single_state_metrics": 100.0,
+        "stable_enrichment_gate": 100.0,
+        "finalization": 100.0
+      }
     },
     {
       "name": "MT5 precursor discovery",
@@ -85,7 +104,9 @@
       "detail": "Find repeatable MT5-native winning precursor families.",
       "weight": 10,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Exact MT5 broker replay",
@@ -93,7 +114,9 @@
       "detail": "Replay frozen MT5 precursors with spread, bid/ask, one-position and LOSS_FIRST semantics.",
       "weight": 8,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Binance strength cross-reference",
@@ -101,7 +124,9 @@
       "detail": "Use Binance only after MT5 precursor rules are frozen.",
       "weight": 8,
       "fraction": 0.0,
-      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u226598% rules."
+      "percent": 0.0,
+      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u226598% rules.",
+      "subchecklist": {}
     },
     {
       "name": "Combined high-precision union",
@@ -109,7 +134,9 @@
       "detail": "Preserve \u226598% families and combine non-conflicting executable trades.",
       "weight": 6,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Robustness / delays / friction",
@@ -117,7 +144,9 @@
       "detail": "Re-test surviving combined rules under execution stress scenarios.",
       "weight": 4,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Confirmation",
@@ -125,7 +154,9 @@
       "detail": "73 untouched chronological days.",
       "weight": 3,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Hard Validation",
@@ -133,7 +164,9 @@
       "detail": "55 untouched chronological days.",
       "weight": 2,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Final Holdout",
@@ -141,7 +174,9 @@
       "detail": "54 sealed chronological days.",
       "weight": 2,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     },
     {
       "name": "Shadow / demo readiness",
@@ -149,7 +184,9 @@
       "detail": "No promotion until all research and validation gates pass.",
       "weight": 1,
       "fraction": 0.0,
-      "finding": ""
+      "percent": 0.0,
+      "finding": "",
+      "subchecklist": {}
     }
   ],
   "notes": [
