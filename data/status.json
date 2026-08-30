@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T22:18:12.302943+00:00",
+  "generated_utc": "2026-08-30T22:25:26.716756+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
-    "overall": 76.7,
+    "overall": 77.3,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -38,7 +38,7 @@
   },
   "structure": {
     "structure_stage": "group_reduce",
-    "structure_progress": 93.0,
+    "structure_progress": 96.0,
     "structure_days": 183,
     "structure_days_total": 183,
     "structure_ticks": 0,
@@ -161,10 +161,10 @@
     {
       "name": "MT5 full causal structure mapping",
       "state": "working",
-      "detail": "group reduce; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage); fine bucket 16/16",
+      "detail": "group reduce; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage); topology bucket 16/16",
       "weight": 18,
-      "fraction": 0.93,
-      "percent": 93.0,
+      "fraction": 0.96,
+      "percent": 96.0,
       "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
         "success_target": 35975633,
