@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-30T22:25:26.716756+00:00",
+  "generated_utc": "2026-08-30T22:31:21.517017+00:00",
   "system": {
-    "working": true,
-    "label": "WORKING",
-    "active_stage": "MT5 full causal structure mapping: group reduce",
-    "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
+    "working": false,
+    "label": "READY FOR NEXT STAGE",
+    "active_stage": "MT5 structural broker replay complete",
+    "active_phase": "MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1"
   },
   "progress": {
-    "overall": 77.3,
+    "overall": 92.0,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -37,30 +37,30 @@
     "broker_exact98_finalists": 0
   },
   "structure": {
-    "structure_stage": "group_reduce",
-    "structure_progress": 96.0,
+    "structure_stage": "complete",
+    "structure_progress": 100.0,
     "structure_days": 183,
     "structure_days_total": 183,
-    "structure_ticks": 0,
-    "structure_events": 0,
-    "structure_success_rows": 0,
+    "structure_ticks": 33488805,
+    "structure_events": 43528148,
+    "structure_success_rows": 35975633,
     "structure_success_target": 35975633,
-    "structure_coverage": 0.0,
+    "structure_coverage": 100.0,
     "structure_health": "HEALTHY",
     "structure_error_bytes": 0,
-    "fine_groups": 0,
-    "topology_groups": 0,
-    "macro_groups": 0
+    "fine_groups": 35432476,
+    "topology_groups": 15694678,
+    "macro_groups": 3182570
   },
   "structural_broker": {
-    "stage": "pending",
-    "progress": 0.0,
+    "stage": "complete",
+    "progress": 100.0,
     "raw_dollar95_candidates": 0,
     "primary_geometries": 36,
     "raw_broker95_combos": 0,
     "exact95_structural_valid": 0,
     "exact98_pretiming": 0,
-    "health": "WAITING",
+    "health": "HEALTHY",
     "error_bytes": 0
   },
   "broker": {
@@ -160,31 +160,31 @@
     },
     {
       "name": "MT5 full causal structure mapping",
-      "state": "working",
-      "detail": "group reduce; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage); topology bucket 16/16",
+      "state": "complete",
+      "detail": "Lossless causal structure mapping complete: 35,975,633/35,975,633 $1-success source-direction rows mapped across 33,488,805 corrected Discovery ticks; fine/topology/macro groups are frozen.",
       "weight": 18,
-      "fraction": 0.96,
-      "percent": 96.0,
+      "fraction": 1.0,
+      "percent": 100.0,
       "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
         "success_target": 35975633,
-        "success_rows_mapped": 0,
-        "coverage_percent": 0.0,
-        "ticks_mapped": 0,
-        "structural_events": 0,
-        "fine_groups": 0,
-        "topology_groups": 0,
-        "macro_groups": 0,
+        "success_rows_mapped": 35975633,
+        "coverage_percent": 100.0,
+        "ticks_mapped": 33488805,
+        "structural_events": 43528148,
+        "fine_groups": 35432476,
+        "topology_groups": 15694678,
+        "macro_groups": 3182570,
         "stderr_bytes": 0
       }
     },
     {
       "name": "MT5 structural family broker replay",
-      "state": "pending",
-      "detail": "pending; 0 structural candidates x 36 primary $1 broker geometries; structural broker worker is not currently active.",
+      "state": "complete",
+      "detail": "Structural broker replay complete: 0 raw $1 >=95% families, 0 broker >=95% combinations, 0 exact one-position >=95% valid, 0 >=98% before microstructure.",
       "weight": 14,
-      "fraction": 0.0,
-      "percent": 0.0,
+      "fraction": 1.0,
+      "percent": 100.0,
       "finding": "The +$1 structural families are replayed at real PU Prime bid/ask prices across 36 primary target100 geometries; exact >=95% one-position families pass to microstructure timing.",
       "subchecklist": {
         "raw_dollar95_candidates": 0,
