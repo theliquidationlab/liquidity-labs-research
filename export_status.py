@@ -15,6 +15,9 @@ MINING_FINAL_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_TICK_BACKWARD_WINNER_MINI
 FRONTIER_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_TICK_PRECURSOR_FRONTIER_V1" / "00_STATUS.json"
 FRONTIER_WORK_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_TICK_PRECURSOR_FRONTIER_V1_WORK" / "PROGRESS.json"
 FRONTIER_FINAL_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_TICK_PRECURSOR_FRONTIER_V1" / "PROGRESS.json"
+SEQ_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1" / "00_STATUS.json"
+SEQ_WORK_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1_WORK" / "PROGRESS.json"
+SEQ_FINAL_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1" / "PROGRESS.json"
 
 def load_json(path):
     try:
@@ -77,6 +80,20 @@ def frontier_stage_state(progress, final_status, active_phase, running):
     if active_phase=="MT5_TICK_PRECURSOR_FRONTIER_V1" and running:
         return "working", fraction, f"{done}/{total} Discovery days screening {pairs:,} retained concurrent MT5 pairs.", progress.get("checklist", {})
     return "pending", fraction, f"{done}/{total} pair-screen days complete; frontier worker is not currently active.", progress.get("checklist", {})
+def precursor_stage_state(frontier_final, seq_progress, seq_final, active_phase, seq_running):
+    pair_done=bool(frontier_final.get("complete")); pair_pct=100.0 if pair_done else 0.0
+    seq_pct=max(0.0,min(100.0,float(seq_progress.get("percent",0.0) or 0.0)))
+    sub={"concurrent_pair_frontier":pair_pct}; sub.update(seq_progress.get("checklist",{}) or {})
+    if seq_final.get("complete"):
+        stable=int(seq_final.get("stable_enriched_temporal",0) or 0)
+        return "complete",1.0,f"Concurrent pairs and 1s/2s/5s temporal frontier complete; {stable:,} stable-enriched temporal precursors preserved.",sub
+    fraction=(0.5 if pair_done else 0.0)+(0.5*seq_pct/100.0)
+    done=int(seq_progress.get("days_complete",0) or 0); total=int(seq_progress.get("days_total",183) or 183)
+    n=int(seq_progress.get("transition_candidates",3492438) or 3492438)
+    if active_phase=="MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1" and seq_running:
+        return "working",fraction,f"{done}/{total} Discovery days screening {n:,} ordered 1s/2s/5s MT5 transitions/persistence candidates.",sub
+    return "pending",fraction,f"Pair frontier complete; temporal frontier is {seq_pct:.2f}% complete.",sub
+
 def build_status():
     atlas = load_json(MT5_ATLAS)
     base = load_json(MT5_BASE)
@@ -94,6 +111,11 @@ def build_status():
     frontier_running = process_running("mt5_tick_precursor_frontier_v1.py")
     frontier_state, frontier_fraction, frontier_detail, frontier_subchecklist = frontier_stage_state(
         frontier_progress, frontier_final, active_phase, frontier_running)
+    seq_final = load_json(SEQ_FINAL)
+    seq_progress = load_json(SEQ_FINAL_PROGRESS) or load_json(SEQ_WORK_PROGRESS)
+    seq_running = process_running("mt5_tick_sequence_persistence_frontier_v1.py")
+    precursor_state, precursor_fraction, precursor_detail, precursor_subchecklist = precursor_stage_state(
+        frontier_final, seq_progress, seq_final, active_phase, seq_running)
 
     mt5_wr = pct(base.get("branch_decision", {}).get("best_full_wr"))
     bin_wr = pct(bstrength.get("branch_decision", {}).get("best_full_wr"))
@@ -110,9 +132,9 @@ def build_status():
         stage("Backward mining of +$1 winners", mining_state, mining_detail, 12, mining_fraction,
               finding="All 810 exact MT5 states are measured against hit and non-hit controls across both directions, nine horizons and six Discovery blocks.",
               subchecklist=mining_subchecklist),
-        stage("MT5 precursor discovery", frontier_state, frontier_detail, 10, frontier_fraction,
-              finding="Exhaustive concurrent-pair frontier preserves all 572,000 legal retained pairs from the 4,402 stable single-state seeds; raw target hits are not final trade wins.",
-              subchecklist=frontier_subchecklist),
+        stage("MT5 precursor discovery", precursor_state, precursor_detail, 10, precursor_fraction,
+              finding="Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
+              subchecklist=precursor_subchecklist),
         stage("Exact MT5 broker replay", "pending", "Replay frozen MT5 precursors with spread, bid/ask, one-position and LOSS_FIRST semantics.", 8, 0.0),
         stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 precursor rules are frozen.", 8, 0.0, finding="Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¥98% rules."),
         stage("Combined high-precision union", "pending", "Preserve ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¥98% families and combine non-conflicting executable trades.", 6, 0.0),
@@ -125,9 +147,11 @@ def build_status():
     overall = sum(s["weight"] * s["fraction"] for s in stages)
     data_progress = (4.0 + feature_fraction) / 5.0 * 100.0
     validation_progress = 0.0
-    working = frontier_state == "working" or mining_state == "working"
-    if frontier_state == "working": active_stage = "MT5 precursor concurrent-pair frontier"
+    working = precursor_state == "working" or frontier_state == "working" or mining_state == "working"
+    if precursor_state == "working" and active_phase == "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1": active_stage = "MT5 sequence / persistence frontier"
+    elif frontier_state == "working": active_stage = "MT5 precursor concurrent-pair frontier"
     elif mining_state == "working": active_stage = "MT5 tick backward winner mining"
+    elif precursor_state == "complete": active_stage = "MT5 precursor discovery complete"
     elif frontier_state == "complete": active_stage = "MT5 precursor pair frontier complete"
     elif mining_state == "complete": active_stage = "MT5 backward mining complete"
     else: active_stage = "Awaiting next research stage"
