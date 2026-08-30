@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-08-30T07:22:24.943302+00:00",
+  "generated_utc": "2026-08-30T07:28:24.797156+00:00",
   "system": {
-    "working": true,
-    "label": "WORKING",
-    "active_stage": "MT5 sequence / persistence frontier",
+    "working": false,
+    "label": "READY FOR NEXT STAGE",
+    "active_stage": "MT5 precursor discovery complete",
     "active_phase": "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1"
   },
   "progress": {
@@ -100,8 +100,8 @@
     },
     {
       "name": "MT5 precursor discovery",
-      "state": "working",
-      "detail": "183/183 Discovery days screening 3,492,438 ordered 1s/2s/5s MT5 transitions/persistence candidates.",
+      "state": "complete",
+      "detail": "Concurrent pairs and 1s/2s/5s temporal frontier complete; 3,355,830 stable-enriched temporal precursors preserved.",
       "weight": 10,
       "fraction": 1.0,
       "percent": 100.0,
@@ -111,9 +111,9 @@
         "authority_and_temporal_catalog": 100.0,
         "discovery_temporal_shards": 100.0,
         "block_aggregation": 100.0,
-        "temporal_metrics": 70.0,
-        "stable_enrichment_gate": 0.0,
-        "finalization": 50.0
+        "temporal_metrics": 100.0,
+        "stable_enrichment_gate": 100.0,
+        "finalization": 100.0
       }
     },
     {
