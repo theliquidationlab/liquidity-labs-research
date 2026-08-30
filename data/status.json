@@ -1,0 +1,160 @@
+{
+  "generated_utc": "2026-08-30T03:41:37.017060+00:00",
+  "system": {
+    "working": false,
+    "label": "READY FOR NEXT STAGE",
+    "active_stage": "Awaiting next research stage"
+  },
+  "progress": {
+    "overall": 44.0,
+    "data_build": 100.0,
+    "validation": 0.0
+  },
+  "metrics": {
+    "mt5_win_rate": 45.77,
+    "mt5_label": "Previous broker-native MT5 baseline",
+    "binance_win_rate": 91.67,
+    "binance_label": "Best prior single Binance confirmation",
+    "combined_win_rate": null,
+    "combined_label": "Current MT5-backward-mined + Binance system",
+    "qualifying_trades_per_day": 0.0,
+    "trade_target_per_day": 100.0,
+    "target_win_rate": 98.0
+  },
+  "counts": {
+    "mt5_ticks": 62299358,
+    "market_days": 365,
+    "mt5_features": 81,
+    "state_days_complete": 365,
+    "state_days_total": 365,
+    "prior_exact_bin_rules": 461040,
+    "prior_stable98_rules": 0
+  },
+  "stages": [
+    {
+      "name": "Full-year PU Prime MT5 tick history",
+      "state": "complete",
+      "detail": "365/365 BTCUSD days cached from PUPrime-Demo.",
+      "weight": 8,
+      "fraction": 1.0,
+      "finding": "62,299,358 historical bid/ask ticks available."
+    },
+    {
+      "name": "+$1-at-0.01 MT5 outcome atlas",
+      "state": "complete",
+      "detail": "Every tick labeled for a +$100 BTC move using executable bid/ask sides.",
+      "weight": 12,
+      "fraction": 1.0,
+      "finding": "BUY ask\u2192future bid; SELL bid\u2192future ask; 900-second forward path."
+    },
+    {
+      "name": "MT5 causal tick feature engine",
+      "state": "complete",
+      "detail": "81 causal tick-level broker features built and regression tested.",
+      "weight": 6,
+      "fraction": 1.0,
+      "finding": "Uses bid/ask microstructure, spread, velocity, range, efficiency, pressure and range position."
+    },
+    {
+      "name": "Discovery threshold fitting",
+      "state": "complete",
+      "detail": "Thresholds fitted only on the 183-day Discovery period.",
+      "weight": 6,
+      "fraction": 1.0,
+      "finding": "Untouched Confirmation/Hard/Holdout outcomes were not used for fitting."
+    },
+    {
+      "name": "Full-year MT5 state matrix",
+      "state": "complete",
+      "detail": "365/365 days binned with frozen MT5 thresholds.",
+      "weight": 12,
+      "fraction": 1.0,
+      "finding": "This creates the searchable MT5 state infrastructure for backward winner mining."
+    },
+    {
+      "name": "Backward mining of +$1 winners",
+      "state": "pending",
+      "detail": "Mine the causal MT5 tick path before profitable +$100 moves.",
+      "weight": 12,
+      "fraction": 0.0,
+      "finding": "This is the next research stage after the state matrix finishes."
+    },
+    {
+      "name": "MT5 precursor discovery",
+      "state": "pending",
+      "detail": "Find repeatable MT5-native winning precursor families.",
+      "weight": 10,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Exact MT5 broker replay",
+      "state": "pending",
+      "detail": "Replay frozen MT5 precursors with spread, bid/ask, one-position and LOSS_FIRST semantics.",
+      "weight": 8,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Binance strength cross-reference",
+      "state": "pending",
+      "detail": "Use Binance only after MT5 precursor rules are frozen.",
+      "weight": 8,
+      "fraction": 0.0,
+      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u226598% rules."
+    },
+    {
+      "name": "Combined high-precision union",
+      "state": "pending",
+      "detail": "Preserve \u226598% families and combine non-conflicting executable trades.",
+      "weight": 6,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Robustness / delays / friction",
+      "state": "pending",
+      "detail": "Re-test surviving combined rules under execution stress scenarios.",
+      "weight": 4,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Confirmation",
+      "state": "pending",
+      "detail": "73 untouched chronological days.",
+      "weight": 3,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Hard Validation",
+      "state": "pending",
+      "detail": "55 untouched chronological days.",
+      "weight": 2,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Final Holdout",
+      "state": "pending",
+      "detail": "54 sealed chronological days.",
+      "weight": 2,
+      "fraction": 0.0,
+      "finding": ""
+    },
+    {
+      "name": "Shadow / demo readiness",
+      "state": "pending",
+      "detail": "No promotion until all research and validation gates pass.",
+      "weight": 1,
+      "fraction": 0.0,
+      "finding": ""
+    }
+  ],
+  "notes": [
+    "Current active research mines MT5 tick outcomes first; Binance is confirmation only.",
+    "No live orders are sent by this research pipeline.",
+    "A displayed PENDING metric has not yet been scientifically measured for the current architecture."
+  ]
+}

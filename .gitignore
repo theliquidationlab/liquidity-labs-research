@@ -1,0 +1,7 @@
+publisher.log
+__pycache__/
+*.pyc
+export_status.py
+publisher.py
+start_publisher.cmd
+start_publisher_hidden.vbs

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>Liquidity Labs Research</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <div class="brand">LIQUIDITY LABS</div>
+        <h1>BTC Research Command Center</h1>
+        <p class="sub">Live MT5 + Binance research status</p>
+      </div>
+      <div class="health-wrap">
+        <span id="healthDot" class="health-dot"></span>
+        <div><strong id="healthLabel">LOADING</strong><small id="activeStage">Connecting…</small></div>
+      </div>
+    </header>
+
+    <section class="progress-card">
+      <div class="progress-head"><span>Overall Research Completion</span><strong id="overallPct">--%</strong></div>
+      <div class="bar"><i id="overallBar"></i></div>
+      <div class="mini-progress">
+        <div><span>Data build</span><strong id="dataPct">--%</strong></div>
+        <div><span>Validation</span><strong id="validationPct">--%</strong></div>
+        <div><span>Last update</span><strong id="updatedAt">--</strong></div>
+      </div>
+    </section>
+    <section class="metrics" aria-label="research metrics">
+      <article class="metric"><span>MT5 Win Rate</span><strong id="mt5Wr">--</strong><small id="mt5Label">--</small></article>
+      <article class="metric"><span>Binance Win Rate</span><strong id="binanceWr">--</strong><small id="binanceLabel">--</small></article>
+      <article class="metric featured"><span>Combined Win Rate</span><strong id="combinedWr">--</strong><small id="combinedLabel">--</small></article>
+      <article class="metric"><span>Qualifying Trades / Day</span><strong id="tradesDay">--</strong><small id="tradeTarget">Target: --</small></article>
+    </section>
+
+    <section class="split">
+      <article class="panel">
+        <div class="section-title"><h2>Research Checklist</h2><span id="stageCount">--</span></div>
+        <div id="stageList" class="stage-list"></div>
+      </article>
+
+      <aside class="panel side-panel">
+        <h2>Open Anywhere</h2>
+        <p>Scan this QR code from any phone or tablet to open this live dashboard.</p>
+        <img class="qr" src="qr.png" alt="QR code for Liquidity Labs research dashboard">
+        <a class="site-link" href="https://theliquidationlab.github.io/liquidity-labs-research/">theliquidationlab.github.io/<br>liquidity-labs-research/</a>
+
+        <h2 class="findings-title">Live Data</h2>
+        <dl class="facts">
+          <div><dt>MT5 ticks</dt><dd id="tickCount">--</dd></div>
+          <div><dt>MT5 state days</dt><dd id="stateDays">--</dd></div>
+          <div><dt>MT5 features</dt><dd id="featureCount">--</dd></div>
+          <div><dt>Prior Binance rules tested</dt><dd id="ruleCount">--</dd></div>
+        </dl>
+      </aside>
+    </section>
+    <section class="panel notes-panel">
+      <div class="section-title"><h2>Current Research Rules</h2><span>Read-only dashboard</span></div>
+      <ul id="notes" class="notes"></ul>
+    </section>
+
+    <footer>
+      Quantitative/crypto research only, not financial advice. Historical measurements do not guarantee future trading results.
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
