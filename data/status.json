@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-08-30T04:55:46.082757+00:00",
+  "generated_utc": "2026-08-30T05:01:01.897687+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
     "active_stage": "MT5 backward mining complete",
-    "active_phase": "MT5_TICK_BACKWARD_WINNER_MINING_V1"
+    "active_phase": "MT5_TICK_PRECURSOR_FRONTIER_V1"
   },
   "progress": {
     "overall": 56.0,
