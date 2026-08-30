@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-08-30T18:54:09.680882+00:00",
+  "generated_utc": "2026-08-30T19:07:25.047353+00:00",
   "system": {
-    "working": true,
-    "label": "WORKING",
-    "active_stage": "MT5 broker certification: anchor block1",
-    "active_phase": "MT5_PRECURSOR_BROKER_SCREEN_V1"
+    "working": false,
+    "label": "READY FOR NEXT STAGE",
+    "active_stage": "MT5 precursor discovery complete; broker certification ready",
+    "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
     "overall": 67.1,
@@ -44,7 +44,7 @@
     "broker_anchor_survivors": 0,
     "broker_raw95_survivors": 0,
     "broker_exact98_finalists": 0,
-    "broker_health": "HEALTHY",
+    "broker_health": "WAITING",
     "broker_error_bytes": 0,
     "days_complete": 8,
     "days_total": 30
@@ -133,8 +133,8 @@
     },
     {
       "name": "Exact MT5 broker replay",
-      "state": "working",
-      "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 8/30 days complete",
+      "state": "pending",
+      "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 8/30 days complete; broker worker is not currently active.",
       "weight": 6,
       "fraction": 0.18,
       "percent": 18.0,
