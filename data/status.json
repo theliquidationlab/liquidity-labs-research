@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-08-30T20:05:03.349462+00:00",
+  "generated_utc": "2026-08-30T20:18:15.351541+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
-    "active_stage": "MT5 full causal structure mapping: grouping",
+    "active_stage": "MT5 full causal structure mapping: group partition",
     "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
@@ -37,11 +37,11 @@
     "broker_exact98_finalists": 0
   },
   "structure": {
-    "structure_stage": "grouping",
-    "structure_progress": 80.0,
+    "structure_stage": "group_partition",
+    "structure_progress": 80.22,
     "structure_days": 183,
     "structure_days_total": 183,
-    "structure_ticks": 33488805,
+    "structure_ticks": 0,
     "structure_events": 0,
     "structure_success_rows": 0,
     "structure_success_target": 35975633,
@@ -150,16 +150,16 @@
     {
       "name": "MT5 full causal structure mapping",
       "state": "working",
-      "detail": "grouping; 183/183 Discovery days; 33,488,805 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage)",
+      "detail": "group partition; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage)",
       "weight": 18,
-      "fraction": 0.8,
-      "percent": 80.0,
+      "fraction": 0.8022,
+      "percent": 80.22,
       "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
         "success_target": 35975633,
         "success_rows_mapped": 0,
         "coverage_percent": 0.0,
-        "ticks_mapped": 33488805,
+        "ticks_mapped": 0,
         "structural_events": 0,
         "fine_groups": 0,
         "topology_groups": 0,
