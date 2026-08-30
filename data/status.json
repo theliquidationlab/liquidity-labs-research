@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T06:01:23.976925+00:00",
+  "generated_utc": "2026-08-30T06:08:10.851828+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1"
   },
   "progress": {
-    "overall": 61.6,
+    "overall": 62.4,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -101,15 +101,15 @@
     {
       "name": "MT5 precursor discovery",
       "state": "pending",
-      "detail": "Pair frontier complete; temporal frontier is 12.57% complete.",
+      "detail": "Pair frontier complete; temporal frontier is 27.32% complete.",
       "weight": 10,
-      "fraction": 0.56285,
-      "percent": 56.28,
+      "fraction": 0.6366,
+      "percent": 63.66,
       "finding": "Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
       "subchecklist": {
         "concurrent_pair_frontier": 100.0,
         "authority_and_temporal_catalog": 100.0,
-        "discovery_temporal_shards": 12.57,
+        "discovery_temporal_shards": 27.32,
         "block_aggregation": 0.0,
         "temporal_metrics": 0.0,
         "stable_enrichment_gate": 0.0,
