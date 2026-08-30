@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T20:44:16.242050+00:00",
+  "generated_utc": "2026-08-30T20:53:41.131006+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -46,8 +46,8 @@
     "structure_success_rows": 0,
     "structure_success_target": 35975633,
     "structure_coverage": 0.0,
-    "structure_health": "HEALTHY",
-    "structure_error_bytes": 0,
+    "structure_health": "ERROR",
+    "structure_error_bytes": 2006,
     "fine_groups": 0,
     "topology_groups": 0,
     "macro_groups": 0
@@ -175,17 +175,17 @@
         "fine_groups": 0,
         "topology_groups": 0,
         "macro_groups": 0,
-        "stderr_bytes": 0
+        "stderr_bytes": 2006
       }
     },
     {
       "name": "MT5 structural family broker replay",
       "state": "pending",
-      "detail": "pending; 0 structural candidates ? 36 primary $1 broker geometries; structural broker worker is not currently active.",
+      "detail": "pending; 0 structural candidates x 36 primary $1 broker geometries; structural broker worker is not currently active.",
       "weight": 14,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "The +$1 structural families are replayed at real PU Prime bid/ask prices across 36 primary target100 geometries; exact ?95% one-position families pass to microstructure timing.",
+      "finding": "The +$1 structural families are replayed at real PU Prime bid/ask prices across 36 primary target100 geometries; exact >=95% one-position families pass to microstructure timing.",
       "subchecklist": {
         "raw_dollar95_candidates": 0,
         "primary_geometries": 36,

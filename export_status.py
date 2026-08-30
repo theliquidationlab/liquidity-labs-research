@@ -28,6 +28,9 @@ BROKER_STDERR = ROOT / "RUNS" / "mt5_precursor_broker_screen_v1.stderr.log"
 STRUCTURE_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_CAUSAL_STRUCTURE_MAP_V1" / "00_STATUS.json"
 STRUCTURE_WORK_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_CAUSAL_STRUCTURE_MAP_V1_WORK" / "PROGRESS.json"
 STRUCTURE_STDERR = ROOT / "RUNS" / "mt5_causal_structure_map_v1.stderr.log"
+STRUCT_BROKER_FINAL = ROOT / "12_LIVE_PARITY" / "MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1" / "00_STATUS.json"
+STRUCT_BROKER_PROGRESS = ROOT / "12_LIVE_PARITY" / "MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1_WORK" / "PROGRESS.json"
+STRUCT_BROKER_STDERR = ROOT / "RUNS" / "mt5_structural_family_broker_screen_v1.stderr.log"
 
 def load_json(path):
     try:
@@ -106,9 +109,9 @@ def precursor_stage_state(frontier_final, seq_progress, seq_final, active_phase,
 
 def structure_stage_state(progress, final_status, active_phase, running, stderr_bytes):
     target=int(final_status.get("success_source_direction_rows",progress.get("success_population_target",35975633)) or 35975633)
-    mapped=int(final_status.get("success_source_direction_rows",progress.get("success_rows_mapped",0)) or 0)
+    mapped=int(final_status.get("success_source_direction_rows",progress.get("success_rows_mapped",progress.get("success_rows",0))) or 0)
     ticks=int(final_status.get("corrected_discovery_ticks",progress.get("ticks",0)) or 0)
-    events=int(final_status.get("structural_events",progress.get("events_confirmed",0)) or 0)
+    events=int(final_status.get("structural_events",progress.get("events_confirmed",progress.get("events",0))) or 0)
     fine=int(final_status.get("fine_groups",0) or 0); topo=int(final_status.get("topology_groups",0) or 0); macro=int(final_status.get("macro_groups",0) or 0)
     coverage=100.0*float(mapped)/float(target) if target else 0.0
     sub={"success_target":target,"success_rows_mapped":mapped,"coverage_percent":round(coverage,4),"ticks_mapped":ticks,"structural_events":events,"fine_groups":fine,"topology_groups":topo,"macro_groups":macro,"stderr_bytes":int(stderr_bytes or 0)}
@@ -117,9 +120,26 @@ def structure_stage_state(progress, final_status, active_phase, running, stderr_
     pctv=max(0.0,min(100.0,float(progress.get("percent",0.0) or 0.0)))
     done=int(progress.get("days_complete",0) or 0); total=int(progress.get("days_total",183) or 183); stage_name=str(progress.get("active_stage","structure_days")).replace("_"," ")
     detail=f"{stage_name}; {done}/{total} Discovery days; {ticks:,} ticks mapped; {mapped:,}/{target:,} $1-success rows mapped ({coverage:.2f}% lossless coverage)"
+    if str(progress.get("active_stage",""))=="group_partition": detail+=f"; partition {int(progress.get("partition_days",0))}/{int(progress.get("partition_days_total",183))} days"
+    if str(progress.get("active_stage",""))=="group_reduce": detail+=f"; {progress.get("group_level","")} bucket {int(progress.get("group_bucket",0))}/{int(progress.get("group_buckets",16))}"
     if active_phase=="MT5_CAUSAL_STRUCTURE_MAP_V1" and running:
         return "working",pctv/100.0,detail,sub
     return "pending",pctv/100.0,detail+"; structure worker is not currently active.",sub
+
+def structural_broker_stage_state(progress, final_status, active_phase, running, stderr_bytes):
+    candidates=int(final_status.get("raw_dollar95_candidates",progress.get("candidates",0)) or 0)
+    raw=int(final_status.get("raw_broker95_combos",progress.get("raw_broker95_combos",0)) or 0)
+    exact95=int(final_status.get("exact95_structural_valid",progress.get("exact95_structural_valid",0)) or 0)
+    pre98=int(final_status.get("exact98_pretiming",progress.get("exact98_pretiming",0)) or 0)
+    geoms=int(final_status.get("primary_geometry_count",progress.get("primary_geometry_count",36)) or 36)
+    sub={"raw_dollar95_candidates":candidates,"primary_geometries":geoms,"raw_broker95_combos":raw,"exact95_structural_valid":exact95,"exact98_pretiming":pre98,"stderr_bytes":int(stderr_bytes or 0)}
+    if final_status.get("complete"):
+        return "complete",1.0,f"Structural broker replay complete: {candidates:,} raw $1 >=95% families, {raw:,} broker >=95% combinations, {exact95:,} exact one-position >=95% valid, {pre98:,} >=98% before microstructure.",sub
+    pctv=max(0.0,min(100.0,float(progress.get("percent",0.0) or 0.0))); stage_name=str(progress.get("active_stage","pending")).replace("_"," ")
+    detail=f"{stage_name}; {candidates:,} structural candidates x {geoms} primary $1 broker geometries"
+    if progress.get("days_complete"): detail+=f"; {int(progress.get('days_complete',0))}/{int(progress.get('days_total',183))} days"
+    if active_phase=="MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1" and running: return "working",pctv/100.0,detail,sub
+    return "pending",pctv/100.0,detail+"; structural broker worker is not currently active.",sub
 
 def broker_stage_state(progress, final_status, active_phase, running, stderr_bytes):
     cond=int(final_status.get("conditions_total",progress.get("conditions_total",733848)) or 733848)
@@ -151,6 +171,8 @@ def build_status():
     broker_progress = load_json(BROKER_FINAL_PROGRESS) or load_json(BROKER_WORK_PROGRESS)
     structure_final = load_json(STRUCTURE_FINAL)
     structure_progress = load_json(STRUCTURE_WORK_PROGRESS)
+    struct_broker_final = load_json(STRUCT_BROKER_FINAL)
+    struct_broker_progress = load_json(STRUCT_BROKER_PROGRESS)
     bin_days, total_days, feature_done = feature_progress()
     active = load_json(ACTIVE_WORKER)
     active_phase = str(active.get("phase", ""))
@@ -181,6 +203,10 @@ def build_status():
     except Exception: structure_stderr_bytes=0
     structure_running=(active_phase=="MT5_CAUSAL_STRUCTURE_MAP_V1" and str(structure_progress.get("state","")).upper()=="RUNNING") or process_running("mt5_causal_structure_map_v1.py")
     structure_state,structure_fraction,structure_detail,structure_subchecklist=structure_stage_state(structure_progress,structure_final,active_phase,structure_running,structure_stderr_bytes)
+    try: struct_broker_stderr_bytes=STRUCT_BROKER_STDERR.stat().st_size
+    except Exception: struct_broker_stderr_bytes=0
+    struct_broker_running=(active_phase=="MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1" and str(struct_broker_progress.get("state","")).upper()=="RUNNING") or process_running("mt5_structural_family_broker_screen_v1.py")
+    struct_broker_state,struct_broker_fraction,struct_broker_detail,struct_broker_subchecklist=structural_broker_stage_state(struct_broker_progress,struct_broker_final,active_phase,struct_broker_running,struct_broker_stderr_bytes)
 
     best=broker_final.get("best_finalist",{}) or broker_final.get("branch_decision",{}).get("best_finalist",{}) or {}
     mt5_wr = pct(best.get("full_wr")) if best else None
@@ -204,9 +230,9 @@ def build_status():
         stage("MT5 full causal structure mapping", structure_state, structure_detail, 18, structure_fraction,
               finding="Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
               subchecklist=structure_subchecklist),
-        stage("MT5 structural family broker replay", "pending" if not structure_final.get("complete") else "pending",
-              "Begins only after the lossless structural map is result-locked; exact PU Prime replay will determine which structural families are valid entries.", 14, 0.0,
-              finding="The interrupted 1s/2s/5s broker screen is audit-only and does not qualify structural signals."),
+        stage("MT5 structural family broker replay", struct_broker_state, struct_broker_detail, 14, struct_broker_fraction,
+              finding="The +$1 structural families are replayed at real PU Prime bid/ask prices across 36 primary target100 geometries; exact >=95% one-position families pass to microstructure timing.",
+              subchecklist=struct_broker_subchecklist),
         stage("Microstructure entry timing", "pending", "After a structural entry is valid, use short-horizon tick behavior only to select the entry tick that avoids immediate adverse movement beyond normal bid/ask spread mechanics.", 8, 0.0),
         stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 structural families and microstructure timing rules are frozen.", 6, 0.0),
         stage("Combined high-precision union", "pending", "Preserve ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥98% families and combine non-conflicting executable trades.", 6, 0.0),
@@ -219,8 +245,10 @@ def build_status():
     overall = sum(s["weight"] * s["fraction"] for s in stages)
     data_progress = (4.0 + feature_fraction) / 5.0 * 100.0
     validation_progress = 0.0
-    working = structure_state == "working" or broker_state == "working" or precursor_state == "working" or frontier_state == "working" or mining_state == "working"
+    working = structure_state == "working" or struct_broker_state == "working" or broker_state == "working" or precursor_state == "working" or frontier_state == "working" or mining_state == "working"
     if structure_state == "working": active_stage = "MT5 full causal structure mapping: " + str(structure_progress.get("active_stage","working")).replace("_"," ")
+    elif struct_broker_state == "working": active_stage = "MT5 structural broker replay: " + str(struct_broker_progress.get("active_stage","working")).replace("_"," ")
+    elif struct_broker_state == "complete": active_stage = "MT5 structural broker replay complete"
     elif structure_state == "complete": active_stage = "MT5 causal structure mapping complete"
     elif broker_state == "working": active_stage = "MT5 audit broker screen: " + str(broker_progress.get("active_stage","working")).replace("_"," ")
     elif broker_state == "complete": active_stage = "MT5 audit broker screen complete"
@@ -266,6 +294,15 @@ def build_status():
                    "fine_groups": int(structure_subchecklist.get("fine_groups",0)),
                    "topology_groups": int(structure_subchecklist.get("topology_groups",0)),
                    "macro_groups": int(structure_subchecklist.get("macro_groups",0))},
+        "structural_broker": {"stage": str(struct_broker_progress.get("active_stage","complete" if struct_broker_final.get("complete") else "pending")),
+                   "progress": round(struct_broker_fraction*100.0,2),
+                   "raw_dollar95_candidates": int(struct_broker_subchecklist.get("raw_dollar95_candidates",0)),
+                   "primary_geometries": int(struct_broker_subchecklist.get("primary_geometries",36)),
+                   "raw_broker95_combos": int(struct_broker_subchecklist.get("raw_broker95_combos",0)),
+                   "exact95_structural_valid": int(struct_broker_subchecklist.get("exact95_structural_valid",0)),
+                   "exact98_pretiming": int(struct_broker_subchecklist.get("exact98_pretiming",0)),
+                   "health": "HEALTHY" if (struct_broker_final.get("complete") or (struct_broker_running and struct_broker_stderr_bytes==0)) else ("ERROR" if struct_broker_stderr_bytes else "WAITING"),
+                   "error_bytes": int(struct_broker_stderr_bytes)},
         "broker": {"broker_stage": str(broker_progress.get("active_stage","complete" if broker_final.get("complete") else "pending")),
                    "broker_progress": round(broker_fraction*100.0,2),
                    "broker_conditions": int(broker_subchecklist.get("conditions",733848)),

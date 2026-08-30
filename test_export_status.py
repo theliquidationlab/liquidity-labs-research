@@ -67,6 +67,20 @@ def test_structure_stage_complete_reports_group_counts():
     assert state=='complete' and fraction==1.0
     assert sub['success_rows_mapped']==35975633 and sub['fine_groups']==100
 
+def test_structure_group_partition_keeps_completed_census_counts_visible():
+    progress={'state':'RUNNING','active_stage':'group_partition','percent':82.5,'days_complete':183,'days_total':183,'ticks':33488805,'success_rows':35975633,'events':43528148,'success_population_target':35975633,'partition_days':46,'partition_days_total':183}
+    state,fraction,detail,sub=m.structure_stage_state(progress,{},'MT5_CAUSAL_STRUCTURE_MAP_V1',True,0)
+    assert state=='working' and sub['success_rows_mapped']==35975633 and sub['coverage_percent']==100.0
+    assert 'group partition' in detail.lower()
+
+def test_structural_broker_stage_reports_live_exact95_and_pretiming98():
+    progress={'state':'RUNNING','active_stage':'raw_broker_days','percent':44.0,'days_complete':120,'days_total':183,'candidates':321,'raw_broker95_combos':12}
+    state,fraction,detail,sub=m.structural_broker_stage_state(progress,{},'MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1',True,0)
+    assert state=='working' and abs(fraction-.44)<1e-9 and sub['primary_geometries']==36
+    final={'complete':True,'raw_dollar95_candidates':321,'raw_broker95_combos':12,'exact95_structural_valid':5,'exact98_pretiming':2,'primary_geometry_count':36}
+    state,fraction,detail,sub=m.structural_broker_stage_state({},final,'',False,0)
+    assert state=='complete' and sub['exact95_structural_valid']==5 and sub['exact98_pretiming']==2
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
