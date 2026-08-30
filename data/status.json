@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T20:25:18.890557+00:00",
+  "generated_utc": "2026-08-30T20:44:16.242050+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
-    "overall": 74.6,
+    "overall": 75.1,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -38,7 +38,7 @@
   },
   "structure": {
     "structure_stage": "group_partition",
-    "structure_progress": 81.2,
+    "structure_progress": 83.77,
     "structure_days": 183,
     "structure_days_total": 183,
     "structure_ticks": 0,
@@ -51,6 +51,17 @@
     "fine_groups": 0,
     "topology_groups": 0,
     "macro_groups": 0
+  },
+  "structural_broker": {
+    "stage": "pending",
+    "progress": 0.0,
+    "raw_dollar95_candidates": 0,
+    "primary_geometries": 36,
+    "raw_broker95_combos": 0,
+    "exact95_structural_valid": 0,
+    "exact98_pretiming": 0,
+    "health": "WAITING",
+    "error_bytes": 0
   },
   "broker": {
     "broker_stage": "anchor_block1",
@@ -150,10 +161,10 @@
     {
       "name": "MT5 full causal structure mapping",
       "state": "working",
-      "detail": "group partition; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage)",
+      "detail": "group partition; 183/183 Discovery days; 0 ticks mapped; 0/35,975,633 $1-success rows mapped (0.00% lossless coverage); partition 69/183 days",
       "weight": 18,
-      "fraction": 0.812,
-      "percent": 81.2,
+      "fraction": 0.8377,
+      "percent": 83.77,
       "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
         "success_target": 35975633,
@@ -170,12 +181,19 @@
     {
       "name": "MT5 structural family broker replay",
       "state": "pending",
-      "detail": "Begins only after the lossless structural map is result-locked; exact PU Prime replay will determine which structural families are valid entries.",
+      "detail": "pending; 0 structural candidates ? 36 primary $1 broker geometries; structural broker worker is not currently active.",
       "weight": 14,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "The interrupted 1s/2s/5s broker screen is audit-only and does not qualify structural signals.",
-      "subchecklist": {}
+      "finding": "The +$1 structural families are replayed at real PU Prime bid/ask prices across 36 primary target100 geometries; exact ?95% one-position families pass to microstructure timing.",
+      "subchecklist": {
+        "raw_dollar95_candidates": 0,
+        "primary_geometries": 36,
+        "raw_broker95_combos": 0,
+        "exact95_structural_valid": 0,
+        "exact98_pretiming": 0,
+        "stderr_bytes": 0
+      }
     },
     {
       "name": "Microstructure entry timing",
