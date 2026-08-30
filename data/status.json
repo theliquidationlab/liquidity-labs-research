@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-30T06:54:17.760455+00:00",
+  "generated_utc": "2026-08-30T06:55:50.484868+00:00",
   "system": {
-    "working": false,
-    "label": "READY FOR NEXT STAGE",
-    "active_stage": "MT5 precursor pair frontier complete",
+    "working": true,
+    "label": "WORKING",
+    "active_stage": "MT5 sequence / persistence frontier",
     "active_phase": "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1"
   },
   "progress": {
-    "overall": 64.4,
+    "overall": 64.5,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -49,7 +49,7 @@
       "weight": 12,
       "fraction": 1.0,
       "percent": 100.0,
-      "finding": "BUY ask\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2future bid; SELL bid\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2future ask; 900-second forward path.",
+      "finding": "BUY ask\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00be\u00c3\u201a\u00c2\u00a2future bid; SELL bid\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00be\u00c3\u201a\u00c2\u00a2future ask; 900-second forward path.",
       "subchecklist": {}
     },
     {
@@ -100,16 +100,16 @@
     },
     {
       "name": "MT5 precursor discovery",
-      "state": "pending",
-      "detail": "Pair frontier complete; temporal frontier is 67.21% complete.",
+      "state": "working",
+      "detail": "128/183 Discovery days screening 3,492,438 ordered 1s/2s/5s MT5 transitions/persistence candidates.",
       "weight": 10,
-      "fraction": 0.83605,
-      "percent": 83.6,
+      "fraction": 0.84975,
+      "percent": 84.97,
       "finding": "Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
       "subchecklist": {
         "concurrent_pair_frontier": 100.0,
         "authority_and_temporal_catalog": 100.0,
-        "discovery_temporal_shards": 67.21,
+        "discovery_temporal_shards": 69.95,
         "block_aggregation": 0.0,
         "temporal_metrics": 0.0,
         "stable_enrichment_gate": 0.0,
@@ -133,13 +133,13 @@
       "weight": 8,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% rules.",
+      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% rules.",
       "subchecklist": {}
     },
     {
       "name": "Combined high-precision union",
       "state": "pending",
-      "detail": "Preserve \u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% families and combine non-conflicting executable trades.",
+      "detail": "Preserve \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% families and combine non-conflicting executable trades.",
       "weight": 6,
       "fraction": 0.0,
       "percent": 0.0,

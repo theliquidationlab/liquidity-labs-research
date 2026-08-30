@@ -103,17 +103,17 @@ def build_status():
     active_phase = str(active.get("phase", ""))
     mining_final = load_json(MINING_FINAL)
     mining_progress = load_json(MINING_FINAL_PROGRESS) or load_json(MINING_WORK_PROGRESS)
-    mining_running = process_running("mt5_tick_backward_winner_mining_v1.py")
+    mining_running = (active_phase == "MT5_TICK_BACKWARD_WINNER_MINING_V1" and str(mining_progress.get("state", "")).upper() == "RUNNING") or process_running("mt5_tick_backward_winner_mining_v1.py")
     mining_state, mining_fraction, mining_detail, mining_subchecklist = mining_stage_state(
         mining_progress, mining_final, active_phase, mining_running)
     frontier_final = load_json(FRONTIER_FINAL)
     frontier_progress = load_json(FRONTIER_FINAL_PROGRESS) or load_json(FRONTIER_WORK_PROGRESS)
-    frontier_running = process_running("mt5_tick_precursor_frontier_v1.py")
+    frontier_running = (active_phase == "MT5_TICK_PRECURSOR_FRONTIER_V1" and str(frontier_progress.get("state", "")).upper() == "RUNNING") or process_running("mt5_tick_precursor_frontier_v1.py")
     frontier_state, frontier_fraction, frontier_detail, frontier_subchecklist = frontier_stage_state(
         frontier_progress, frontier_final, active_phase, frontier_running)
     seq_final = load_json(SEQ_FINAL)
     seq_progress = load_json(SEQ_FINAL_PROGRESS) or load_json(SEQ_WORK_PROGRESS)
-    seq_running = process_running("mt5_tick_sequence_persistence_frontier_v1.py")
+    seq_running = (active_phase == "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1" and str(seq_progress.get("state", "")).upper() == "RUNNING") or process_running("mt5_tick_sequence_persistence_frontier_v1.py")
     precursor_state, precursor_fraction, precursor_detail, precursor_subchecklist = precursor_stage_state(
         frontier_final, seq_progress, seq_final, active_phase, seq_running)
 
@@ -125,7 +125,7 @@ def build_status():
 
     stages = [
         stage("Full-year PU Prime MT5 tick history", "complete", "365/365 BTCUSD days cached from PUPrime-Demo.", 8, finding="62,299,358 historical bid/ask ticks available."),
-        stage("+$1-at-0.01 MT5 outcome atlas", "complete", "Every tick labeled for a +$100 BTC move using executable bid/ask sides.", 12, finding="BUY askÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢future bid; SELL bidÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢future ask; 900-second forward path."),
+        stage("+$1-at-0.01 MT5 outcome atlas", "complete", "Every tick labeled for a +$100 BTC move using executable bid/ask sides.", 12, finding="BUY askÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢future bid; SELL bidÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢future ask; 900-second forward path."),
         stage("MT5 causal tick feature engine", "complete", "81 causal tick-level broker features built and regression tested.", 6, finding="Uses bid/ask microstructure, spread, velocity, range, efficiency, pressure and range position."),
         stage("Discovery threshold fitting", "complete", "Thresholds fitted only on the 183-day Discovery period.", 6, finding="Untouched Confirmation/Hard/Holdout outcomes were not used for fitting."),
         stage("Full-year MT5 state matrix", "complete" if feature_done else "working", f"{bin_days}/365 days binned with frozen MT5 thresholds.", 12, feature_fraction, finding="This creates the searchable MT5 state infrastructure for backward winner mining."),
@@ -136,8 +136,8 @@ def build_status():
               finding="Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
               subchecklist=precursor_subchecklist),
         stage("Exact MT5 broker replay", "pending", "Replay frozen MT5 precursors with spread, bid/ask, one-position and LOSS_FIRST semantics.", 8, 0.0),
-        stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 precursor rules are frozen.", 8, 0.0, finding="Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¥98% rules."),
-        stage("Combined high-precision union", "pending", "Preserve ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¥98% families and combine non-conflicting executable trades.", 6, 0.0),
+        stage("Binance strength cross-reference", "pending", "Use Binance only after MT5 precursor rules are frozen.", 8, 0.0, finding="Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥98% rules."),
+        stage("Combined high-precision union", "pending", "Preserve ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥98% families and combine non-conflicting executable trades.", 6, 0.0),
         stage("Robustness / delays / friction", "pending", "Re-test surviving combined rules under execution stress scenarios.", 4, 0.0),
         stage("Confirmation", "pending", "73 untouched chronological days.", 3, 0.0),
         stage("Hard Validation", "pending", "55 untouched chronological days.", 2, 0.0),

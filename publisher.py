@@ -14,11 +14,16 @@ def run(args, check=True):
     env = os.environ.copy()
     env["GIT_TERMINAL_PROMPT"] = "0"
     try:
-        p = subprocess.run(args, cwd=HERE, capture_output=True, text=True, timeout=60, env=env)
+        if len(args) >= 2 and args[0] == "git" and args[1] == "push":
+            with (HERE / "publisher_git.log").open("a", encoding="utf-8") as sink:
+                p = subprocess.run(args, cwd=HERE, stdout=sink, stderr=subprocess.STDOUT, text=True, timeout=60, env=env)
+        else:
+            p = subprocess.run(args, cwd=HERE, capture_output=True, text=True, timeout=60, env=env)
     except subprocess.TimeoutExpired as exc:
         raise RuntimeError(f"TIMEOUT after 60s: {args}") from exc
     if check and p.returncode:
-        raise RuntimeError(f"{args}: {p.stderr.strip() or p.stdout.strip()}")
+        err = getattr(p, "stderr", None) or getattr(p, "stdout", None) or f"returncode={p.returncode}"
+        raise RuntimeError(f"{args}: {str(err).strip()}")
     return p
 
 def publish_once():
