@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T18:04:11.017948+00:00",
+  "generated_utc": "2026-08-30T18:10:11.204491+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_PRECURSOR_BROKER_SCREEN_V1"
   },
   "progress": {
-    "overall": 66.9,
+    "overall": 66.7,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -135,7 +135,7 @@
       "name": "Exact MT5 broker replay",
       "state": "working",
       "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 1/30 days complete",
-      "weight": 8,
+      "weight": 6,
       "fraction": 0.11,
       "percent": 11.0,
       "finding": "Corrected 733,848 precursor masks are screened across the full 1,638-geometry PU Prime grid; final families require exact chronological one-position \u226598% certification.",
@@ -149,10 +149,20 @@
       }
     },
     {
+      "name": "MT5 signal build-up construction",
+      "state": "pending",
+      "detail": "Combine broker-certified current/1s/2s/5s precursor pieces into exact causal build-up definitions, then broker-replay the completed sequences before Binance.",
+      "weight": 4,
+      "fraction": 0.0,
+      "percent": 0.0,
+      "finding": "This stage answers what forms first, what confirms next, and the exact terminal MT5 state that turns a build-up into a proper entry.",
+      "subchecklist": {}
+    },
+    {
       "name": "Binance strength cross-reference",
       "state": "pending",
-      "detail": "Use Binance only after MT5 precursor rules are frozen.",
-      "weight": 8,
+      "detail": "Use Binance only after MT5 precursor and signal-build-up rules are frozen.",
+      "weight": 6,
       "fraction": 0.0,
       "percent": 0.0,
       "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% rules.",
