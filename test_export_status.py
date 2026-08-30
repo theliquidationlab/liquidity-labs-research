@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 import importlib.util
 
 P=Path(__file__).resolve().parent/'export_status.py'
@@ -41,8 +41,20 @@ def test_precursor_stage_combines_pair_completion_with_live_temporal_progress():
     assert state=='working' and abs(fraction-.50545)<1e-9
     assert '3,492,438' in detail and sub['concurrent_pair_frontier']==100.0
     assert sub['discovery_temporal_shards']==1.09
+
+def test_broker_stage_reports_live_real_progress_and_survivors():
+    progress={'state':'RUNNING','active_stage':'raw_screen','percent':52.5,'days_complete':66,'days_total':183,'conditions_total':733848,'geometry_total':1638,'anchor_total':126,'anchor_B1_survivors':21,'raw95_survivors':7,'exact98_finalists':0}
+    state,fraction,detail,sub=m.broker_stage_state(progress,{},'MT5_PRECURSOR_BROKER_SCREEN_V1',True,0)
+    assert state=='working' and abs(fraction-.525)<1e-9
+    assert 'raw screen' in detail.lower() and '733,848' in detail
+    assert sub['conditions']==733848 and sub['raw_95_survivors']==7
+
+def test_broker_stage_complete_reports_exact_finalists():
+    final={'complete':True,'raw95_survivors':12,'exact98_finalists':3,'conditions_total':733848,'geometry_total':1638}
+    state,fraction,detail,sub=m.broker_stage_state({},final,'',False,0)
+    assert state=='complete' and fraction==1.0 and '3' in detail and sub['exact_98_finalists']==3
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
     print(f'PASS {len(tests)} tests')
-
