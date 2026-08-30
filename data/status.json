@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T06:55:52.338876+00:00",
+  "generated_utc": "2026-08-30T06:56:40.232959+00:00",
   "system": {
     "working": true,
     "label": "WORKING",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_TICK_SEQUENCE_PERSISTENCE_FRONTIER_V1"
   },
   "progress": {
-    "overall": 64.5,
+    "overall": 64.6,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -101,15 +101,15 @@
     {
       "name": "MT5 precursor discovery",
       "state": "working",
-      "detail": "128/183 Discovery days screening 3,492,438 ordered 1s/2s/5s MT5 transitions/persistence candidates.",
+      "detail": "131/183 Discovery days screening 3,492,438 ordered 1s/2s/5s MT5 transitions/persistence candidates.",
       "weight": 10,
-      "fraction": 0.84975,
-      "percent": 84.97,
+      "fraction": 0.8579,
+      "percent": 85.79,
       "finding": "Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
       "subchecklist": {
         "concurrent_pair_frontier": 100.0,
         "authority_and_temporal_catalog": 100.0,
-        "discovery_temporal_shards": 69.95,
+        "discovery_temporal_shards": 71.58,
         "block_aggregation": 0.0,
         "temporal_metrics": 0.0,
         "stable_enrichment_gate": 0.0,
