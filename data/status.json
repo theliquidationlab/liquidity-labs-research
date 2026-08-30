@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T19:28:50.040434+00:00",
+  "generated_utc": "2026-08-30T19:35:59.912305+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -7,7 +7,7 @@
     "active_phase": "MT5_CAUSAL_STRUCTURE_MAP_V1"
   },
   "progress": {
-    "overall": 67.1,
+    "overall": 72.7,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -117,13 +117,13 @@
       }
     },
     {
-      "name": "MT5 precursor discovery",
+      "name": "MT5 microstructure precursor inventory (audit)",
       "state": "complete",
       "detail": "Boundary-corrected MT5 precursor census complete: 4,402 stable singles, 540,672 stable pairs and 3,355,724 stable temporal rows.",
-      "weight": 10,
+      "weight": 4,
       "fraction": 1.0,
       "percent": 100.0,
-      "finding": "Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
+      "finding": "The earlier single/pair/1s/2s/5s inventory is preserved for audit and later entry timing; it is no longer the structural signal foundation.",
       "subchecklist": {
         "boundary_correction": 100.0,
         "corrected_single_catalog": 100.0,
@@ -132,40 +132,53 @@
       }
     },
     {
-      "name": "Exact MT5 broker replay",
-      "state": "pending",
-      "detail": "anchor block1; 733,848 corrected conditions \u00d7 1,638 broker geometries; 8/30 days complete; broker worker is not currently active.",
-      "weight": 6,
-      "fraction": 0.18,
-      "percent": 18.0,
-      "finding": "Corrected 733,848 precursor masks are screened across the full 1,638-geometry PU Prime grid; final families require exact chronological one-position \u226598% certification.",
+      "name": "MT5 full causal structure mapping",
+      "state": "working",
+      "detail": "structure days; 172/183 Discovery days; 30,054,514 ticks mapped; 31,690,344/35,975,633 $1-success rows mapped (88.09% lossless coverage)",
+      "weight": 18,
+      "fraction": 0.7049,
+      "percent": 70.49,
+      "finding": "Every corrected Discovery tick is mapped through 32 causal price-event swing scales; every $1-success source is retained and grouped without top-N or frequency pruning.",
       "subchecklist": {
-        "conditions": 733848,
-        "geometries": 1638,
-        "anchor_b1_survivors": 0,
-        "raw_95_survivors": 0,
-        "exact_98_finalists": 0,
+        "success_target": 35975633,
+        "success_rows_mapped": 31690344,
+        "coverage_percent": 88.0884,
+        "ticks_mapped": 30054514,
+        "structural_events": 38739474,
+        "fine_groups": 0,
+        "topology_groups": 0,
+        "macro_groups": 0,
         "stderr_bytes": 0
       }
     },
     {
-      "name": "MT5 signal build-up construction",
+      "name": "MT5 structural family broker replay",
       "state": "pending",
-      "detail": "Combine broker-certified current/1s/2s/5s precursor pieces into exact causal build-up definitions, then broker-replay the completed sequences before Binance.",
-      "weight": 4,
+      "detail": "Begins only after the lossless structural map is result-locked; exact PU Prime replay will determine which structural families are valid entries.",
+      "weight": 14,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "This stage answers what forms first, what confirms next, and the exact terminal MT5 state that turns a build-up into a proper entry.",
+      "finding": "The interrupted 1s/2s/5s broker screen is audit-only and does not qualify structural signals.",
+      "subchecklist": {}
+    },
+    {
+      "name": "Microstructure entry timing",
+      "state": "pending",
+      "detail": "After a structural entry is valid, use short-horizon tick behavior only to select the entry tick that avoids immediate adverse movement beyond normal bid/ask spread mechanics.",
+      "weight": 8,
+      "fraction": 0.0,
+      "percent": 0.0,
+      "finding": "",
       "subchecklist": {}
     },
     {
       "name": "Binance strength cross-reference",
       "state": "pending",
-      "detail": "Use Binance only after MT5 precursor and signal-build-up rules are frozen.",
+      "detail": "Use Binance only after MT5 structural families and microstructure timing rules are frozen.",
       "weight": 6,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% rules.",
+      "finding": "",
       "subchecklist": {}
     },
     {
