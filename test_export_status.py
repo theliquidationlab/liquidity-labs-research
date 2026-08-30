@@ -25,6 +25,13 @@ def test_load_json_accepts_windows_utf8_bom():
         p=Path(td)/'x.json'; p.write_text(json.dumps({'phase':'x'}),encoding='utf-8-sig')
         assert m.load_json(p)['phase']=='x'
 
+def test_frontier_stage_reports_live_pair_progress():
+    progress={'days_complete':6,'days_total':183,'percent':3.28,'pair_candidates':572000,
+              'checklist':{'authority_and_pair_catalog':100.0,'discovery_pair_shards':3.28}}
+    state,fraction,detail,sub=m.frontier_stage_state(progress,{},'MT5_TICK_PRECURSOR_FRONTIER_V1',True)
+    assert state=='working' and abs(fraction-.0328)<1e-9
+    assert '6/183' in detail and '572,000' in detail
+    assert sub['authority_and_pair_catalog']==100.0
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()

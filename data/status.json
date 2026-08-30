@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-30T05:01:01.897687+00:00",
+  "generated_utc": "2026-08-30T05:02:22.393762+00:00",
   "system": {
-    "working": false,
-    "label": "READY FOR NEXT STAGE",
-    "active_stage": "MT5 backward mining complete",
+    "working": true,
+    "label": "WORKING",
+    "active_stage": "MT5 precursor concurrent-pair frontier",
     "active_phase": "MT5_TICK_PRECURSOR_FRONTIER_V1"
   },
   "progress": {
-    "overall": 56.0,
+    "overall": 58.0,
     "data_build": 100.0,
     "validation": 0.0
   },
@@ -49,7 +49,7 @@
       "weight": 12,
       "fraction": 1.0,
       "percent": 100.0,
-      "finding": "BUY ask\u00e2\u2020\u2019future bid; SELL bid\u00e2\u2020\u2019future ask; 900-second forward path.",
+      "finding": "BUY ask\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2future bid; SELL bid\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00a0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2future ask; 900-second forward path.",
       "subchecklist": {}
     },
     {
@@ -100,13 +100,20 @@
     },
     {
       "name": "MT5 precursor discovery",
-      "state": "pending",
-      "detail": "Find repeatable MT5-native winning precursor families.",
+      "state": "working",
+      "detail": "36/183 Discovery days screening 572,000 retained concurrent MT5 pairs.",
       "weight": 10,
-      "fraction": 0.0,
-      "percent": 0.0,
-      "finding": "",
-      "subchecklist": {}
+      "fraction": 0.1967,
+      "percent": 19.67,
+      "finding": "Exhaustive concurrent-pair frontier preserves all 572,000 legal retained pairs from the 4,402 stable single-state seeds; raw target hits are not final trade wins.",
+      "subchecklist": {
+        "authority_and_pair_catalog": 100.0,
+        "discovery_pair_shards": 19.67,
+        "block_aggregation": 0.0,
+        "pair_metrics": 0.0,
+        "stable_enrichment_gate": 0.0,
+        "finalization": 0.0
+      }
     },
     {
       "name": "Exact MT5 broker replay",
@@ -125,13 +132,13 @@
       "weight": 8,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00e2\u2030\u00a598% rules.",
+      "finding": "Earlier single-condition experiment raised one MT5 setup from ~45.8% to 91.67%, but produced zero stable \u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% rules.",
       "subchecklist": {}
     },
     {
       "name": "Combined high-precision union",
       "state": "pending",
-      "detail": "Preserve \u00e2\u2030\u00a598% families and combine non-conflicting executable trades.",
+      "detail": "Preserve \u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00b0\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a598% families and combine non-conflicting executable trades.",
       "weight": 6,
       "fraction": 0.0,
       "percent": 0.0,
