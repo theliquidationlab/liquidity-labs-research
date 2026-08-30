@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-08-30T17:53:31.358032+00:00",
+  "generated_utc": "2026-08-30T17:58:37.814457+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
-    "active_stage": "MT5 precursor discovery complete",
+    "active_stage": "MT5 precursor discovery complete; broker certification ready",
     "active_phase": "MT5_DISCOVERY_BOUNDARY_CENSOR_CORRECTION_V1"
   },
   "progress": {
@@ -12,8 +12,8 @@
     "validation": 0.0
   },
   "metrics": {
-    "mt5_win_rate": 45.77,
-    "mt5_label": "Previous broker-native MT5 baseline",
+    "mt5_win_rate": null,
+    "mt5_label": "Exact MT5 broker certification pending",
     "binance_win_rate": 91.67,
     "binance_label": "Best prior single Binance confirmation",
     "combined_win_rate": null,
@@ -29,7 +29,25 @@
     "state_days_complete": 365,
     "state_days_total": 365,
     "prior_exact_bin_rules": 461040,
-    "prior_stable98_rules": 0
+    "prior_stable98_rules": 0,
+    "broker_conditions": 733848,
+    "broker_geometries": 1638,
+    "broker_anchor_survivors": 0,
+    "broker_raw95_survivors": 0,
+    "broker_exact98_finalists": 0
+  },
+  "broker": {
+    "broker_stage": "pending",
+    "broker_progress": 0.0,
+    "broker_conditions": 733848,
+    "broker_geometries": 1638,
+    "broker_anchor_survivors": 0,
+    "broker_raw95_survivors": 0,
+    "broker_exact98_finalists": 0,
+    "broker_health": "WAITING",
+    "broker_error_bytes": 0,
+    "days_complete": 0,
+    "days_total": 183
   },
   "stages": [
     {
@@ -101,30 +119,34 @@
     {
       "name": "MT5 precursor discovery",
       "state": "complete",
-      "detail": "Concurrent pairs and 1s/2s/5s temporal frontier complete; 3,355,830 stable-enriched temporal precursors preserved.",
+      "detail": "Boundary-corrected MT5 precursor census complete: 4,402 stable singles, 540,672 stable pairs and 3,355,724 stable temporal rows.",
       "weight": 10,
       "fraction": 1.0,
       "percent": 100.0,
       "finding": "Concurrent pairs plus the exhaustive 1s/2s/5s ordered transition/persistence frontier define the MT5-native precursor search; raw target hits are not final trade wins.",
       "subchecklist": {
-        "concurrent_pair_frontier": 100.0,
-        "authority_and_temporal_catalog": 100.0,
-        "discovery_temporal_shards": 100.0,
-        "block_aggregation": 100.0,
-        "temporal_metrics": 100.0,
-        "stable_enrichment_gate": 100.0,
-        "finalization": 100.0
+        "boundary_correction": 100.0,
+        "corrected_single_catalog": 100.0,
+        "corrected_pair_frontier": 100.0,
+        "corrected_temporal_frontier": 100.0
       }
     },
     {
       "name": "Exact MT5 broker replay",
       "state": "pending",
-      "detail": "Replay frozen MT5 precursors with spread, bid/ask, one-position and LOSS_FIRST semantics.",
+      "detail": "pending; 733,848 corrected conditions \u00d7 1,638 broker geometries; broker worker is not currently active.",
       "weight": 8,
       "fraction": 0.0,
       "percent": 0.0,
-      "finding": "",
-      "subchecklist": {}
+      "finding": "Corrected 733,848 precursor masks are screened across the full 1,638-geometry PU Prime grid; final families require exact chronological one-position \u226598% certification.",
+      "subchecklist": {
+        "conditions": 733848,
+        "geometries": 1638,
+        "anchor_b1_survivors": 0,
+        "raw_95_survivors": 0,
+        "exact_98_finalists": 0,
+        "stderr_bytes": 0
+      }
     },
     {
       "name": "Binance strength cross-reference",
