@@ -5,3 +5,4 @@ export_status.py
 publisher.py
 start_publisher.cmd
 start_publisher_hidden.vbs
+publisher_git.log
