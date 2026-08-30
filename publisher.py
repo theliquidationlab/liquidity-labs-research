@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess, time, datetime, traceback
+import subprocess, time, datetime, traceback, os
 
 HERE = Path(__file__).resolve().parent
 LOG = HERE / "publisher.log"
@@ -11,7 +11,12 @@ def log(msg):
         f.write(f"{stamp} {msg}\n")
 
 def run(args, check=True):
-    p = subprocess.run(args, cwd=HERE, capture_output=True, text=True)
+    env = os.environ.copy()
+    env["GIT_TERMINAL_PROMPT"] = "0"
+    try:
+        p = subprocess.run(args, cwd=HERE, capture_output=True, text=True, timeout=60, env=env)
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(f"TIMEOUT after 60s: {args}") from exc
     if check and p.returncode:
         raise RuntimeError(f"{args}: {p.stderr.strip() or p.stdout.strip()}")
     return p
