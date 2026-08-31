@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-08-31T00:53:28.389814+00:00",
+  "generated_utc": "2026-08-31T02:06:41.618277+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
     "active_stage": "MT5 structural broker replay complete",
-    "active_phase": "MT5_STRUCTURAL_FAMILY_BROKER_SCREEN_V1"
+    "active_phase": "CORRECTED_FULL_SECOND_TRANSITION_CONTEXT_BROKER_SCREEN_V1"
   },
   "progress": {
     "overall": 92.0,
