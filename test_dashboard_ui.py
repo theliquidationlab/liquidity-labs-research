@@ -30,6 +30,24 @@ def test_dashboard_has_live_structural_broker_panel():
     for token in ('raw_dollar95_candidates','primary_geometries','raw_broker95_combos','exact95_structural_valid','exact98_pretiming'):
         assert token in JS
 
+
+def test_command_center_has_all_read_only_panels_and_stale_banner():
+    html=(ROOT/'index.html').read_text(encoding='utf-8').lower()
+    for token in ('livePanel','researchPanel','signalPanel','promotionPanel','historyPanel','tradingPanel','healthPanel','staleBanner'):
+        assert f'id="{token.lower()}"' in html
+    for forbidden in ('<form','method="post"','trade now','place order','restart bot','config editor'):
+        assert forbidden not in html
+
+def test_command_center_js_has_schema_v2_renderers_and_sixty_second_polling():
+    for token in ('renderLive','renderResearch','renderSignals','renderPromotions','renderHistory','renderTrading','renderHealth','schema_version'):
+        assert token in JS
+    assert '60000' in JS
+    assert 'staleBanner' in JS
+
+def test_command_center_css_has_mobile_breakpoint():
+    assert '@media' in CSS
+    assert '760px' in CSS
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()

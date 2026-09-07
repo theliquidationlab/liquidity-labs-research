@@ -21,6 +21,54 @@
       </div>
     </header>
 
+    <div id="staleBanner" class="stale-banner" hidden>Published data is stale. Values below may no longer reflect the VPS.</div>
+
+    <section class="command-strip" aria-label="current command center status">
+      <article><span>Demo Bot</span><strong id="stripBot">--</strong><small id="stripDecision">--</small></article>
+      <article><span>Research Brain</span><strong id="stripResearch">--</strong><small id="stripPhase">--</small></article>
+      <article><span>Strong Candidates</span><strong id="stripCandidates">--</strong><small>latest deep search</small></article>
+      <article><span>Promotions</span><strong id="stripPromotions">--</strong><small>active / historical state</small></article>
+    </section>
+
+    <section id="livePanel" class="panel command-panel">
+      <div class="section-title"><h2>Live Demo Bot</h2><span id="liveBadge">LOADING</span></div>
+      <div id="liveGrid" class="detail-grid"></div>
+    </section>
+
+    <section id="researchPanel" class="panel command-panel">
+      <div class="section-title"><h2>Research Brain</h2><span id="researchBadge">LOADING</span></div>
+      <div id="researchGrid" class="detail-grid"></div>
+    </section>
+
+    <section id="signalPanel" class="panel command-panel">
+      <div class="section-title"><h2>Strong Signal Discovery</h2><span id="signalUpdated">--</span></div>
+      <div id="signalChart" class="mini-chart" aria-label="signal family quality chart"></div>
+      <div id="signalTable" class="responsive-table"></div>
+    </section>
+
+    <section id="promotionPanel" class="panel command-panel">
+      <div class="section-title"><h2>Promotions</h2><span>Canary vs full validation</span></div>
+      <div id="promotionChart" class="mini-chart"></div>
+      <div id="promotionList" class="card-list"></div>
+    </section>
+
+    <section id="historyPanel" class="panel command-panel">
+      <div class="section-title"><h2>Verifier &amp; Research History</h2><span>Failures included</span></div>
+      <div id="historyChart" class="mini-chart"></div>
+      <div id="historyList" class="card-list compact"></div>
+    </section>
+
+    <section id="tradingPanel" class="panel command-panel">
+      <div class="section-title"><h2>Demo Trading Results</h2><span id="tradingSummary">--</span></div>
+      <div id="tradingChart" class="mini-chart"></div>
+      <div id="tradingList" class="responsive-table"></div>
+    </section>
+
+    <section id="healthPanel" class="panel command-panel">
+      <div class="section-title"><h2>System Health</h2><span>Freshness matrix</span></div>
+      <div id="healthGrid" class="health-grid"></div>
+    </section>
+
     <section class="progress-card">
       <div class="progress-head"><span>Overall Research Completion</span><strong id="overallPct">--%</strong></div>
       <div class="bar"><i id="overallBar"></i></div>

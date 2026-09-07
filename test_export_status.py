@@ -81,7 +81,85 @@ def test_structural_broker_stage_reports_live_exact95_and_pretiming98():
     state,fraction,detail,sub=m.structural_broker_stage_state({},final,'',False,0)
     assert state=='complete' and sub['exact95_structural_valid']==5 and sub['exact98_pretiming']==2
 
+
+def _walk_public(value):
+    if isinstance(value, dict):
+        for k,v in value.items():
+            yield str(k); yield from _walk_public(v)
+    elif isinstance(value, list):
+        for v in value: yield from _walk_public(v)
+    elif value is not None:
+        yield str(value)
+
+def test_command_center_schema_v2_has_required_sections():
+    d=m.build_status()
+    assert d['schema_version']==2
+    assert d.get('generated_utc')
+    for key in ('live','research','signals','promotions','history','trading','health'):
+        assert key in d
+
+def test_public_snapshot_does_not_expose_sensitive_terms_or_windows_paths():
+    d=m.build_status()
+    blob='\n'.join(_walk_public(d)).lower()
+    for bad in ('password','secret','api_key','private_ip','commandline','172.31.','c:\\\\'):
+        assert bad not in blob
+
+def test_health_state_thresholds():
+    assert m.health_state(10,60,120)=='GREEN'
+    assert m.health_state(90,60,120)=='AMBER'
+    assert m.health_state(121,60,120)=='RED'
+
+
+def test_live_summary_includes_sanitized_active_ten_minute_context():
+    live=m.build_status()['live']
+    assert 'ten_minute_context' in live
+    ctx=live['ten_minute_context']
+    assert set(ctx).issuperset({'demand','supply'})
+    for zone in (ctx.get('demand'),ctx.get('supply')):
+        if zone:
+            assert set(zone).issubset({'high','low','state'})
+
+def test_research_brain_exposes_collector_mt5_and_watchdog_freshness():
+    research=m.build_status()['research']
+    for key in ('collector_age_seconds','mt5_sync_age_seconds','watchdog_age_seconds'):
+        assert key in research
+        assert research[key] is None or research[key] >= 0
+
+
+def test_candidate_frequency_day_math_and_canary_labeling():
+    from command_center_export import summarize_candidate
+    c={'family':'X','objective':'RECOVER','rule':{},'evaluation':{'decision':'FAIL','matched_resolved':9,'reasons':['INSUFFICIENT_VALIDATION_SAMPLE'],'long_term':{'resolved':9,'profit_factor_r':2.0,'expectancy_r':0.4,'opportunities_per_hour':0.5},'training':{'resolved':6},'validation':{'resolved':3,'opportunities_per_hour':0.5},'recent':{'resolved':3},'walk_forward':{'stable':True}}}
+    row=summarize_candidate(c)
+    assert row['eligibility']=='CANARY'
+    assert row['opportunities_per_hour']==0.5
+    assert row['opportunities_per_day']==12.0
+
+def test_trading_rows_have_family_field_and_no_trade_identifiers():
+    trading=m.build_status()['trading']
+    for row in trading['recent']:
+        assert 'family' in row
+        for forbidden in ('position_id','volume','magic','deals','entry','exit'):
+            assert forbidden not in row
+
+def test_verifier_history_keeps_fail_reasons_without_raw_payloads():
+    history=m.build_status()['history']['verifier']
+    assert history
+    assert all('decision' in row and 'reasons' in row for row in history)
+    assert all('details_json' not in row and 'metrics_json' not in row for row in history)
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
     print(f'PASS {len(tests)} tests')
+
+
+def test_public_json_writer_falls_back_when_windows_replace_is_denied(tmp_path, monkeypatch):
+    target=tmp_path/'status.json'
+    target.write_text('{"old":true}',encoding='utf-8')
+    def denied(self, target_path):
+        raise PermissionError('simulated Windows sharing violation')
+    monkeypatch.setattr(m.Path,'replace',denied)
+    m.write_public_json(target,{'schema_version':2,'ok':True})
+    import json
+    assert json.loads(target.read_text(encoding='utf-8'))=={'schema_version':2,'ok':True}
+    assert not target.with_suffix('.json.tmp').exists()
