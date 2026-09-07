@@ -51,12 +51,18 @@ def metric_summary(block):
     keys = ("resolved", "wins", "losses", "profit_factor_r", "expectancy_r", "max_drawdown_r", "opportunities_per_hour")
     return {k: block.get(k) for k in keys}
 
+def safe_price_zone(zone, state=None):
+    if not isinstance(zone, dict):
+        return None
+    return {"high": zone.get("high"), "low": zone.get("low"), "state": state}
+
 def build_live_summary():
     st = load_json(LIVE_ROOT / "status.json")
     book = st.get("futures_book") or {}
     flow = st.get("futures_flow") or {}
     oi = st.get("futures_oi") or {}
     zones = st.get("zone_lifecycle") or {}
+    active = st.get("ten_minute_active_context") or {}
     return {
         "running": bool(st.get("running")),
         "demo_only": bool(st.get("demo_only")),
@@ -73,6 +79,7 @@ def build_live_summary():
         "spread": st.get("spread"),
         "updated_utc": st.get("utc"),
         "zones": {"demand": safe_zone(zones.get("demand")), "supply": safe_zone(zones.get("supply"))},
+        "ten_minute_context": {"demand": safe_price_zone(active.get("demand"), (zones.get("demand") or {}).get("state")), "supply": safe_price_zone(active.get("supply"), (zones.get("supply") or {}).get("state"))},
         "order_book": {k: book.get(k) for k in ("ready", "stale", "age_ms", "pressure_now", "pressure_1s", "pressure_3s")},
         "futures_flow": {k: flow.get(k) for k in ("ready", "stale", "age_ms", "flow_30s", "flow_1m", "flow_3m", "flow_5m", "accel_30s_vs_3m", "accel_1m_vs_5m")},
         "open_interest": {k: oi.get(k) for k in ("ready", "stale", "change_pct")},
@@ -84,6 +91,8 @@ def build_research_summary():
     model = watchdog.get("model") or {}
     supervisor = load_json(RESEARCH_ROOT / "supervisor_heartbeat.json")
     deep = load_json(RESEARCH_ROOT / "deep_signal_search_latest.json")
+    collector = load_json(RESEARCH_ROOT / "collector_heartbeat.json")
+    mt5 = load_json(RESEARCH_ROOT / "mt5_sync_heartbeat.json")
     return {
         "model": model.get("model") or "UNKNOWN",
         "model_degraded": model.get("degraded"),
@@ -99,6 +108,9 @@ def build_research_summary():
         "full_promotions": int(learning.get("validated_promotions", 0) or 0),
         "canary_promotions": int(learning.get("demo_canary_promotions", 0) or 0),
         "overall": watchdog.get("overall") or "UNKNOWN",
+        "collector_age_seconds": age_seconds(collector.get("utc")),
+        "mt5_sync_age_seconds": age_seconds(mt5.get("utc")),
+        "watchdog_age_seconds": age_seconds(watchdog.get("utc")),
     }
 
 def candidate_eligibility(evaluation):

@@ -109,6 +109,22 @@ def test_health_state_thresholds():
     assert m.health_state(90,60,120)=='AMBER'
     assert m.health_state(121,60,120)=='RED'
 
+
+def test_live_summary_includes_sanitized_active_ten_minute_context():
+    live=m.build_status()['live']
+    assert 'ten_minute_context' in live
+    ctx=live['ten_minute_context']
+    assert set(ctx).issuperset({'demand','supply'})
+    for zone in (ctx.get('demand'),ctx.get('supply')):
+        if zone:
+            assert set(zone).issubset({'high','low','state'})
+
+def test_research_brain_exposes_collector_mt5_and_watchdog_freshness():
+    research=m.build_status()['research']
+    for key in ('collector_age_seconds','mt5_sync_age_seconds','watchdog_age_seconds'):
+        assert key in research
+        assert research[key] is None or research[key] >= 0
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
