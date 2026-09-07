@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T02:10:45.076614+00:00",
+  "generated_utc": "2026-09-07T03:56:33.152294+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -280,5 +280,2653 @@
     "Current active research mines MT5 tick outcomes first; Binance is confirmation only.",
     "No live orders are sent by this research pipeline.",
     "A displayed PENDING metric has not yet been scientifically measured for the current architecture."
+  ],
+  "schema_version": 2,
+  "live": {
+    "running": true,
+    "demo_only": true,
+    "dry_run": false,
+    "decision": "WAIT_5M_PULLBACK",
+    "signal_ready": false,
+    "side": "SELL",
+    "path": "NONE",
+    "reason": "WAIT_5M_PULLBACK",
+    "five_minute_phase": "BEARISH_IMPULSE",
+    "trigger": "NEUTRAL",
+    "trigger_kind": "NONE",
+    "quote_age_ms": 0.0,
+    "spread": 17.09999999999127,
+    "updated_utc": "2026-09-07T03:56:28.913801Z",
+    "zones": {
+      "demand": {
+        "state": "BROKEN",
+        "age_min": 96.482,
+        "last_touch_age_min": 32.482,
+        "touch_bars": 10,
+        "touch_episodes": 6,
+        "broken": true
+      },
+      "supply": {
+        "state": "FRESH",
+        "age_min": 66.482,
+        "last_touch_age_min": null,
+        "touch_bars": 0,
+        "touch_episodes": 0,
+        "broken": false
+      }
+    },
+    "ten_minute_context": {
+      "demand": null,
+      "supply": {
+        "high": 80426.0,
+        "low": 80386.02,
+        "state": "FRESH"
+      }
+    },
+    "order_book": {
+      "ready": true,
+      "stale": false,
+      "age_ms": 0,
+      "pressure_now": -2.5,
+      "pressure_1s": -1.421144,
+      "pressure_3s": -0.903956
+    },
+    "futures_flow": {
+      "ready": true,
+      "stale": false,
+      "age_ms": 0,
+      "flow_30s": 0.79537,
+      "flow_1m": 0.7325,
+      "flow_3m": 0.451487,
+      "flow_5m": 0.182033,
+      "accel_30s_vs_3m": 0.343883,
+      "accel_1m_vs_5m": 0.550467
+    },
+    "open_interest": {
+      "ready": true,
+      "stale": false,
+      "change_pct": 0.0
+    }
+  },
+  "research": {
+    "model": "v3a-frontier-gpt-oss:20b",
+    "model_degraded": false,
+    "model_state": "PREFERRED_MODEL_RESIDENT",
+    "gpu_endpoint": "PRIMARY_GPU",
+    "supervisor_status": "OK",
+    "research_phase": "BUSY_HOURLY_RESEARCH",
+    "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
+    "last_directed_family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+    "last_directed_outcome": "MODEL_UNAVAILABLE",
+    "directed_runs": 96,
+    "hourly_runs": 32,
+    "full_promotions": 0,
+    "canary_promotions": 1,
+    "overall": "OK",
+    "collector_age_seconds": 1435.118193,
+    "mt5_sync_age_seconds": 1435.118193,
+    "watchdog_age_seconds": 3779.626091
+  },
+  "signals": {
+    "updated_utc": "2026-09-07T02:51:21.333909Z",
+    "status": "OK",
+    "count": 24,
+    "candidates": [
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          },
+          {
+            "field": "quality_state_family",
+            "value": "BROKEN_ZONE"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          },
+          {
+            "field": "orb_state",
+            "value": "DIRECTIONAL_BREAK"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "min_retest_dist_atr",
+            "value": 0.0
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "min_pullback5_atr",
+            "value": 0.0
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 2.0
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 0.0
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 16,
+        "long_term": {
+          "resolved": 16,
+          "wins": 9,
+          "losses": 7,
+          "profit_factor_r": 1.7357,
+          "expectancy_r": 0.3219,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4046
+        },
+        "training": {
+          "resolved": 11,
+          "wins": 6,
+          "losses": 5,
+          "profit_factor_r": 1.62,
+          "expectancy_r": 0.2818,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.4532
+        },
+        "validation": {
+          "resolved": 5,
+          "wins": 3,
+          "losses": 2,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.6022
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 7.6459
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.6022,
+        "opportunities_per_day": 14.45,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "opp_bos_bucket",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 9,
+        "long_term": {
+          "resolved": 9,
+          "wins": 8,
+          "losses": 1,
+          "profit_factor_r": 10.8,
+          "expectancy_r": 1.0889,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4009
+        },
+        "training": {
+          "resolved": 6,
+          "wins": 5,
+          "losses": 1,
+          "profit_factor_r": 6.75,
+          "expectancy_r": 0.9583,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4569
+        },
+        "validation": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "recent": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 4.05,
+          "min_expectancy_r": 0.7625
+        },
+        "opportunities_per_hour": 2.9309,
+        "opportunities_per_day": 70.34,
+        "rule": [
+          {
+            "field": "max_accel_1m_vs_5m",
+            "value": -0.209912
+          },
+          {
+            "field": "max_far_dist_atr",
+            "value": 4.844068
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 2.0
+          },
+          {
+            "field": "min_pullback5_atr",
+            "value": 0.506852
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 9,
+        "long_term": {
+          "resolved": 9,
+          "wins": 8,
+          "losses": 1,
+          "profit_factor_r": 10.8,
+          "expectancy_r": 1.0889,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4009
+        },
+        "training": {
+          "resolved": 6,
+          "wins": 5,
+          "losses": 1,
+          "profit_factor_r": 6.75,
+          "expectancy_r": 0.9583,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4569
+        },
+        "validation": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "recent": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 4.05,
+          "min_expectancy_r": 0.7625
+        },
+        "opportunities_per_hour": 2.9309,
+        "opportunities_per_day": 70.34,
+        "rule": [
+          {
+            "field": "max_accel_1m_vs_5m",
+            "value": -0.492869
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 2.0
+          },
+          {
+            "field": "min_pullback5_atr",
+            "value": 0.506852
+          },
+          {
+            "field": "trigger_kind",
+            "value": "BOS"
+          }
+        ]
+      },
+      {
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 9,
+        "long_term": {
+          "resolved": 9,
+          "wins": 8,
+          "losses": 1,
+          "profit_factor_r": 10.8,
+          "expectancy_r": 1.0889,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4009
+        },
+        "training": {
+          "resolved": 6,
+          "wins": 5,
+          "losses": 1,
+          "profit_factor_r": 6.75,
+          "expectancy_r": 0.9583,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.4569
+        },
+        "validation": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "recent": {
+          "resolved": 3,
+          "wins": 3,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 2.9309
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 4.05,
+          "min_expectancy_r": 0.7625
+        },
+        "opportunities_per_hour": 2.9309,
+        "opportunities_per_day": 70.34,
+        "rule": [
+          {
+            "field": "max_accel_1m_vs_5m",
+            "value": -0.492869
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 2.0
+          },
+          {
+            "field": "min_pullback5_atr",
+            "value": 0.506852
+          },
+          {
+            "field": "quality_state_family",
+            "value": "BROKEN_ZONE"
+          }
+        ]
+      },
+      {
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "objective": "PROTECT_LIVE_EDGE",
+        "eligibility": "CANARY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ],
+        "matched_resolved": 12,
+        "long_term": {
+          "resolved": 12,
+          "wins": 7,
+          "losses": 5,
+          "profit_factor_r": 1.89,
+          "expectancy_r": 0.3708,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.2285
+        },
+        "training": {
+          "resolved": 8,
+          "wins": 5,
+          "losses": 3,
+          "profit_factor_r": 2.25,
+          "expectancy_r": 0.4688,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.2176
+        },
+        "validation": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.5796
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.5796
+        },
+        "walk_forward": {
+          "stable": true,
+          "positive_fraction": 1.0,
+          "min_profit_factor_r": 1.35,
+          "min_expectancy_r": 0.175
+        },
+        "opportunities_per_hour": 0.5796,
+        "opportunities_per_day": 13.91,
+        "rule": [
+          {
+            "field": "max_accel_1m_vs_5m",
+            "value": 0.081142
+          },
+          {
+            "field": "max_side_flow_5m",
+            "value": 0.593981
+          },
+          {
+            "field": "trigger_kind",
+            "value": "BOS"
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "min_retest_dist_atr",
+            "value": 0.136918
+          },
+          {
+            "field": "side",
+            "value": "SELL"
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "max_pullback5_atr",
+            "value": 0.239291
+          },
+          {
+            "field": "side",
+            "value": "SELL"
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "max_accel_30s_vs_3m",
+            "value": -0.11457
+          },
+          {
+            "field": "side",
+            "value": "SELL"
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "max_accel_30s_vs_3m",
+            "value": -0.11457
+          },
+          {
+            "field": "min_retest_dist_atr",
+            "value": 0.136918
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "max_accel_30s_vs_3m",
+            "value": -0.11457
+          },
+          {
+            "field": "min_retest_dist_atr",
+            "value": 0.000147
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "five_minute_phase",
+            "value": "BEARISH_PULLBACK"
+          },
+          {
+            "field": "min_retest_dist_atr",
+            "value": 0.136918
+          }
+        ]
+      },
+      {
+        "family": "CHOP_RELEASE_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 3,
+          "losses": 1,
+          "profit_factor_r": 4.05,
+          "expectancy_r": 0.7625,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.2383
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.026
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 27.0337
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 27.0337,
+        "opportunities_per_day": 648.81,
+        "rule": [
+          {
+            "field": "max_accel_30s_vs_3m",
+            "value": -0.11457
+          },
+          {
+            "field": "trigger_kind",
+            "value": "BOS"
+          }
+        ]
+      },
+      {
+        "family": "REVERSAL_SWEEP_CHOCH",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "LOW_FREQUENCY",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 4,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 0.2325
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 1.1812
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 0.2656
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 2,
+          "losses": 0,
+          "profit_factor_r": 999.0,
+          "expectancy_r": 1.35,
+          "max_drawdown_r": 0.0,
+          "opportunities_per_hour": 0.2656
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 0.2656,
+        "opportunities_per_day": 6.37,
+        "rule": [
+          {
+            "field": "max_opp_bos15",
+            "value": 0.0
+          },
+          {
+            "field": "min_accel_30s_vs_3m",
+            "value": 0.486148
+          },
+          {
+            "field": "min_side_flow_1m",
+            "value": 0.4405
+          },
+          {
+            "field": "min_side_flow_5m",
+            "value": -0.257097
+          }
+        ]
+      },
+      {
+        "family": "RANGE_ROTATION",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "LOW_PROFIT_FACTOR",
+          "NEGATIVE_OR_WEAK_EXPECTANCY",
+          "LOW_FREQUENCY",
+          "RECENT_HOLDOUT_LOW_PROFIT_FACTOR",
+          "RECENT_HOLDOUT_WEAK_EXPECTANCY",
+          "RECENT_REGIME_DEGRADATION"
+        ],
+        "matched_resolved": 12,
+        "long_term": {
+          "resolved": 12,
+          "wins": 8,
+          "losses": 4,
+          "profit_factor_r": 2.7,
+          "expectancy_r": 0.5667,
+          "max_drawdown_r": 4.0,
+          "opportunities_per_hour": 0.283
+        },
+        "training": {
+          "resolved": 8,
+          "wins": 7,
+          "losses": 1,
+          "profit_factor_r": 9.45,
+          "expectancy_r": 1.0563,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.2842
+        },
+        "validation": {
+          "resolved": 4,
+          "wins": 1,
+          "losses": 3,
+          "profit_factor_r": 0.45,
+          "expectancy_r": -0.4125,
+          "max_drawdown_r": 3.0,
+          "opportunities_per_hour": 0.2812
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 1,
+          "losses": 3,
+          "profit_factor_r": 0.45,
+          "expectancy_r": -0.4125,
+          "max_drawdown_r": 3.0,
+          "opportunities_per_hour": 0.2812
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.6667,
+          "min_profit_factor_r": 0.45,
+          "min_expectancy_r": -0.4125
+        },
+        "opportunities_per_hour": 0.2812,
+        "opportunities_per_day": 6.75,
+        "rule": [
+          {
+            "field": "demand_state",
+            "value": "TESTED"
+          },
+          {
+            "field": "flow_class",
+            "value": "ALL_4_ALIGNED"
+          },
+          {
+            "field": "min_accel_1m_vs_5m",
+            "value": -0.442367
+          },
+          {
+            "field": "orb_state",
+            "value": "DIRECTIONAL_BREAK"
+          }
+        ]
+      },
+      {
+        "family": "CLEAN_CONTINUATION",
+        "objective": "IMPROVE_CONTINUATION_CONVERSION",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "LOW_PROFIT_FACTOR",
+          "NEGATIVE_OR_WEAK_EXPECTANCY",
+          "INSUFFICIENT_RECENT_HOLDOUT",
+          "RECENT_HOLDOUT_LOW_PROFIT_FACTOR",
+          "RECENT_HOLDOUT_WEAK_EXPECTANCY",
+          "RECENT_REGIME_DEGRADATION"
+        ],
+        "matched_resolved": 10,
+        "long_term": {
+          "resolved": 10,
+          "wins": 6,
+          "losses": 4,
+          "profit_factor_r": 2.025,
+          "expectancy_r": 0.41,
+          "max_drawdown_r": 4.0,
+          "opportunities_per_hour": 0.2449
+        },
+        "training": {
+          "resolved": 7,
+          "wins": 6,
+          "losses": 1,
+          "profit_factor_r": 8.1,
+          "expectancy_r": 1.0143,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 0.2886
+        },
+        "validation": {
+          "resolved": 3,
+          "wins": 0,
+          "losses": 3,
+          "profit_factor_r": 0.0,
+          "expectancy_r": -1.0,
+          "max_drawdown_r": 3.0,
+          "opportunities_per_hour": 2.2288
+        },
+        "recent": {
+          "resolved": 3,
+          "wins": 0,
+          "losses": 3,
+          "profit_factor_r": 0.0,
+          "expectancy_r": -1.0,
+          "max_drawdown_r": 3.0,
+          "opportunities_per_hour": 2.2288
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.5,
+          "min_profit_factor_r": 0.3375,
+          "min_expectancy_r": -0.53
+        },
+        "opportunities_per_hour": 2.2288,
+        "opportunities_per_day": 53.49,
+        "rule": [
+          {
+            "field": "flow_class",
+            "value": "FAST_ALIGNED_SLOW_OPPOSED"
+          },
+          {
+            "field": "max_retest_dist_atr",
+            "value": 0.000739
+          },
+          {
+            "field": "max_side_flow_1m",
+            "value": 1.916383
+          },
+          {
+            "field": "trigger_kind",
+            "value": "BOS"
+          }
+        ]
+      },
+      {
+        "family": "RANGE_ROTATION_MICRO_ORB",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 1,
+          "losses": 3,
+          "profit_factor_r": 0.45,
+          "expectancy_r": -0.4125,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 1.1774
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 0,
+          "losses": 2,
+          "profit_factor_r": 0.0,
+          "expectancy_r": -1.0,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 9.4747
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 15.6997
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 15.6997
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 15.6997,
+        "opportunities_per_day": 376.79,
+        "rule": [
+          {
+            "field": "max_accel_1m_vs_5m",
+            "value": 0.477232
+          },
+          {
+            "field": "orb_state",
+            "value": "DIRECTIONAL_BREAK"
+          },
+          {
+            "field": "supply_state",
+            "value": "FRESH"
+          }
+        ]
+      },
+      {
+        "family": "DEEP_RETEST_REBREAK",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "LOW_FREQUENCY"
+        ],
+        "matched_resolved": 12,
+        "long_term": {
+          "resolved": 12,
+          "wins": 4,
+          "losses": 8,
+          "profit_factor_r": 0.675,
+          "expectancy_r": -0.2167,
+          "max_drawdown_r": 4.65,
+          "opportunities_per_hour": 0.1969
+        },
+        "training": {
+          "resolved": 8,
+          "wins": 2,
+          "losses": 6,
+          "profit_factor_r": 0.45,
+          "expectancy_r": -0.4125,
+          "max_drawdown_r": 4.65,
+          "opportunities_per_hour": 0.1875
+        },
+        "validation": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.2668
+        },
+        "recent": {
+          "resolved": 4,
+          "wins": 2,
+          "losses": 2,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 0.2668
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.6667,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": -1.0
+        },
+        "opportunities_per_hour": 0.2668,
+        "opportunities_per_day": 6.4,
+        "rule": [
+          {
+            "field": "min_bos_extension_atr",
+            "value": 0.043624
+          },
+          {
+            "field": "min_far_dist_atr",
+            "value": -0.248434
+          }
+        ]
+      },
+      {
+        "family": "CONTINUATION_PULLBACK_RECLAIM",
+        "objective": "RECOVER_REJECTED_WINNERS",
+        "eligibility": "EXPLORATORY",
+        "decision": "FAIL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "LOW_PROFIT_FACTOR",
+          "NEGATIVE_OR_WEAK_EXPECTANCY",
+          "INSUFFICIENT_RECENT_HOLDOUT",
+          "RECENT_HOLDOUT_LOW_PROFIT_FACTOR"
+        ],
+        "matched_resolved": 4,
+        "long_term": {
+          "resolved": 4,
+          "wins": 1,
+          "losses": 3,
+          "profit_factor_r": 0.45,
+          "expectancy_r": -0.4125,
+          "max_drawdown_r": 3.0,
+          "opportunities_per_hour": 1.373
+        },
+        "training": {
+          "resolved": 2,
+          "wins": 1,
+          "losses": 1,
+          "profit_factor_r": 1.35,
+          "expectancy_r": 0.175,
+          "max_drawdown_r": 1.0,
+          "opportunities_per_hour": 2.6705
+        },
+        "validation": {
+          "resolved": 2,
+          "wins": 0,
+          "losses": 2,
+          "profit_factor_r": 0.0,
+          "expectancy_r": -1.0,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 29.7118
+        },
+        "recent": {
+          "resolved": 2,
+          "wins": 0,
+          "losses": 2,
+          "profit_factor_r": 0.0,
+          "expectancy_r": -1.0,
+          "max_drawdown_r": 2.0,
+          "opportunities_per_hour": 29.7118
+        },
+        "walk_forward": {
+          "stable": false,
+          "positive_fraction": 0.0,
+          "min_profit_factor_r": 0.0,
+          "min_expectancy_r": 0.0
+        },
+        "opportunities_per_hour": 29.7118,
+        "opportunities_per_day": 713.08,
+        "rule": [
+          {
+            "field": "max_far_dist_atr",
+            "value": -2.192234
+          },
+          {
+            "field": "min_accel_1m_vs_5m",
+            "value": 0.065859
+          },
+          {
+            "field": "min_opp_bos15",
+            "value": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "promotions": [
+    {
+      "proposal_id": 105,
+      "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+      "tier": "DEMO_CANARY",
+      "status": "DEMOTED",
+      "promoted_utc": "2026-09-07T02:47:04.917474Z",
+      "demoted_utc": "2026-09-07T03:19:16.134852Z",
+      "verifier_decision": "CANARY_PASS",
+      "verifier_status": "DEMO_CANARY_READY",
+      "matched_resolved": 9,
+      "profit_factor_r": 10.8,
+      "expectancy_r": 1.0889,
+      "opportunities_per_hour": 0.4009,
+      "health_decision": "POLICY_DEMOTED",
+      "new_resolved": 0,
+      "demotion_reasons": [
+        "POLICY_FULL_VALIDATION_REQUIRED"
+      ],
+      "rule": [
+        {
+          "field": "max_accel_1m_vs_5m",
+          "value": -0.492869
+        },
+        {
+          "field": "max_far_dist_atr",
+          "value": 4.844068
+        },
+        {
+          "field": "min_opp_bos15",
+          "value": 2.0
+        },
+        {
+          "field": "min_pullback5_atr",
+          "value": 0.506852
+        }
+      ]
+    }
+  ],
+  "history": {
+    "verifier": [
+      {
+        "proposal_id": 105,
+        "utc": "2026-09-07T02:47:04.910438Z",
+        "stage": "verifier",
+        "decision": "CANARY_PASS",
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ]
+      },
+      {
+        "proposal_id": 105,
+        "utc": "2026-09-07T02:43:23.734210Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ]
+      },
+      {
+        "proposal_id": 105,
+        "utc": "2026-09-07T02:42:47.973159Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 104,
+        "utc": "2026-09-07T02:41:52.010646Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "INSUFFICIENT_VALIDATION_SAMPLE",
+          "INSUFFICIENT_RECENT_HOLDOUT"
+        ]
+      },
+      {
+        "proposal_id": 104,
+        "utc": "2026-09-07T02:41:11.398349Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 103,
+        "utc": "2026-09-07T02:30:45.301889Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 103,
+        "utc": "2026-09-07T02:28:38.021536Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 102,
+        "utc": "2026-09-07T02:17:32.276466Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 102,
+        "utc": "2026-09-07T02:15:35.968743Z",
+        "stage": "critic",
+        "decision": "CHALLENGE",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 101,
+        "utc": "2026-09-07T02:02:58.356727Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "CLEAN_CONTINUATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 101,
+        "utc": "2026-09-07T02:02:12.266797Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 100,
+        "utc": "2026-09-07T01:50:30.666350Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "RANGE_ROTATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 100,
+        "utc": "2026-09-07T01:49:34.131949Z",
+        "stage": "critic",
+        "decision": "CHALLENGE",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 99,
+        "utc": "2026-09-07T01:45:47.556879Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "UNCLASSIFIED",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 99,
+        "utc": "2026-09-07T01:44:55.975755Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 98,
+        "utc": "2026-09-07T01:37:34.916853Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "DEEP_RETEST_REBREAK",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 98,
+        "utc": "2026-09-07T01:36:52.667849Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 97,
+        "utc": "2026-09-07T01:25:26.692669Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "REVERSAL_SWEEP_CHOCH",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 97,
+        "utc": "2026-09-07T01:24:33.368388Z",
+        "stage": "critic",
+        "decision": "CHALLENGE",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 96,
+        "utc": "2026-09-07T01:12:03.217443Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 96,
+        "utc": "2026-09-07T01:10:46.196991Z",
+        "stage": "critic",
+        "decision": "CHALLENGE",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 95,
+        "utc": "2026-09-07T00:58:28.100743Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "CLEAN_CONTINUATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 95,
+        "utc": "2026-09-07T00:57:36.526772Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 94,
+        "utc": "2026-09-07T00:57:13.716385Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 94,
+        "utc": "2026-09-07T00:56:45.364775Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 93,
+        "utc": "2026-09-07T00:45:09.890990Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "RANGE_ROTATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 93,
+        "utc": "2026-09-07T00:44:12.032026Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 92,
+        "utc": "2026-09-07T00:41:58.196485Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "UNCLASSIFIED",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 92,
+        "utc": "2026-09-07T00:41:01.620441Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
+        "proposal_id": 91,
+        "utc": "2026-09-07T00:30:32.596098Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "RANGE_ROTATION",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      }
+    ],
+    "research": [
+      {
+        "utc": "2026-09-07T02:42:47.973159Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:41:13.870172Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:28:38.028645Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:28:16.344718Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 103,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:15:35.974145Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:14:52.346348Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 102,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:02:12.266797Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T02:01:50.116827Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 101,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:49:34.165209Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:48:54.452762Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 100,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:44:55.975755Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:44:14.335173Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 99,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:36:52.678159Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:36:20.108899Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 98,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:24:33.378551Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:23:44.451806Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 97,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:10:46.207850Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T01:10:01.371951Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 96,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:57:36.532385Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:57:09.146273Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 95,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:56:45.364775Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:55:50.324751Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 94,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:44:12.047893Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:43:43.700743Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 93,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:41:01.627258Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:40:25.844392Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 92,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:30:21.657050Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:29:33.876300Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 91,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:17:15.638259Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T00:16:53.492152Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 90,
+        "model": "v3a-frontier-gpt-oss:20b"
+      }
+    ]
+  },
+  "trading": {
+    "recent": [
+      {
+        "entry_utc": "2026-09-07T03:02:12.122000Z",
+        "exit_utc": "2026-09-07T03:13:30.315000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -27.46,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-07T02:22:45.694000Z",
+        "exit_utc": "2026-09-07T02:36:44.241000Z",
+        "side": "BUY",
+        "family": "CLEAN_CONTINUATION",
+        "result": "WIN",
+        "profit": 31.94,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-06T20:38:37.583000Z",
+        "exit_utc": "2026-09-06T21:06:01.375000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -8.57,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-06T17:28:01.746000Z",
+        "exit_utc": "2026-09-06T18:03:15.312000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -13.39,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-06T16:04:11.039000Z",
+        "exit_utc": "2026-09-06T16:12:53.595000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -14.3,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-06T12:37:48.820000Z",
+        "exit_utc": "2026-09-06T13:17:39.156000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 12.62,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-06T12:26:25.849000Z",
+        "exit_utc": "2026-09-06T12:32:02.286000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -6.56,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-06T10:25:30.890000Z",
+        "exit_utc": "2026-09-06T10:41:19.229000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -6.7,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-06T08:50:41.547000Z",
+        "exit_utc": "2026-09-06T08:55:49.915000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 10.97,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-06T05:46:47.950000Z",
+        "exit_utc": "2026-09-06T06:41:57.388000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 22.32,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-05T23:14:58.149000Z",
+        "exit_utc": "2026-09-05T23:45:52.517000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 9.58,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-05T17:27:29.555000Z",
+        "exit_utc": "2026-09-05T17:32:50.489000Z",
+        "side": "SELL",
+        "family": "RANGE_ROTATION_MICRO_ORB",
+        "result": "LOSS",
+        "profit": -9.09,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-05T14:36:40.240000Z",
+        "exit_utc": "2026-09-05T15:05:59.947000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -5.12,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-05T03:45:05.182000Z",
+        "exit_utc": "2026-09-05T03:48:35.231000Z",
+        "side": "BUY",
+        "family": "BROKEN_ZONE_REBREAK",
+        "result": "LOSS",
+        "profit": -2.79,
+        "reason": "3"
+      },
+      {
+        "entry_utc": "2026-09-05T00:58:56.433000Z",
+        "exit_utc": "2026-09-05T01:00:00.376000Z",
+        "side": "SELL",
+        "family": "BROKEN_LEVEL_RETEST_REBREAK",
+        "result": "LOSS",
+        "profit": -2.56,
+        "reason": "3"
+      },
+      {
+        "entry_utc": "2026-09-04T23:26:20.759000Z",
+        "exit_utc": "2026-09-04T23:27:07.747000Z",
+        "side": "BUY",
+        "family": "BROKEN_LEVEL_RETEST_REBREAK",
+        "result": "LOSS",
+        "profit": -2.55,
+        "reason": "3"
+      },
+      {
+        "entry_utc": "2026-09-04T19:38:57.735000Z",
+        "exit_utc": "2026-09-04T19:44:18.037000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -2.35,
+        "reason": "3"
+      },
+      {
+        "entry_utc": "2026-09-04T10:17:14.432000Z",
+        "exit_utc": "2026-09-04T10:32:25.932000Z",
+        "side": "SELL",
+        "family": "CONTINUATION_PULLBACK_RECLAIM",
+        "result": "LOSS",
+        "profit": -21.12,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-04T08:10:24.588000Z",
+        "exit_utc": "2026-09-04T08:24:13.733000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 15.47,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-04T07:49:27.558000Z",
+        "exit_utc": "2026-09-04T07:54:40.707000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -9.69,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-04T07:00:13.941000Z",
+        "exit_utc": "2026-09-04T07:11:50.307000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "WIN",
+        "profit": 12.03,
+        "reason": "5"
+      }
+    ],
+    "summary": {
+      "trades": 21,
+      "wins": 7,
+      "losses": 14,
+      "win_rate": 33.3,
+      "net_profit": -17.32
+    }
+  },
+  "health": [
+    {
+      "name": "Bot heartbeat",
+      "state": "GREEN",
+      "age_seconds": 1.9,
+      "detail": "FRESH"
+    },
+    {
+      "name": "Bot status",
+      "state": "GREEN",
+      "age_seconds": 1.9,
+      "detail": "FRESH"
+    },
+    {
+      "name": "Collector",
+      "state": "GREEN",
+      "age_seconds": 1.2,
+      "detail": "FRESH"
+    },
+    {
+      "name": "MT5 sync",
+      "state": "AMBER",
+      "age_seconds": 702.3,
+      "detail": "FRESH"
+    },
+    {
+      "name": "GPU tunnel",
+      "state": "GREEN",
+      "age_seconds": 0.8,
+      "detail": "FRESH"
+    },
+    {
+      "name": "Hourly research",
+      "state": "AMBER",
+      "age_seconds": 4066.0,
+      "detail": "FRESH"
+    },
+    {
+      "name": "Live feed",
+      "state": "GREEN",
+      "age_seconds": null,
+      "detail": "OK"
+    },
+    {
+      "name": "Research supervisor",
+      "state": "RED",
+      "age_seconds": 1435.2,
+      "detail": "BUSY_HOURLY_RESEARCH"
+    }
   ]
 }
