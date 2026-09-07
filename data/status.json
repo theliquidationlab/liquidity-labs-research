@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T14:26:48.012895+00:00",
+  "generated_utc": "2026-09-07T14:31:56.701343+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,21 +295,21 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.05000000000291,
-    "updated_utc": "2026-09-07T14:26:41.528988Z",
+    "spread": 17.089999999996508,
+    "updated_utc": "2026-09-07T14:31:53.360349Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 46.692,
-        "last_touch_age_min": 21.692,
+        "age_min": 51.889,
+        "last_touch_age_min": 26.889,
         "touch_bars": 26,
         "touch_episodes": 1,
         "broken": true
       },
       "supply": {
         "state": "TESTED",
-        "age_min": 66.692,
-        "last_touch_age_min": 54.692,
+        "age_min": 71.889,
+        "last_touch_age_min": 59.889,
         "touch_bars": 13,
         "touch_episodes": 1,
         "broken": false
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 1.996012,
-      "pressure_1s": 0.877669,
-      "pressure_3s": 0.683502
+      "pressure_now": -0.735646,
+      "pressure_1s": -0.102133,
+      "pressure_3s": -0.318896
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 1.422425,
-      "flow_1m": 0.857513,
-      "flow_3m": 0.831523,
-      "flow_5m": 0.648594,
-      "accel_30s_vs_3m": 0.590902,
-      "accel_1m_vs_5m": 0.208919
+      "flow_30s": -0.532022,
+      "flow_1m": -0.080985,
+      "flow_3m": -1.268994,
+      "flow_5m": -1.099534,
+      "accel_30s_vs_3m": 0.736972,
+      "accel_1m_vs_5m": 1.018549
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": 0.0015
     }
   },
   "research": {
@@ -354,18 +354,18 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "IDLE",
+    "research_phase": "BUSY_HOURLY_RESEARCH",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
-    "last_directed_family": "LIQUIDITY_SWEEP_REVERSAL",
+    "last_directed_family": "REVERSAL_SWEEP_CHOCH",
     "last_directed_outcome": "REJECTED",
-    "directed_runs": 129,
+    "directed_runs": 130,
     "hourly_runs": 40,
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 33.258745,
-    "mt5_sync_age_seconds": 291.422091,
-    "watchdog_age_seconds": 33.258745
+    "collector_age_seconds": 124.472267,
+    "mt5_sync_age_seconds": 124.472267,
+    "watchdog_age_seconds": 341.956025
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2093,6 +2093,29 @@
   "history": {
     "verifier": [
       {
+        "proposal_id": 149,
+        "utc": "2026-09-07T14:29:41.909554Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "REVERSAL_SWEEP_CHOCH",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 149,
+        "utc": "2026-09-07T14:28:25.590696Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
         "proposal_id": 148,
         "utc": "2026-09-07T14:16:41.591548Z",
         "stage": "verifier",
@@ -2383,29 +2406,25 @@
         "decision": "NO_FATAL_OBJECTION",
         "family": null,
         "reasons": []
-      },
-      {
-        "proposal_id": 134,
-        "utc": "2026-09-07T11:40:32.051464Z",
-        "stage": "verifier",
-        "decision": "FAIL",
-        "family": "RANGE_ROTATION",
-        "reasons": [
-          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
-          "INSUFFICIENT_VALIDATION_SAMPLE",
-          "INSUFFICIENT_RECENT_HOLDOUT"
-        ]
-      },
-      {
-        "proposal_id": 134,
-        "utc": "2026-09-07T11:39:45.665277Z",
-        "stage": "critic",
-        "decision": "NO_FATAL_OBJECTION",
-        "family": null,
-        "reasons": []
       }
     ],
     "research": [
+      {
+        "utc": "2026-09-07T14:28:25.597818Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-07T14:28:03.805734Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 149,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
       {
         "utc": "2026-09-07T14:15:25.887949Z",
         "role": "critic",
@@ -2628,22 +2647,6 @@
         "family": null,
         "outcome": null,
         "proposal_id": 135,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-07T11:39:45.670279Z",
-        "role": "critic",
-        "family": null,
-        "outcome": null,
-        "proposal_id": null,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-07T11:39:12.886313Z",
-        "role": "analyst",
-        "family": null,
-        "outcome": null,
-        "proposal_id": 134,
         "model": "v3a-frontier-gpt-oss:20b"
       }
     ]
@@ -2903,8 +2906,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 10.4,
-      "detail": "IDLE"
+      "age_seconds": 16.4,
+      "detail": "BUSY_HOURLY_RESEARCH"
     }
   ]
 }
