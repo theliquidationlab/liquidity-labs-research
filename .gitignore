@@ -6,3 +6,5 @@ publisher.py
 start_publisher.cmd
 start_publisher_hidden.vbs
 publisher_git.log
+
+.worktrees/
