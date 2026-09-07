@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T22:12:38.231354+00:00",
+  "generated_utc": "2026-09-07T22:18:45.643299+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,30 +286,30 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "SEQUENCE_STATE_NOT_READY",
-    "signal_ready": true,
+    "decision": "WAIT_1M_BOS",
+    "signal_ready": false,
     "side": "SELL",
-    "path": "CONTINUATION",
-    "reason": "ENTRY_READY",
+    "path": "NONE",
+    "reason": "WAIT_1M_BOS",
     "five_minute_phase": "BEARISH_PULLBACK",
-    "trigger": "SELL",
-    "trigger_kind": "BOS",
+    "trigger": "NEUTRAL",
+    "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.979999999995925,
-    "updated_utc": "2026-09-07T22:12:34.554839Z",
+    "spread": 16.970000000001164,
+    "updated_utc": "2026-09-07T22:18:42.520958Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 82.576,
-        "last_touch_age_min": 0.576,
-        "touch_bars": 47,
+        "age_min": 88.709,
+        "last_touch_age_min": 5.709,
+        "touch_bars": 48,
         "touch_episodes": 6,
         "broken": true
       },
       "supply": {
         "state": "WEAKENED",
-        "age_min": 52.576,
-        "last_touch_age_min": 47.576,
+        "age_min": 58.709,
+        "last_touch_age_min": 53.709,
         "touch_bars": 2,
         "touch_episodes": 2,
         "broken": false
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -1.021282,
-      "pressure_1s": -1.020578,
-      "pressure_3s": -1.00233
+      "pressure_now": 1.455419,
+      "pressure_1s": 1.461632,
+      "pressure_3s": 1.462457
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -0.08892,
-      "flow_1m": -1.064021,
-      "flow_3m": -0.224901,
-      "flow_5m": -0.230687,
-      "accel_30s_vs_3m": 0.135981,
-      "accel_1m_vs_5m": -0.833334
+      "flow_30s": 0.407025,
+      "flow_1m": -0.719279,
+      "flow_3m": -0.275041,
+      "flow_5m": -0.317295,
+      "accel_30s_vs_3m": 0.682066,
+      "accel_1m_vs_5m": -0.401984
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0001
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -354,7 +354,7 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "STARTING",
+    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CLEAN_CONTINUATION",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 494.710263,
-    "mt5_sync_age_seconds": 494.710263,
-    "watchdog_age_seconds": 2847.283558
+    "collector_age_seconds": 118.720162,
+    "mt5_sync_age_seconds": 118.720162,
+    "watchdog_age_seconds": 3214.717146
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2419,6 +2419,14 @@
     ],
     "research": [
       {
+        "utc": "2026-09-07T22:13:20.022173Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 174,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
         "utc": "2026-09-07T22:11:04.102536Z",
         "role": "critic",
         "family": null,
@@ -2648,14 +2656,6 @@
         "family": null,
         "outcome": null,
         "proposal_id": null,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-07T16:16:44.286997Z",
-        "role": "analyst",
-        "family": null,
-        "outcome": null,
-        "proposal_id": 159,
         "model": "v3a-frontier-gpt-oss:20b"
       }
     ]
@@ -2942,8 +2942,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 6.4,
-      "detail": "STARTING"
+      "age_seconds": 25.8,
+      "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
 }
