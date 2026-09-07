@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T07:30:57.897681+00:00",
+  "generated_utc": "2026-09-07T07:36:07.582253+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,7 +286,7 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "SMART_ARM_WAIT",
+    "decision": "WAIT_1M_BOS",
     "signal_ready": false,
     "side": "SELL",
     "path": "NONE",
@@ -295,23 +295,23 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.029999999998836,
-    "updated_utc": "2026-09-07T07:30:53.023853Z",
+    "spread": 17.10000000000582,
+    "updated_utc": "2026-09-07T07:36:03.434335Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 170.884,
-        "last_touch_age_min": 4.884,
+        "age_min": 176.057,
+        "last_touch_age_min": 10.057,
         "touch_bars": 12,
         "touch_episodes": 4,
         "broken": true
       },
       "supply": {
-        "state": "WEAKENED",
-        "age_min": 120.884,
-        "last_touch_age_min": 100.884,
-        "touch_bars": 17,
-        "touch_episodes": 2,
+        "state": "TESTED",
+        "age_min": 126.057,
+        "last_touch_age_min": 106.057,
+        "touch_bars": 14,
+        "touch_episodes": 1,
         "broken": false
       }
     },
@@ -320,32 +320,32 @@
       "supply": {
         "high": 79926.04,
         "low": 79855.99,
-        "state": "WEAKENED"
+        "state": "TESTED"
       }
     },
     "order_book": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.389002,
-      "pressure_1s": -0.822272,
-      "pressure_3s": 0.106463
+      "pressure_now": 2.390437,
+      "pressure_1s": 0.097332,
+      "pressure_3s": 0.393853
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.480914,
-      "flow_1m": -0.812296,
-      "flow_3m": -0.663222,
-      "flow_5m": -0.690177,
-      "accel_30s_vs_3m": 1.144136,
-      "accel_1m_vs_5m": -0.122119
+      "flow_30s": -0.578507,
+      "flow_1m": -0.570396,
+      "flow_3m": -0.398412,
+      "flow_5m": -0.397198,
+      "accel_30s_vs_3m": -0.180095,
+      "accel_1m_vs_5m": -0.173198
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0058
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -354,7 +354,7 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "LOOP_START",
+    "research_phase": "BUSY_ADVANCED_SEARCH",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 697.219781,
-    "mt5_sync_age_seconds": 697.219781,
-    "watchdog_age_seconds": 1350.192664
+    "collector_age_seconds": 446.774818,
+    "mt5_sync_age_seconds": 446.774818,
+    "watchdog_age_seconds": 1659.918133
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2666,12 +2666,12 @@
     "recent": [
       {
         "entry_utc": "2026-09-07T07:07:10.329000Z",
-        "exit_utc": null,
+        "exit_utc": "2026-09-07T07:22:15.073000Z",
         "side": "BUY",
         "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "FLAT",
-        "profit": 0.0,
-        "reason": "OPEN"
+        "result": "LOSS",
+        "profit": -16.71,
+        "reason": "4"
       },
       {
         "entry_utc": "2026-09-07T03:02:12.122000Z",
@@ -2866,9 +2866,9 @@
     "summary": {
       "trades": 22,
       "wins": 7,
-      "losses": 14,
-      "win_rate": 33.3,
-      "net_profit": -17.32
+      "losses": 15,
+      "win_rate": 31.8,
+      "net_profit": -34.03
     }
   },
   "health": [
@@ -2916,9 +2916,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "AMBER",
-      "age_seconds": 137.1,
-      "detail": "LOOP_START"
+      "state": "GREEN",
+      "age_seconds": 11.4,
+      "detail": "BUSY_ADVANCED_SEARCH"
     }
   ]
 }
