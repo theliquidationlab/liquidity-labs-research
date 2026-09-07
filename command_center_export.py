@@ -252,9 +252,41 @@ def build_history(limit=30):
         con.close()
     return {"verifier": verifier[:limit], "research": research[:limit]}
 
+def recent_order_families():
+    rows=[]
+    try:
+        for line in (LIVE_ROOT / "events.jsonl").read_text(encoding="utf-8", errors="ignore").splitlines():
+            try:
+                event=json.loads(line)
+            except Exception:
+                continue
+            if event.get("kind") != "ORDER_FILLED":
+                continue
+            plan=event.get("plan") or {}
+            family=plan.get("smart_family") or (plan.get("smart_entry") or {}).get("family")
+            rows.append({"utc":event.get("utc"),"side":plan.get("side"),"family":family})
+    except Exception:
+        return []
+    return rows[-100:]
+
+def match_trade_family(entry_utc, side, fills):
+    entry=_parse_utc(entry_utc)
+    best=(999999.0,"UNKNOWN")
+    for row in fills:
+        if side and row.get("side") and row.get("side") != side:
+            continue
+        when=_parse_utc(row.get("utc"))
+        if entry is None or when is None:
+            continue
+        delta=abs((entry-when).total_seconds())
+        if delta < best[0]:
+            best=(delta,row.get("family") or "UNKNOWN")
+    return best[1] if best[0] <= 10.0 else "UNKNOWN"
+
 def build_trading(limit=30):
     con = _ro_connection()
     recent = []
+    fills = recent_order_families()
     if con is not None:
         try:
             rows = con.execute("select entry_utc,exit_utc,side,profit,reason from trades order by rowid desc limit ?", (limit,))
@@ -264,6 +296,7 @@ def build_trading(limit=30):
                     "entry_utc": entry_utc,
                     "exit_utc": exit_utc,
                     "side": side or "UNKNOWN",
+                    "family": match_trade_family(entry_utc, side, fills),
                     "result": "WIN" if value > 0 else ("LOSS" if value < 0 else "FLAT"),
                     "profit": round(value, 2),
                     "reason": str(reason or ""),

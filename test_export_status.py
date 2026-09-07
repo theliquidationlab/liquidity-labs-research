@@ -125,6 +125,28 @@ def test_research_brain_exposes_collector_mt5_and_watchdog_freshness():
         assert key in research
         assert research[key] is None or research[key] >= 0
 
+
+def test_candidate_frequency_day_math_and_canary_labeling():
+    from command_center_export import summarize_candidate
+    c={'family':'X','objective':'RECOVER','rule':{},'evaluation':{'decision':'FAIL','matched_resolved':9,'reasons':['INSUFFICIENT_VALIDATION_SAMPLE'],'long_term':{'resolved':9,'profit_factor_r':2.0,'expectancy_r':0.4,'opportunities_per_hour':0.5},'training':{'resolved':6},'validation':{'resolved':3,'opportunities_per_hour':0.5},'recent':{'resolved':3},'walk_forward':{'stable':True}}}
+    row=summarize_candidate(c)
+    assert row['eligibility']=='CANARY'
+    assert row['opportunities_per_hour']==0.5
+    assert row['opportunities_per_day']==12.0
+
+def test_trading_rows_have_family_field_and_no_trade_identifiers():
+    trading=m.build_status()['trading']
+    for row in trading['recent']:
+        assert 'family' in row
+        for forbidden in ('position_id','volume','magic','deals','entry','exit'):
+            assert forbidden not in row
+
+def test_verifier_history_keeps_fail_reasons_without_raw_payloads():
+    history=m.build_status()['history']['verifier']
+    assert history
+    assert all('decision' in row and 'reasons' in row for row in history)
+    assert all('details_json' not in row and 'metrics_json' not in row for row in history)
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
