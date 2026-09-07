@@ -151,3 +151,15 @@ if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()
     print(f'PASS {len(tests)} tests')
+
+
+def test_public_json_writer_falls_back_when_windows_replace_is_denied(tmp_path, monkeypatch):
+    target=tmp_path/'status.json'
+    target.write_text('{"old":true}',encoding='utf-8')
+    def denied(self, target_path):
+        raise PermissionError('simulated Windows sharing violation')
+    monkeypatch.setattr(m.Path,'replace',denied)
+    m.write_public_json(target,{'schema_version':2,'ok':True})
+    import json
+    assert json.loads(target.read_text(encoding='utf-8'))=={'schema_version':2,'ok':True}
+    assert not target.with_suffix('.json.tmp').exists()

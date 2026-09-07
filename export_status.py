@@ -328,11 +328,21 @@ def build_status():
     data.update(build_command_center())
     return data
 
+def write_public_json(path, payload):
+    path=Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text=json.dumps(payload, indent=2)
+    tmp=path.with_suffix(".json.tmp")
+    tmp.write_text(text, encoding="utf-8")
+    try:
+        tmp.replace(path)
+    except PermissionError:
+        path.write_text(text, encoding="utf-8")
+        try: tmp.unlink()
+        except FileNotFoundError: pass
+
 def main():
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    tmp = OUT.with_suffix(".json.tmp")
-    tmp.write_text(json.dumps(build_status(), indent=2), encoding="utf-8")
-    tmp.replace(OUT)
+    write_public_json(OUT, build_status())
     print(OUT)
 
 if __name__ == "__main__":
