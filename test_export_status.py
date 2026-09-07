@@ -81,6 +81,34 @@ def test_structural_broker_stage_reports_live_exact95_and_pretiming98():
     state,fraction,detail,sub=m.structural_broker_stage_state({},final,'',False,0)
     assert state=='complete' and sub['exact95_structural_valid']==5 and sub['exact98_pretiming']==2
 
+
+def _walk_public(value):
+    if isinstance(value, dict):
+        for k,v in value.items():
+            yield str(k); yield from _walk_public(v)
+    elif isinstance(value, list):
+        for v in value: yield from _walk_public(v)
+    elif value is not None:
+        yield str(value)
+
+def test_command_center_schema_v2_has_required_sections():
+    d=m.build_status()
+    assert d['schema_version']==2
+    assert d.get('generated_utc')
+    for key in ('live','research','signals','promotions','history','trading','health'):
+        assert key in d
+
+def test_public_snapshot_does_not_expose_sensitive_terms_or_windows_paths():
+    d=m.build_status()
+    blob='\n'.join(_walk_public(d)).lower()
+    for bad in ('password','secret','api_key','private_ip','commandline','172.31.','c:\\\\'):
+        assert bad not in blob
+
+def test_health_state_thresholds():
+    assert m.health_state(10,60,120)=='GREEN'
+    assert m.health_state(90,60,120)=='AMBER'
+    assert m.health_state(121,60,120)=='RED'
+
 if __name__=='__main__':
     tests=[v for k,v in list(globals().items()) if k.startswith('test_')]
     for fn in tests: fn()

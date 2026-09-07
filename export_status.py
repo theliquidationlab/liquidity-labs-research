@@ -1,5 +1,6 @@
 from pathlib import Path
 import json, re, subprocess, datetime
+from command_center_export import build_command_center, health_state
 
 ROOT = Path(r"C:\LiquidityLabs\BTC_CLEANROOM_V1")
 OUT = Path(__file__).resolve().parent / "data" / "status.json"
@@ -160,7 +161,7 @@ def broker_stage_state(progress, final_status, active_phase, running, stderr_byt
         return "working",pctv/100.0,detail,sub
     return "pending",pctv/100.0,detail+"; broker worker is not currently active.",sub
 
-def build_status():
+def build_legacy_status():
     atlas = load_json(MT5_ATLAS)
     base = load_json(MT5_BASE)
     bstrength = load_json(BIN_STRENGTH)
@@ -321,6 +322,11 @@ def build_status():
             "A displayed PENDING metric has not yet been scientifically measured for the current architecture."
         ]
     }
+
+def build_status():
+    data=build_legacy_status()
+    data.update(build_command_center())
+    return data
 
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
