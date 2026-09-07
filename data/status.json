@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T19:03:25.407220+00:00",
+  "generated_utc": "2026-09-07T19:14:58.955792+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,32 +286,32 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "WAIT_1M_BOS",
+    "decision": "NO_5M_DIRECTION",
     "signal_ready": false,
-    "side": "BUY",
+    "side": "NEUTRAL",
     "path": "NONE",
-    "reason": "WAIT_1M_BOS",
-    "five_minute_phase": "BULLISH_PULLBACK",
+    "reason": "NO_5M_DIRECTION",
+    "five_minute_phase": "RANGE",
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.95000000001164,
-    "updated_utc": "2026-09-07T19:03:19.208670Z",
+    "spread": 16.979999999995925,
+    "updated_utc": "2026-09-07T19:14:55.718904Z",
     "zones": {
       "demand": {
         "state": "TESTED",
-        "age_min": 23.32,
-        "last_touch_age_min": 23.32,
+        "age_min": 34.929,
+        "last_touch_age_min": 34.929,
         "touch_bars": 1,
         "touch_episodes": 1,
         "broken": false
       },
       "supply": {
         "state": "BROKEN",
-        "age_min": 63.32,
-        "last_touch_age_min": 2.32,
-        "touch_bars": 30,
-        "touch_episodes": 6,
+        "age_min": 74.929,
+        "last_touch_age_min": 7.929,
+        "touch_bars": 33,
+        "touch_episodes": 7,
         "broken": true
       }
     },
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -2.238529,
-      "pressure_1s": -2.211129,
-      "pressure_3s": -2.211741
+      "pressure_now": 0.111202,
+      "pressure_1s": 0.100929,
+      "pressure_3s": 0.100547
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 1.342209,
-      "flow_1m": 0.501495,
-      "flow_3m": -0.163936,
-      "flow_5m": 0.034938,
-      "accel_30s_vs_3m": 1.506145,
-      "accel_1m_vs_5m": 0.466557
+      "flow_30s": 2.5,
+      "flow_1m": 1.166285,
+      "flow_3m": 0.791279,
+      "flow_5m": -0.472933,
+      "accel_30s_vs_3m": 1.708721,
+      "accel_1m_vs_5m": 1.639218
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0001
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -354,7 +354,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_ADVANCED_SEARCH",
+    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CLEAN_CONTINUATION",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 3610.339779,
-    "mt5_sync_age_seconds": 3610.339779,
-    "watchdog_age_seconds": 4382.06839
+    "collector_age_seconds": 76.080468,
+    "mt5_sync_age_seconds": 76.080468,
+    "watchdog_age_seconds": 5075.661822
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2653,12 +2653,12 @@
     "recent": [
       {
         "entry_utc": "2026-09-07T17:57:43.229000Z",
-        "exit_utc": null,
+        "exit_utc": "2026-09-07T18:52:13.110000Z",
         "side": "SELL",
         "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "FLAT",
-        "profit": 0.0,
-        "reason": "OPEN"
+        "result": "LOSS",
+        "profit": -11.45,
+        "reason": "4"
       },
       {
         "entry_utc": "2026-09-07T15:41:09.757000Z",
@@ -2871,9 +2871,9 @@
     "summary": {
       "trades": 24,
       "wins": 7,
-      "losses": 16,
-      "win_rate": 30.4,
-      "net_profit": -69.27
+      "losses": 17,
+      "win_rate": 29.2,
+      "net_profit": -80.72
     }
   },
   "health": [
@@ -2921,9 +2921,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "RED",
-      "age_seconds": 1324.6,
-      "detail": "BUSY_ADVANCED_SEARCH"
+      "state": "GREEN",
+      "age_seconds": 27.3,
+      "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
 }
