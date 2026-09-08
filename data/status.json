@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T13:55:10.063314+00:00",
+  "generated_utc": "2026-09-08T14:01:10.958987+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,7 +286,7 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "SMART_ARM_WAIT",
+    "decision": "WAIT_1M_BOS",
     "signal_ready": false,
     "side": "SELL",
     "path": "NONE",
@@ -295,21 +295,21 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.089999999996508,
-    "updated_utc": "2026-09-08T13:55:05.519519Z",
+    "spread": 17.05999999999767,
+    "updated_utc": "2026-09-08T14:01:06.447468Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 105.092,
-        "last_touch_age_min": 23.092,
+        "age_min": 111.107,
+        "last_touch_age_min": 29.107,
         "touch_bars": 43,
         "touch_episodes": 6,
         "broken": true
       },
       "supply": {
         "state": "TESTED",
-        "age_min": 45.092,
-        "last_touch_age_min": 39.092,
+        "age_min": 51.107,
+        "last_touch_age_min": 45.107,
         "touch_bars": 7,
         "touch_episodes": 1,
         "broken": false
@@ -328,19 +328,19 @@
       "stale": false,
       "age_ms": 0,
       "pressure_now": 2.5,
-      "pressure_1s": 1.245478,
-      "pressure_3s": 1.102538
+      "pressure_1s": 0.160468,
+      "pressure_3s": -0.028357
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.086701,
-      "flow_1m": 0.193264,
-      "flow_3m": -0.265532,
-      "flow_5m": -0.411065,
-      "accel_30s_vs_3m": 0.352233,
-      "accel_1m_vs_5m": 0.604329
+      "flow_30s": 0.358504,
+      "flow_1m": 0.510323,
+      "flow_3m": 0.145241,
+      "flow_5m": 0.182085,
+      "accel_30s_vs_3m": 0.213263,
+      "accel_1m_vs_5m": 0.328238
     },
     "open_interest": {
       "ready": true,
@@ -354,18 +354,18 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_DIRECTED_RESEARCH",
+    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
-    "last_directed_family": "CLEAN_CONTINUATION",
+    "last_directed_family": "LIQUIDITY_SWEEP_REVERSAL",
     "last_directed_outcome": "REJECTED",
-    "directed_runs": 252,
+    "directed_runs": 253,
     "hourly_runs": 57,
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 1236.828779,
-    "mt5_sync_age_seconds": 1236.828779,
-    "watchdog_age_seconds": 1897.679971
+    "collector_age_seconds": 308.000861,
+    "mt5_sync_age_seconds": 308.000861,
+    "watchdog_age_seconds": 1597.850782
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2094,6 +2094,21 @@
     "verifier": [
       {
         "proposal_id": 291,
+        "utc": "2026-09-08T13:55:48.399229Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "reasons": [
+          "WALK_FORWARD_INSTABILITY",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "LOW_PROFIT_FACTOR"
+        ]
+      },
+      {
+        "proposal_id": 291,
         "utc": "2026-09-08T13:54:37.375764Z",
         "stage": "critic",
         "decision": "CHALLENGE",
@@ -2426,21 +2441,6 @@
         "decision": "NO_FATAL_OBJECTION",
         "family": null,
         "reasons": []
-      },
-      {
-        "proposal_id": 276,
-        "utc": "2026-09-08T12:04:03.292132Z",
-        "stage": "verifier",
-        "decision": "FAIL",
-        "family": "NON_SIGNAL",
-        "reasons": [
-          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
-          "LONG_TERM_LOW_PROFIT_FACTOR",
-          "LONG_TERM_WEAK_EXPECTANCY",
-          "TRAINING_LOW_PROFIT_FACTOR",
-          "TRAINING_WEAK_EXPECTANCY",
-          "INSUFFICIENT_VALIDATION_SAMPLE"
-        ]
       }
     ],
     "research": [
@@ -3001,7 +3001,7 @@
     {
       "name": "Hourly research",
       "state": "GREEN",
-      "age_seconds": 1027.8,
+      "age_seconds": 1688.7,
       "detail": "FRESH"
     },
     {
@@ -3013,8 +3013,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 5.3,
-      "detail": "BUSY_DIRECTED_RESEARCH"
+      "age_seconds": 22.4,
+      "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
 }
