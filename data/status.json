@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T11:28:27.978714+00:00",
+  "generated_utc": "2026-09-08T11:33:50.636498+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,21 +295,21 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.119999999995343,
-    "updated_utc": "2026-09-08T11:28:23.578518Z",
+    "spread": 17.089999999996508,
+    "updated_utc": "2026-09-08T11:33:44.859758Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 78.393,
-        "last_touch_age_min": 37.393,
+        "age_min": 83.748,
+        "last_touch_age_min": 42.748,
         "touch_bars": 14,
         "touch_episodes": 4,
         "broken": true
       },
       "supply": {
         "state": "TESTED",
-        "age_min": 58.393,
-        "last_touch_age_min": 56.393,
+        "age_min": 63.748,
+        "last_touch_age_min": 61.748,
         "touch_bars": 3,
         "touch_episodes": 1,
         "broken": false
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 1.961844,
-      "pressure_1s": 2.5,
-      "pressure_3s": 2.5
+      "pressure_now": -0.088865,
+      "pressure_1s": -0.087164,
+      "pressure_3s": 0.585826
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -0.252348,
-      "flow_1m": -0.060027,
-      "flow_3m": -0.71918,
-      "flow_5m": 0.170922,
-      "accel_30s_vs_3m": 0.466832,
-      "accel_1m_vs_5m": -0.230949
+      "flow_30s": 1.213157,
+      "flow_1m": -1.211792,
+      "flow_3m": 0.141643,
+      "flow_5m": -0.061196,
+      "accel_30s_vs_3m": 1.071514,
+      "accel_1m_vs_5m": -1.150596
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0021
+      "change_pct": 0.0006
     }
   },
   "research": {
@@ -354,7 +354,7 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
+    "research_phase": "BUSY_DIRECTED_RESEARCH",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CHOP_RELEASE_REBREAK",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 357.019251,
-    "mt5_sync_age_seconds": 357.019251,
-    "watchdog_age_seconds": 800.978955
+    "collector_age_seconds": 83.137689,
+    "mt5_sync_age_seconds": 143.602917,
+    "watchdog_age_seconds": 143.602917
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2093,6 +2093,16 @@
   "history": {
     "verifier": [
       {
+        "proposal_id": 272,
+        "utc": "2026-09-08T11:33:34.796830Z",
+        "stage": "critic",
+        "decision": "CHALLENGE",
+        "family": null,
+        "reasons": [
+          "The BTC_V3_A strategy does not consistently produce positive returns.  Out of the ten trades returned by the evidence_details tool, only four were profitable (E_2ADBB8DF8E, E_CE1B708281, E_FCDC657B2D, E_3ED21B517C).  The remaining six trades resulted in losses or zero profit (E_7BC5FAD542, E_1110B0D7AE, E_D550B51AC4, E_68C093BAE2, E_96A00CBCB2, E_7D5E381DDA).  This demonstrates a 40\u202f% win\u2011rate, which is below the 50\u202f% threshold typically required for a profitable strategy when accounting for transaction costs and slippage.  The evidence also shows that the strategy frequently hits stop\u2011losses (e.g., E_7BC5FAD542, E_1110B0D7AE, E_96A00CBCB2, E_7D5E381DDA), indicating that the risk\u2011management rules are not effectively protecting capital.  Furthermore, the average profit on winning trades (\u2248\u202f$19\u2013$25) is smaller than the average loss on losing trades (\u2248\u202f$12\u2013$22), implying a negative expectancy.  These counter\u2011examples directly contradict any claim that BTC_V3_A is a consistently profitable or risk\u2011controlled strategy."
+        ]
+      },
+      {
         "proposal_id": 271,
         "utc": "2026-09-08T11:22:20.328872Z",
         "stage": "verifier",
@@ -2425,17 +2435,25 @@
           "TRAINING_WEAK_EXPECTANCY",
           "LOW_PROFIT_FACTOR"
         ]
-      },
-      {
-        "proposal_id": 257,
-        "utc": "2026-09-08T09:40:01.526682Z",
-        "stage": "critic",
-        "decision": "NO_FATAL_OBJECTION",
-        "family": null,
-        "reasons": []
       }
     ],
     "research": [
+      {
+        "utc": "2026-09-08T11:33:34.796830Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-08T11:33:07.086720Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 272,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
       {
         "utc": "2026-09-08T11:21:33.907145Z",
         "role": "critic",
@@ -2659,22 +2677,6 @@
         "outcome": null,
         "proposal_id": 258,
         "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-08T09:40:01.526682Z",
-        "role": "critic",
-        "family": null,
-        "outcome": null,
-        "proposal_id": null,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-08T09:39:23.508960Z",
-        "role": "analyst",
-        "family": null,
-        "outcome": null,
-        "proposal_id": 257,
-        "model": "v3a-frontier-gpt-oss:20b"
       }
     ]
   },
@@ -2682,12 +2684,12 @@
     "recent": [
       {
         "entry_utc": "2026-09-08T11:14:57.039000Z",
-        "exit_utc": null,
+        "exit_utc": "2026-09-08T11:23:14.399000Z",
         "side": "SELL",
         "family": "POST_BREAK_REENTRY",
-        "result": "FLAT",
-        "profit": 0.0,
-        "reason": "OPEN"
+        "result": "LOSS",
+        "profit": -40.88,
+        "reason": "4"
       },
       {
         "entry_utc": "2026-09-08T09:43:55.718000Z",
@@ -2954,9 +2956,9 @@
     "summary": {
       "trades": 30,
       "wins": 10,
-      "losses": 18,
-      "win_rate": 35.7,
-      "net_profit": -54.63
+      "losses": 19,
+      "win_rate": 34.5,
+      "net_profit": -95.51
     }
   },
   "health": [
@@ -2993,7 +2995,7 @@
     {
       "name": "Hourly research",
       "state": "GREEN",
-      "age_seconds": 1972.4,
+      "age_seconds": 2952.4,
       "detail": "FRESH"
     },
     {
@@ -3005,8 +3007,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 3.8,
-      "detail": "BUSY_AGGRESSIVE_LEARNING"
+      "age_seconds": 14.6,
+      "detail": "BUSY_DIRECTED_RESEARCH"
     }
   ]
 }
