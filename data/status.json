@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T15:41:25.344664+00:00",
+  "generated_utc": "2026-09-08T15:53:52.969894+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,56 +295,52 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.020000000004075,
-    "updated_utc": "2026-09-08T15:41:19.244326Z",
+    "spread": 17.04999999998836,
+    "updated_utc": "2026-09-08T15:53:49.457060Z",
     "zones": {
       "demand": {
-        "state": "TESTED",
-        "age_min": 101.321,
-        "last_touch_age_min": 99.321,
-        "touch_bars": 1,
-        "touch_episodes": 1,
+        "state": "WEAKENED",
+        "age_min": 23.824,
+        "last_touch_age_min": 20.824,
+        "touch_bars": 3,
+        "touch_episodes": 2,
         "broken": false
       },
       "supply": {
-        "state": "WEAKENED",
-        "age_min": 21.321,
-        "last_touch_age_min": 0.321,
-        "touch_bars": 6,
+        "state": "BROKEN",
+        "age_min": 33.824,
+        "last_touch_age_min": 6.824,
+        "touch_bars": 12,
         "touch_episodes": 3,
-        "broken": false
+        "broken": true
       }
     },
     "ten_minute_context": {
       "demand": {
-        "high": 77884.0,
-        "low": 77620.01,
-        "state": "TESTED"
-      },
-      "supply": {
-        "high": 78708.08,
-        "low": 78618.01,
+        "high": 78465.0,
+        "low": 78451.39,
         "state": "WEAKENED"
-      }
+      },
+      "supply": null
     },
     "order_book": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 1.313453,
-      "pressure_1s": 1.554967,
-      "pressure_3s": 1.44468
+      "pressure_now": 0.485282,
+      "pressure_1s": 0.052886,
+      "pressure_3s": -0.039114
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 1.54842,
-      "flow_1m": 1.038739,
-      "flow_3m": 0.128414,
-      "flow_5m": 0.042387,
-      "accel_30s_vs_3m": 1.420006,
-      "accel_1m_vs_5m": 0.996352
+      "flow_30s": 0.869578,
+      "flow_1m": 0.628418,
+      "flow_3m": 0.577683,
+      "flow_5m": 0.614711,
+      "accel_30s_vs_3m": 0.291895,
+      "accel_1m_vs_5m": 0.013707
     },
     "open_interest": {
       "ready": true,
@@ -358,7 +354,7 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
+    "research_phase": "BUSY_HOURLY_RESEARCH",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "RANGE_ROTATION",
     "last_directed_outcome": "REJECTED",
@@ -367,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 194.107473,
-    "mt5_sync_age_seconds": 194.107473,
-    "watchdog_age_seconds": 1355.13143
+    "collector_age_seconds": 941.65882,
+    "mt5_sync_age_seconds": 941.65882,
+    "watchdog_age_seconds": 2102.682777
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2450,6 +2446,14 @@
     ],
     "research": [
       {
+        "utc": "2026-09-08T15:53:27.259535Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 302,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
         "utc": "2026-09-08T15:36:58.645382Z",
         "role": "critic",
         "family": null,
@@ -2679,14 +2683,6 @@
         "family": null,
         "outcome": null,
         "proposal_id": null,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-08T13:19:34.057932Z",
-        "role": "analyst",
-        "family": null,
-        "outcome": null,
-        "proposal_id": 287,
         "model": "v3a-frontier-gpt-oss:20b"
       }
     ]
@@ -3018,8 +3014,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 24.9,
-      "detail": "BUSY_AGGRESSIVE_LEARNING"
+      "age_seconds": 25.6,
+      "detail": "BUSY_HOURLY_RESEARCH"
     }
   ]
 }
