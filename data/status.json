@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T21:10:50.155380+00:00",
+  "generated_utc": "2026-09-08T21:16:03.737079+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,22 +295,22 @@
     "trigger": "BUY",
     "trigger_kind": "BOS",
     "quote_age_ms": 0.0,
-    "spread": 16.970000000001164,
-    "updated_utc": "2026-09-08T21:10:46.582002Z",
+    "spread": 16.989999999990687,
+    "updated_utc": "2026-09-08T21:15:56.557870Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 30.776,
-        "last_touch_age_min": 4.776,
+        "age_min": 35.943,
+        "last_touch_age_min": 9.943,
         "touch_bars": 25,
         "touch_episodes": 3,
         "broken": false
       },
       "supply": {
         "state": "WEAKENED",
-        "age_min": 50.776,
-        "last_touch_age_min": 0.776,
-        "touch_bars": 30,
+        "age_min": 55.943,
+        "last_touch_age_min": 0.943,
+        "touch_bars": 35,
         "touch_episodes": 7,
         "broken": false
       }
@@ -331,25 +331,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 0.369875,
-      "pressure_1s": -0.149365,
-      "pressure_3s": 0.580197
+      "pressure_now": 0.035251,
+      "pressure_1s": -0.021001,
+      "pressure_3s": -0.022468
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 2.5,
-      "flow_1m": 2.5,
-      "flow_3m": 1.008074,
-      "flow_5m": 0.276523,
-      "accel_30s_vs_3m": 1.491926,
-      "accel_1m_vs_5m": 2.223477
+      "flow_30s": 1.460263,
+      "flow_1m": 1.420202,
+      "flow_3m": 0.103418,
+      "flow_5m": -0.534465,
+      "accel_30s_vs_3m": 1.356845,
+      "accel_1m_vs_5m": 1.954667
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": 0.0006
     }
   },
   "research": {
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 654.575495,
-    "mt5_sync_age_seconds": 745.867961,
-    "watchdog_age_seconds": 654.575495
+    "collector_age_seconds": 947.883492,
+    "mt5_sync_age_seconds": 947.883492,
+    "watchdog_age_seconds": 968.207512
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2097,6 +2097,14 @@
   "history": {
     "verifier": [
       {
+        "proposal_id": 320,
+        "utc": "2026-09-08T21:15:42.055906Z",
+        "stage": "critic",
+        "decision": "NO_FATAL_OBJECTION",
+        "family": null,
+        "reasons": []
+      },
+      {
         "proposal_id": 319,
         "utc": "2026-09-08T19:10:12.942213Z",
         "stage": "verifier",
@@ -2432,17 +2440,25 @@
           "TRAINING_WEAK_EXPECTANCY",
           "LOW_PROFIT_FACTOR"
         ]
-      },
-      {
-        "proposal_id": 305,
-        "utc": "2026-09-08T16:13:54.729573Z",
-        "stage": "critic",
-        "decision": "NO_FATAL_OBJECTION",
-        "family": null,
-        "reasons": []
       }
     ],
     "research": [
+      {
+        "utc": "2026-09-08T21:15:42.062671Z",
+        "role": "critic",
+        "family": null,
+        "outcome": null,
+        "proposal_id": null,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
+      {
+        "utc": "2026-09-08T21:14:55.555560Z",
+        "role": "analyst",
+        "family": null,
+        "outcome": null,
+        "proposal_id": 320,
+        "model": "v3a-frontier-gpt-oss:20b"
+      },
       {
         "utc": "2026-09-08T19:09:22.302712Z",
         "role": "critic",
@@ -2665,22 +2681,6 @@
         "family": null,
         "outcome": null,
         "proposal_id": 306,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-08T16:13:54.729573Z",
-        "role": "critic",
-        "family": null,
-        "outcome": null,
-        "proposal_id": null,
-        "model": "v3a-frontier-gpt-oss:20b"
-      },
-      {
-        "utc": "2026-09-08T16:13:10.730129Z",
-        "role": "analyst",
-        "family": null,
-        "outcome": null,
-        "proposal_id": 305,
         "model": "v3a-frontier-gpt-oss:20b"
       }
     ]
@@ -3012,7 +3012,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 5.2,
+      "age_seconds": 18.1,
       "detail": "BUSY_HOURLY_RESEARCH"
     }
   ]
