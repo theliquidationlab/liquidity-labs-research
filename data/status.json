@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T21:52:30.174071+00:00",
+  "generated_utc": "2026-09-08T21:57:41.344612+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,21 +295,21 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.960000000006403,
-    "updated_utc": "2026-09-08T21:52:21.641094Z",
+    "spread": 17.119999999995343,
+    "updated_utc": "2026-09-08T21:57:35.635391Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 42.361,
-        "last_touch_age_min": 2.361,
+        "age_min": 47.594,
+        "last_touch_age_min": 7.594,
         "touch_bars": 7,
         "touch_episodes": 4,
         "broken": true
       },
       "supply": {
         "state": "WEAKENED",
-        "age_min": 22.361,
-        "last_touch_age_min": 8.361,
+        "age_min": 27.594,
+        "last_touch_age_min": 13.594,
         "touch_bars": 5,
         "touch_episodes": 2,
         "broken": false
@@ -327,31 +327,31 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 0.783346,
-      "pressure_1s": 0.784806,
-      "pressure_3s": 0.801978
+      "pressure_now": 1.373822,
+      "pressure_1s": 1.408044,
+      "pressure_3s": 1.49252
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 1.138292,
-      "flow_1m": 1.192686,
-      "flow_3m": -0.191689,
-      "flow_5m": 0.030552,
-      "accel_30s_vs_3m": 1.329981,
-      "accel_1m_vs_5m": 1.162134
+      "flow_30s": -2.152963,
+      "flow_1m": -1.422401,
+      "flow_3m": -0.530946,
+      "flow_5m": -0.572332,
+      "accel_30s_vs_3m": -1.622017,
+      "accel_1m_vs_5m": -0.850069
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0012
+      "change_pct": -0.0034
     }
   },
   "research": {
     "model": "v3a-frontier-gpt-oss:20b",
     "model_degraded": false,
-    "model_state": "PREFERRED_MODEL_RESIDENT",
+    "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
     "research_phase": "IDLE",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 46.958326,
-    "mt5_sync_age_seconds": 107.818592,
-    "watchdog_age_seconds": 46.958326
+    "collector_age_seconds": 59.294869,
+    "mt5_sync_age_seconds": 99.333983,
+    "watchdog_age_seconds": 59.294869
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2976,7 +2976,7 @@
     {
       "name": "MT5 sync",
       "state": "GREEN",
-      "age_seconds": 52.0,
+      "age_seconds": 40.0,
       "detail": "FRESH"
     },
     {
@@ -2988,7 +2988,7 @@
     {
       "name": "Hourly research",
       "state": "GREEN",
-      "age_seconds": 2109.2,
+      "age_seconds": 2408.0,
       "detail": "FRESH"
     },
     {
@@ -3000,7 +3000,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 6.3,
+      "age_seconds": 9.5,
       "detail": "IDLE"
     }
   ]
