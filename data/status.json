@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T22:25:54.626016+00:00",
+  "generated_utc": "2026-09-08T22:31:26.231383+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,33 +286,33 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "NO_5M_DIRECTION",
-    "signal_ready": false,
-    "side": "NEUTRAL",
-    "path": "NONE",
-    "reason": "NO_5M_DIRECTION",
+    "decision": "OPPOSITE_TAKER_PRESSURE",
+    "signal_ready": true,
+    "side": "SELL",
+    "path": "REVERSAL",
+    "reason": "REVERSAL_ENTRY_READY",
     "five_minute_phase": "RANGE",
-    "trigger": "NEUTRAL",
-    "trigger_kind": "NONE",
+    "trigger": "SELL",
+    "trigger_kind": "BOS",
     "quote_age_ms": 0.0,
-    "spread": 17.05999999999767,
-    "updated_utc": "2026-09-08T22:25:49.722422Z",
+    "spread": 17.080000000001746,
+    "updated_utc": "2026-09-08T22:31:22.987898Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 25.829,
-        "last_touch_age_min": 5.829,
-        "touch_bars": 13,
-        "touch_episodes": 3,
+        "age_min": 31.383,
+        "last_touch_age_min": 0.383,
+        "touch_bars": 15,
+        "touch_episodes": 4,
         "broken": false
       },
       "supply": {
-        "state": "BROKEN",
-        "age_min": 55.829,
-        "last_touch_age_min": 0.829,
+        "state": "WEAKENED",
+        "age_min": 21.383,
+        "last_touch_age_min": 1.383,
         "touch_bars": 17,
-        "touch_episodes": 4,
-        "broken": true
+        "touch_episodes": 3,
+        "broken": false
       }
     },
     "ten_minute_context": {
@@ -321,31 +321,35 @@
         "low": 78406.0,
         "state": "WEAKENED"
       },
-      "supply": null
+      "supply": {
+        "high": 78662.75,
+        "low": 78492.19,
+        "state": "WEAKENED"
+      }
     },
     "order_book": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.623166,
-      "pressure_1s": -0.628221,
-      "pressure_3s": -0.627594
+      "pressure_now": 1.320006,
+      "pressure_1s": 1.545922,
+      "pressure_3s": 1.611096
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -2.5,
-      "flow_1m": -2.5,
-      "flow_3m": 0.106154,
-      "flow_5m": 0.074916,
-      "accel_30s_vs_3m": -2.606154,
-      "accel_1m_vs_5m": -2.574916
+      "flow_30s": 1.01765,
+      "flow_1m": 0.618058,
+      "flow_3m": -0.270012,
+      "flow_5m": -0.690076,
+      "accel_30s_vs_3m": 1.287662,
+      "accel_1m_vs_5m": 1.308134
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": -0.0013
     }
   },
   "research": {
@@ -354,7 +358,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "IDLE",
+    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CLEAN_CONTINUATION",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "OK",
-    "collector_age_seconds": 59.837368,
-    "mt5_sync_age_seconds": 8.710257,
-    "watchdog_age_seconds": 59.837368
+    "collector_age_seconds": 85.130553,
+    "mt5_sync_age_seconds": 340.295852,
+    "watchdog_age_seconds": 85.130553
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2976,7 +2980,7 @@
     {
       "name": "MT5 sync",
       "state": "GREEN",
-      "age_seconds": 253.6,
+      "age_seconds": 255.2,
       "detail": "FRESH"
     },
     {
@@ -2988,7 +2992,7 @@
     {
       "name": "Hourly research",
       "state": "AMBER",
-      "age_seconds": 4100.8,
+      "age_seconds": 4407.1,
       "detail": "FRESH"
     },
     {
@@ -3000,8 +3004,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 8.8,
-      "detail": "IDLE"
+      "age_seconds": 14.1,
+      "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
 }
