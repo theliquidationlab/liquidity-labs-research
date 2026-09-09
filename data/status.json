@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-09T04:20:09.164768+00:00",
+  "generated_utc": "2026-09-09T04:26:11.881957+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,7 +286,7 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "OWNED_POSITION_EXISTS",
+    "decision": "SMART_ARM_WAIT",
     "signal_ready": false,
     "side": "BUY",
     "path": "NONE",
@@ -295,23 +295,23 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.95000000001164,
-    "updated_utc": "2026-09-09T04:20:03.291474Z",
+    "spread": 17.070000000006985,
+    "updated_utc": "2026-09-09T04:26:07.882746Z",
     "zones": {
       "demand": {
         "state": "TESTED",
-        "age_min": 50.055,
-        "last_touch_age_min": 50.055,
+        "age_min": 56.131,
+        "last_touch_age_min": 56.131,
         "touch_bars": 1,
         "touch_episodes": 1,
         "broken": false
       },
       "supply": {
-        "state": "TESTED",
-        "age_min": 120.055,
-        "last_touch_age_min": 14.055,
-        "touch_bars": 4,
-        "touch_episodes": 1,
+        "state": "WEAKENED",
+        "age_min": 126.131,
+        "last_touch_age_min": 0.131,
+        "touch_bars": 7,
+        "touch_episodes": 2,
         "broken": false
       }
     },
@@ -324,32 +324,32 @@
       "supply": {
         "high": 78928.65,
         "low": 78908.0,
-        "state": "TESTED"
+        "state": "WEAKENED"
       }
     },
     "order_book": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -1.517101,
-      "pressure_1s": -1.510605,
-      "pressure_3s": -1.512241
+      "pressure_now": -0.438981,
+      "pressure_1s": -0.610511,
+      "pressure_3s": -0.596463
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -1.757405,
-      "flow_1m": -1.65618,
-      "flow_3m": 0.323162,
-      "flow_5m": 0.114681,
-      "accel_30s_vs_3m": -2.080567,
-      "accel_1m_vs_5m": -1.770861
+      "flow_30s": -0.199045,
+      "flow_1m": -0.27119,
+      "flow_3m": -0.056089,
+      "flow_5m": -0.194712,
+      "accel_30s_vs_3m": -0.142956,
+      "accel_1m_vs_5m": -0.076478
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0003
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -358,7 +358,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_SEQUENCE_DISCOVERY",
+    "research_phase": "BUSY_HOURLY_RESEARCH",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "NON_SIGNAL",
     "last_directed_outcome": "REJECTED",
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 1451.854369,
-    "mt5_sync_age_seconds": 1451.854369,
-    "watchdog_age_seconds": 12051.270802
+    "collector_age_seconds": 1814.591678,
+    "mt5_sync_age_seconds": 1814.591678,
+    "watchdog_age_seconds": 12414.008111
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2673,6 +2673,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-09T04:07:29.148000Z",
+        "exit_utc": "2026-09-09T04:22:41.912000Z",
+        "side": "SELL",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -13.57,
+        "reason": "4"
+      },
+      {
         "entry_utc": "2026-09-09T01:38:07.304000Z",
         "exit_utc": "2026-09-09T02:17:22.995000Z",
         "side": "BUY",
@@ -2932,23 +2941,14 @@
         "result": "WIN",
         "profit": 22.32,
         "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-05T23:14:58.149000Z",
-        "exit_utc": "2026-09-05T23:45:52.517000Z",
-        "side": "BUY",
-        "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "WIN",
-        "profit": 9.58,
-        "reason": "5"
       }
     ],
     "summary": {
       "trades": 30,
-      "wins": 11,
-      "losses": 17,
-      "win_rate": 39.3,
-      "net_profit": -142.86
+      "wins": 10,
+      "losses": 18,
+      "win_rate": 35.7,
+      "net_profit": -166.01
     }
   },
   "health": [
@@ -2997,8 +2997,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 15.2,
-      "detail": "BUSY_SEQUENCE_DISCOVERY"
+      "age_seconds": 14.3,
+      "detail": "BUSY_HOURLY_RESEARCH"
     }
   ]
 }
