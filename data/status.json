@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-09T15:51:58.405728+00:00",
+  "generated_utc": "2026-09-09T15:57:24.172926+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,20 +295,20 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.969999999986612,
-    "updated_utc": "2026-09-09T15:51:51.694033Z",
+    "spread": 17.0,
+    "updated_utc": "2026-09-09T15:57:18.259267Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 21.862,
-        "last_touch_age_min": 19.862,
+        "age_min": 27.304,
+        "last_touch_age_min": 25.304,
         "touch_bars": 2,
         "touch_episodes": 2,
         "broken": false
       },
       "supply": {
         "state": "FRESH",
-        "age_min": 41.862,
+        "age_min": 47.304,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
@@ -331,20 +331,20 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 0.013234,
-      "pressure_1s": -1.169199,
-      "pressure_3s": -0.656907
+      "pressure_now": -1.670031,
+      "pressure_1s": 1.036706,
+      "pressure_3s": 0.858105
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.246255,
-      "flow_1m": 0.312668,
-      "flow_3m": -0.048035,
-      "flow_5m": -0.328064,
-      "accel_30s_vs_3m": 0.29429,
-      "accel_1m_vs_5m": 0.640732
+      "flow_30s": 0.976619,
+      "flow_1m": -0.139051,
+      "flow_3m": 0.496068,
+      "flow_5m": 0.26672,
+      "accel_30s_vs_3m": 0.480551,
+      "accel_1m_vs_5m": -0.405771
     },
     "open_interest": {
       "ready": true,
@@ -360,16 +360,16 @@
     "supervisor_status": "OK",
     "research_phase": "STARTING",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
-    "last_directed_family": "RANGE_ROTATION_MICRO_ORB",
+    "last_directed_family": "NON_SIGNAL",
     "last_directed_outcome": "REJECTED",
-    "directed_runs": 298,
+    "directed_runs": 299,
     "hourly_runs": 64,
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 3154.524151,
-    "mt5_sync_age_seconds": 3154.524151,
-    "watchdog_age_seconds": 53560.474869
+    "collector_age_seconds": 3480.328934,
+    "mt5_sync_age_seconds": 3480.328934,
+    "watchdog_age_seconds": 53886.279652
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2098,6 +2098,21 @@
     "verifier": [
       {
         "proposal_id": 346,
+        "utc": "2026-09-09T15:52:08.623119Z",
+        "stage": "verifier",
+        "decision": "FAIL",
+        "family": "NON_SIGNAL",
+        "reasons": [
+          "INSUFFICIENT_WALK_FORWARD_SAMPLE",
+          "LONG_TERM_LOW_PROFIT_FACTOR",
+          "LONG_TERM_WEAK_EXPECTANCY",
+          "TRAINING_LOW_PROFIT_FACTOR",
+          "TRAINING_WEAK_EXPECTANCY",
+          "INSUFFICIENT_VALIDATION_SAMPLE"
+        ]
+      },
+      {
+        "proposal_id": 346,
         "utc": "2026-09-09T15:51:10.767073Z",
         "stage": "critic",
         "decision": "NO_FATAL_OBJECTION",
@@ -2425,21 +2440,6 @@
         "decision": "NO_FATAL_OBJECTION",
         "family": null,
         "reasons": []
-      },
-      {
-        "proposal_id": 331,
-        "utc": "2026-09-09T15:08:17.970100Z",
-        "stage": "verifier",
-        "decision": "FAIL",
-        "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
-        "reasons": [
-          "WALK_FORWARD_INSTABILITY",
-          "LONG_TERM_LOW_PROFIT_FACTOR",
-          "LONG_TERM_WEAK_EXPECTANCY",
-          "TRAINING_LOW_PROFIT_FACTOR",
-          "TRAINING_WEAK_EXPECTANCY",
-          "LOW_PROFIT_FACTOR"
-        ]
       }
     ],
     "research": [
@@ -3011,8 +3011,8 @@
     },
     {
       "name": "Research supervisor",
-      "state": "GREEN",
-      "age_seconds": 2.9,
+      "state": "RED",
+      "age_seconds": 268.3,
       "detail": "STARTING"
     }
   ]
