@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-09T00:49:24.454610+00:00",
+  "generated_utc": "2026-09-09T00:54:35.158743+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,21 +286,21 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "NO_5M_DIRECTION",
+    "decision": "OWNED_POSITION_EXISTS",
     "signal_ready": false,
-    "side": "NEUTRAL",
+    "side": "BUY",
     "path": "NONE",
-    "reason": "NO_5M_DIRECTION",
-    "five_minute_phase": "RANGE",
+    "reason": "WAIT_1M_BOS",
+    "five_minute_phase": "BULLISH_PULLBACK",
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.110000000000582,
-    "updated_utc": "2026-09-09T00:49:19.491823Z",
+    "spread": 16.94999999999709,
+    "updated_utc": "2026-09-09T00:54:30.670177Z",
     "zones": {
       "demand": {
         "state": "FRESH",
-        "age_min": 49.325,
+        "age_min": 54.511,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
@@ -308,8 +308,8 @@
       },
       "supply": {
         "state": "BROKEN",
-        "age_min": 109.325,
-        "last_touch_age_min": 12.325,
+        "age_min": 114.511,
+        "last_touch_age_min": 17.511,
         "touch_bars": 8,
         "touch_episodes": 3,
         "broken": true
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.303016,
-      "pressure_1s": -2.5,
-      "pressure_3s": -2.5
+      "pressure_now": 2.5,
+      "pressure_1s": 1.103036,
+      "pressure_3s": 1.092941
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -2.5,
-      "flow_1m": -0.612446,
-      "flow_3m": 0.031628,
-      "flow_5m": 0.412549,
-      "accel_30s_vs_3m": -2.531628,
-      "accel_1m_vs_5m": -1.024995
+      "flow_30s": -1.984632,
+      "flow_1m": 0.278197,
+      "flow_3m": -0.258526,
+      "flow_5m": 0.231262,
+      "accel_30s_vs_3m": -1.726106,
+      "accel_1m_vs_5m": 0.046935
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": 0.0001
     }
   },
   "research": {
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 13.504182,
-    "mt5_sync_age_seconds": 13.504182,
-    "watchdog_age_seconds": 13.504182
+    "collector_age_seconds": 37.712091,
+    "mt5_sync_age_seconds": 18.036041,
+    "watchdog_age_seconds": 37.712091
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2676,6 +2676,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-09T00:49:53.710000Z",
+        "exit_utc": null,
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "FLAT",
+        "profit": 0.0,
+        "reason": "OPEN"
+      },
+      {
         "entry_utc": "2026-09-09T00:06:39.287000Z",
         "exit_utc": "2026-09-09T00:31:18.990000Z",
         "side": "BUY",
@@ -2935,23 +2944,14 @@
         "result": "LOSS",
         "profit": -9.09,
         "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-05T14:36:40.240000Z",
-        "exit_utc": "2026-09-05T15:05:59.947000Z",
-        "side": "SELL",
-        "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "LOSS",
-        "profit": -5.12,
-        "reason": "4"
       }
     ],
     "summary": {
       "trades": 30,
       "wins": 11,
-      "losses": 17,
-      "win_rate": 39.3,
-      "net_profit": -93.65
+      "losses": 16,
+      "win_rate": 40.7,
+      "net_profit": -88.53
     }
   },
   "health": [
@@ -2976,7 +2976,7 @@
     {
       "name": "MT5 sync",
       "state": "GREEN",
-      "age_seconds": 0.0,
+      "age_seconds": 277.6,
       "detail": "FRESH"
     },
     {
@@ -2988,7 +2988,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 6189.1,
+      "age_seconds": 6475.6,
       "detail": "STALE"
     },
     {
@@ -3000,7 +3000,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 3.1,
+      "age_seconds": 8.0,
       "detail": "IDLE"
     }
   ]
