@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-09T16:02:38.222474+00:00",
+  "generated_utc": "2026-09-09T16:07:47.197396+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,29 +286,29 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "WAIT_1M_BOS",
-    "signal_ready": false,
-    "side": "BUY",
-    "path": "NONE",
-    "reason": "WAIT_1M_BOS",
-    "five_minute_phase": "BULLISH_PULLBACK",
-    "trigger": "NEUTRAL",
-    "trigger_kind": "NONE",
+    "decision": "OWNED_POSITION_EXISTS",
+    "signal_ready": true,
+    "side": "SELL",
+    "path": "CONTINUATION",
+    "reason": "RANGE_ROTATION_READY",
+    "five_minute_phase": "RANGE",
+    "trigger": "SELL",
+    "trigger_kind": "BOS",
     "quote_age_ms": 0.0,
-    "spread": 17.060000000012224,
-    "updated_utc": "2026-09-09T16:02:32.688304Z",
+    "spread": 17.09000000001106,
+    "updated_utc": "2026-09-09T16:07:38.904334Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 32.545,
-        "last_touch_age_min": 30.545,
+        "age_min": 37.648,
+        "last_touch_age_min": 35.648,
         "touch_bars": 2,
         "touch_episodes": 2,
         "broken": false
       },
       "supply": {
         "state": "FRESH",
-        "age_min": 52.545,
+        "age_min": 57.648,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
@@ -331,25 +331,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 2.5,
-      "pressure_1s": 1.309974,
-      "pressure_3s": 1.472342
+      "pressure_now": 1.220377,
+      "pressure_1s": -0.551212,
+      "pressure_3s": -0.527077
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -0.37676,
-      "flow_1m": -0.104327,
-      "flow_3m": -0.00123,
-      "flow_5m": -0.54208,
-      "accel_30s_vs_3m": -0.37553,
-      "accel_1m_vs_5m": 0.437753
+      "flow_30s": -0.698974,
+      "flow_1m": -0.494376,
+      "flow_3m": -0.449703,
+      "flow_5m": -0.449703,
+      "accel_30s_vs_3m": -0.249271,
+      "accel_1m_vs_5m": -0.044673
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0045
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 3794.360321,
-    "mt5_sync_age_seconds": 3794.360321,
-    "watchdog_age_seconds": 54200.311039
+    "collector_age_seconds": 4103.375915,
+    "mt5_sync_age_seconds": 4103.375915,
+    "watchdog_age_seconds": 54509.326633
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2055,45 +2055,7 @@
       }
     ]
   },
-  "promotions": [
-    {
-      "proposal_id": 105,
-      "family": "BROKEN_ZONE_MOMENTUM_CONTINUATION",
-      "tier": "DEMO_CANARY",
-      "status": "DEMOTED",
-      "promoted_utc": "2026-09-07T02:47:04.917474Z",
-      "demoted_utc": "2026-09-07T03:19:16.134852Z",
-      "verifier_decision": "CANARY_PASS",
-      "verifier_status": "DEMO_CANARY_READY",
-      "matched_resolved": 9,
-      "profit_factor_r": 10.8,
-      "expectancy_r": 1.0889,
-      "opportunities_per_hour": 0.4009,
-      "health_decision": "POLICY_DEMOTED",
-      "new_resolved": 0,
-      "demotion_reasons": [
-        "POLICY_FULL_VALIDATION_REQUIRED"
-      ],
-      "rule": [
-        {
-          "field": "max_accel_1m_vs_5m",
-          "value": -0.492869
-        },
-        {
-          "field": "max_far_dist_atr",
-          "value": 4.844068
-        },
-        {
-          "field": "min_opp_bos15",
-          "value": 2.0
-        },
-        {
-          "field": "min_pullback5_atr",
-          "value": 0.506852
-        }
-      ]
-    }
-  ],
+  "promotions": [],
   "history": {
     "verifier": [
       {
@@ -3011,8 +2973,8 @@
     },
     {
       "name": "Research supervisor",
-      "state": "AMBER",
-      "age_seconds": 90.2,
+      "state": "RED",
+      "age_seconds": 399.3,
       "detail": "STARTING"
     }
   ]
