@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-10T18:47:52.151764+00:00",
+  "generated_utc": "2026-09-10T18:53:06.755851+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,12 +295,12 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.039999999993597,
-    "updated_utc": "2026-09-10T18:47:46.771654Z",
+    "spread": 17.080000000001746,
+    "updated_utc": "2026-09-10T18:52:57.582187Z",
     "zones": {
       "demand": {
         "state": "FRESH",
-        "age_min": 27.78,
+        "age_min": 32.96,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
@@ -308,8 +308,8 @@
       },
       "supply": {
         "state": "WEAKENED",
-        "age_min": 67.78,
-        "last_touch_age_min": 50.78,
+        "age_min": 72.96,
+        "last_touch_age_min": 55.96,
         "touch_bars": 14,
         "touch_episodes": 3,
         "broken": false
@@ -331,20 +331,20 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -2.5,
-      "pressure_1s": 1.033844,
-      "pressure_3s": 0.940552
+      "pressure_now": -0.983932,
+      "pressure_1s": -0.716272,
+      "pressure_3s": -0.669892
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.144657,
-      "flow_1m": 0.080217,
-      "flow_3m": 0.286561,
-      "flow_5m": 0.594498,
-      "accel_30s_vs_3m": -0.141904,
-      "accel_1m_vs_5m": -0.514281
+      "flow_30s": 1.770573,
+      "flow_1m": 1.20582,
+      "flow_3m": 1.036796,
+      "flow_5m": 1.04462,
+      "accel_30s_vs_3m": 0.733777,
+      "accel_1m_vs_5m": 0.1612
     },
     "open_interest": {
       "ready": true,
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 60327.307989,
-    "mt5_sync_age_seconds": 60327.307989,
-    "watchdog_age_seconds": 60923.094771
+    "collector_age_seconds": 60641.871258,
+    "mt5_sync_age_seconds": 60641.871258,
+    "watchdog_age_seconds": 61237.65804
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2974,7 +2974,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 29.8,
+      "age_seconds": 12.7,
       "detail": "BUSY_SEQUENCE_DISCOVERY"
     }
   ]
