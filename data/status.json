@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-10T00:13:02.691346+00:00",
+  "generated_utc": "2026-09-10T00:18:10.274569+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,22 +295,22 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.09999999999127,
-    "updated_utc": "2026-09-10T00:12:55.924077Z",
+    "spread": 16.95000000001164,
+    "updated_utc": "2026-09-10T00:18:05.726851Z",
     "zones": {
       "demand": {
         "state": "TESTED",
-        "age_min": 72.932,
-        "last_touch_age_min": 72.932,
+        "age_min": 78.095,
+        "last_touch_age_min": 78.095,
         "touch_bars": 1,
         "touch_episodes": 1,
         "broken": false
       },
       "supply": {
         "state": "BROKEN",
-        "age_min": 182.932,
-        "last_touch_age_min": 0.932,
-        "touch_bars": 9,
+        "age_min": 188.095,
+        "last_touch_age_min": 5.095,
+        "touch_bars": 10,
         "touch_episodes": 3,
         "broken": true
       }
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.146443,
-      "pressure_1s": 0.167053,
-      "pressure_3s": -0.062325
+      "pressure_now": 2.5,
+      "pressure_1s": 2.5,
+      "pressure_3s": 2.5
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 1.616154,
-      "flow_1m": 1.145169,
-      "flow_3m": 0.929988,
-      "flow_5m": 0.935246,
-      "accel_30s_vs_3m": 0.686166,
-      "accel_1m_vs_5m": 0.209923
+      "flow_30s": 1.078843,
+      "flow_1m": 0.601774,
+      "flow_3m": -0.141268,
+      "flow_5m": 0.519665,
+      "accel_30s_vs_3m": 1.220111,
+      "accel_1m_vs_5m": 0.082109
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0167
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 1036.674655,
-    "mt5_sync_age_seconds": 1036.674655,
-    "watchdog_age_seconds": 1858.104351
+    "collector_age_seconds": 155.10808,
+    "mt5_sync_age_seconds": 155.10808,
+    "watchdog_age_seconds": 1344.227859
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2646,6 +2646,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-10T00:02:42.260000Z",
+        "exit_utc": null,
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "FLAT",
+        "profit": 0.0,
+        "reason": "OPEN"
+      },
+      {
         "entry_utc": "2026-09-09T23:02:46.953000Z",
         "exit_utc": "2026-09-09T23:33:01.489000Z",
         "side": "BUY",
@@ -2905,23 +2914,14 @@
         "result": "LOSS",
         "profit": -44.25,
         "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T00:49:53.710000Z",
-        "exit_utc": "2026-09-09T01:16:08.418000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -19.17,
-        "reason": "4"
       }
     ],
     "summary": {
       "trades": 30,
       "wins": 16,
-      "losses": 12,
-      "win_rate": 57.1,
-      "net_profit": 285.63
+      "losses": 11,
+      "win_rate": 59.3,
+      "net_profit": 304.8
     }
   },
   "health": [
@@ -2958,7 +2958,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 30826.7,
+      "age_seconds": 31648.1,
       "detail": "STALE"
     },
     {
@@ -2970,7 +2970,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 28.2,
+      "age_seconds": 20.1,
       "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
