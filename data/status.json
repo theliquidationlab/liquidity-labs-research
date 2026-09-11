@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T09:10:14.907002+00:00",
+  "generated_utc": "2026-09-11T09:15:23.878833+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,21 +286,21 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "OWNED_POSITION_EXISTS",
+    "decision": "WAIT_5M_PULLBACK",
     "signal_ready": false,
-    "side": "NEUTRAL",
+    "side": "SELL",
     "path": "NONE",
-    "reason": "WAIT_RANGE_1M_BOS",
-    "five_minute_phase": "RANGE",
+    "reason": "WAIT_5M_PULLBACK",
+    "five_minute_phase": "BEARISH_IMPULSE",
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.029999999998836,
-    "updated_utc": "2026-09-11T09:10:06.035070Z",
+    "spread": 17.10000000000582,
+    "updated_utc": "2026-09-11T09:15:16.977417Z",
     "zones": {
       "demand": {
         "state": "FRESH",
-        "age_min": 50.101,
+        "age_min": 55.283,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
@@ -308,8 +308,8 @@
       },
       "supply": {
         "state": "TESTED",
-        "age_min": 30.101,
-        "last_touch_age_min": 22.101,
+        "age_min": 35.283,
+        "last_touch_age_min": 27.283,
         "touch_bars": 9,
         "touch_episodes": 1,
         "broken": false
@@ -331,25 +331,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.108572,
-      "pressure_1s": -0.182598,
-      "pressure_3s": -0.210419
+      "pressure_now": -1.715908,
+      "pressure_1s": -1.751631,
+      "pressure_3s": -1.781501
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -1.589432,
-      "flow_1m": -1.782857,
-      "flow_3m": -1.420233,
-      "flow_5m": -1.437887,
-      "accel_30s_vs_3m": -0.169199,
-      "accel_1m_vs_5m": -0.34497
+      "flow_30s": -1.049716,
+      "flow_1m": -1.146893,
+      "flow_3m": 0.625969,
+      "flow_5m": 0.443503,
+      "accel_30s_vs_3m": -1.675685,
+      "accel_1m_vs_5m": -1.590396
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": -0.0009
     }
   },
   "research": {
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 1681.077883,
-    "mt5_sync_age_seconds": 1681.077883,
-    "watchdog_age_seconds": 3071.904305
+    "collector_age_seconds": 234.714918,
+    "mt5_sync_age_seconds": 234.714918,
+    "watchdog_age_seconds": 1990.071989
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2650,6 +2650,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-11T09:02:40.672000Z",
+        "exit_utc": "2026-09-11T09:10:13.441000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "WIN",
+        "profit": 33.46,
+        "reason": "5"
+      },
+      {
         "entry_utc": "2026-09-11T08:11:39.746000Z",
         "exit_utc": "2026-09-11T08:15:23.909000Z",
         "side": "SELL",
@@ -2909,23 +2918,14 @@
         "result": "LOSS",
         "profit": -49.39,
         "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-10T08:08:49.958000Z",
-        "exit_utc": "2026-09-10T08:13:42.809000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -44.8,
-        "reason": "4"
       }
     ],
     "summary": {
       "trades": 30,
-      "wins": 8,
-      "losses": 20,
-      "win_rate": 28.6,
-      "net_profit": -466.29
+      "wins": 9,
+      "losses": 19,
+      "win_rate": 32.1,
+      "net_profit": -388.03
     }
   },
   "health": [
@@ -2962,7 +2962,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 148245.0,
+      "age_seconds": 149635.9,
       "detail": "STALE"
     },
     {
@@ -2974,7 +2974,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 18.4,
+      "age_seconds": 5.7,
       "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
