@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T16:24:07.168565+00:00",
+  "generated_utc": "2026-09-11T16:29:29.099544+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,30 +286,30 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "OWNED_POSITION_EXISTS",
+    "decision": "WAIT_RANGE_1M_BOS",
     "signal_ready": false,
-    "side": "SELL",
+    "side": "NEUTRAL",
     "path": "NONE",
-    "reason": "WAIT_1M_BOS",
-    "five_minute_phase": "BEARISH_PULLBACK",
+    "reason": "WAIT_RANGE_1M_BOS",
+    "five_minute_phase": "RANGE",
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.020000000004075,
-    "updated_utc": "2026-09-11T16:23:59.039460Z",
+    "spread": 16.960000000006403,
+    "updated_utc": "2026-09-11T16:29:21.993459Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 23.984,
-        "last_touch_age_min": 0.984,
-        "touch_bars": 8,
+        "age_min": 29.367,
+        "last_touch_age_min": 0.367,
+        "touch_bars": 14,
         "touch_episodes": 2,
         "broken": false
       },
       "supply": {
         "state": "TESTED",
-        "age_min": 43.984,
-        "last_touch_age_min": 43.984,
+        "age_min": 49.367,
+        "last_touch_age_min": 49.367,
         "touch_bars": 1,
         "touch_episodes": 1,
         "broken": false
@@ -331,25 +331,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 2.5,
-      "pressure_1s": 0.400357,
-      "pressure_3s": 0.527747
+      "pressure_now": 1.28727,
+      "pressure_1s": 0.429062,
+      "pressure_3s": -0.063499
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.350448,
-      "flow_1m": -0.226258,
-      "flow_3m": 0.292243,
-      "flow_5m": -0.263352,
-      "accel_30s_vs_3m": 0.058205,
-      "accel_1m_vs_5m": 0.037094
+      "flow_30s": 0.160006,
+      "flow_1m": 0.196764,
+      "flow_3m": 0.312508,
+      "flow_5m": 0.446366,
+      "accel_30s_vs_3m": -0.152502,
+      "accel_1m_vs_5m": -0.249602
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0
+      "change_pct": -0.3878
     }
   },
   "research": {
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 15712.112211,
-    "mt5_sync_age_seconds": 15712.112211,
-    "watchdog_age_seconds": 16768.582132
+    "collector_age_seconds": 16034.031583,
+    "mt5_sync_age_seconds": 16034.031583,
+    "watchdog_age_seconds": 17090.501504
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2974,7 +2974,7 @@
     {
       "name": "Research supervisor",
       "state": "RED",
-      "age_seconds": 1340.3,
+      "age_seconds": 1662.7,
       "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
