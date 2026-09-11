@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T10:27:48.402408+00:00",
+  "generated_utc": "2026-09-11T10:32:58.305820+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,32 +286,32 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "OWNED_POSITION_EXISTS",
-    "signal_ready": true,
+    "decision": "10M_DEMAND_TOO_CLOSE",
+    "signal_ready": false,
     "side": "SELL",
-    "path": "CONTINUATION",
-    "reason": "RANGE_ROTATION_READY",
+    "path": "NONE",
+    "reason": "10M_DEMAND_TOO_CLOSE",
     "five_minute_phase": "RANGE",
     "trigger": "SELL",
     "trigger_kind": "BOS",
     "quote_age_ms": 0.0,
-    "spread": 17.05000000000291,
-    "updated_utc": "2026-09-11T10:27:43.698737Z",
+    "spread": 17.039999999993597,
+    "updated_utc": "2026-09-11T10:32:55.000819Z",
     "zones": {
       "demand": {
         "state": "FRESH",
-        "age_min": 37.728,
+        "age_min": 42.917,
         "last_touch_age_min": null,
         "touch_bars": 0,
         "touch_episodes": 0,
         "broken": false
       },
       "supply": {
-        "state": "TESTED",
-        "age_min": 107.728,
-        "last_touch_age_min": 99.728,
-        "touch_bars": 9,
-        "touch_episodes": 1,
+        "state": "WEAKENED",
+        "age_min": 22.917,
+        "last_touch_age_min": 7.917,
+        "touch_bars": 14,
+        "touch_episodes": 2,
         "broken": false
       }
     },
@@ -322,34 +322,34 @@
         "state": "FRESH"
       },
       "supply": {
-        "high": 77500.0,
-        "low": 77401.35,
-        "state": "TESTED"
+        "high": 77163.25,
+        "low": 77091.02,
+        "state": "WEAKENED"
       }
     },
     "order_book": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": -0.263976,
-      "pressure_1s": -0.535351,
-      "pressure_3s": -0.520697
+      "pressure_now": -2.397897,
+      "pressure_1s": -2.443447,
+      "pressure_3s": -2.431788
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.880598,
-      "flow_1m": 0.24639,
-      "flow_3m": -0.124719,
-      "flow_5m": -0.230219,
-      "accel_30s_vs_3m": 1.005317,
-      "accel_1m_vs_5m": 0.476609
+      "flow_30s": 1.172972,
+      "flow_1m": -0.408004,
+      "flow_3m": -0.226832,
+      "flow_5m": -0.389427,
+      "accel_30s_vs_3m": 1.399804,
+      "accel_1m_vs_5m": -0.018577
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0012
+      "change_pct": 0.0007
     }
   },
   "research": {
@@ -367,9 +367,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 1063.418093,
-    "mt5_sync_age_seconds": 1063.418093,
-    "watchdog_age_seconds": 2180.400097
+    "collector_age_seconds": 158.031189,
+    "mt5_sync_age_seconds": 158.031189,
+    "watchdog_age_seconds": 1373.349706
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2650,6 +2650,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-11T10:10:39.608000Z",
+        "exit_utc": null,
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "FLAT",
+        "profit": 0.0,
+        "reason": "OPEN"
+      },
+      {
         "entry_utc": "2026-09-11T09:02:40.672000Z",
         "exit_utc": "2026-09-11T09:10:13.441000Z",
         "side": "SELL",
@@ -2909,23 +2918,14 @@
         "result": "LOSS",
         "profit": -64.91,
         "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-10T08:29:57.192000Z",
-        "exit_utc": "2026-09-10T08:32:49.613000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -49.39,
-        "reason": "4"
       }
     ],
     "summary": {
       "trades": 30,
       "wins": 9,
-      "losses": 19,
-      "win_rate": 32.1,
-      "net_profit": -388.03
+      "losses": 18,
+      "win_rate": 33.3,
+      "net_profit": -338.64
     }
   },
   "health": [
@@ -2962,7 +2962,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 153790.1,
+      "age_seconds": 154907.0,
       "detail": "STALE"
     },
     {
@@ -2974,7 +2974,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 0.9,
+      "age_seconds": 15.7,
       "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
