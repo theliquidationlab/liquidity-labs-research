@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T04:15:19.220053+00:00",
+  "generated_utc": "2026-09-11T04:20:59.405780+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -287,29 +287,29 @@
     "demo_only": true,
     "dry_run": false,
     "decision": "OWNED_POSITION_EXISTS",
-    "signal_ready": false,
+    "signal_ready": true,
     "side": "BUY",
-    "path": "NONE",
-    "reason": "WAIT_1M_BOS",
+    "path": "CONTINUATION",
+    "reason": "ENTRY_READY",
     "five_minute_phase": "BULLISH_PULLBACK",
-    "trigger": "NEUTRAL",
-    "trigger_kind": "NONE",
+    "trigger": "BUY",
+    "trigger_kind": "BOS",
     "quote_age_ms": 0.0,
-    "spread": 17.110000000000582,
-    "updated_utc": "2026-09-11T04:15:14.500796Z",
+    "spread": 16.94999999999709,
+    "updated_utc": "2026-09-11T04:20:55.988522Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 35.242,
-        "last_touch_age_min": 20.242,
+        "age_min": 40.933,
+        "last_touch_age_min": 25.933,
         "touch_bars": 10,
         "touch_episodes": 2,
         "broken": false
       },
       "supply": {
         "state": "BROKEN",
-        "age_min": 75.242,
-        "last_touch_age_min": 4.242,
+        "age_min": 80.933,
+        "last_touch_age_min": 9.933,
         "touch_bars": 4,
         "touch_episodes": 3,
         "broken": true
@@ -324,28 +324,28 @@
       "supply": null
     },
     "order_book": {
-      "ready": false,
+      "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 0.155365,
-      "pressure_1s": -0.020498,
-      "pressure_3s": -0.020498
+      "pressure_now": 1.589645,
+      "pressure_1s": 1.430137,
+      "pressure_3s": 0.835847
     },
     "futures_flow": {
-      "ready": false,
+      "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": 0.0,
-      "flow_1m": 0.0,
-      "flow_3m": 0.0,
-      "flow_5m": 0.0,
-      "accel_30s_vs_3m": 0.0,
-      "accel_1m_vs_5m": 0.0
+      "flow_30s": 1.311847,
+      "flow_1m": 0.92217,
+      "flow_3m": 0.682182,
+      "flow_5m": 0.475581,
+      "accel_30s_vs_3m": 0.629665,
+      "accel_1m_vs_5m": 0.446589
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": 0.0003
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -354,7 +354,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "LOOP_START",
+    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "NON_SIGNAL",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 94374.336895,
-    "mt5_sync_age_seconds": 94374.336895,
-    "watchdog_age_seconds": 94970.123677
+    "collector_age_seconds": 424.224453,
+    "mt5_sync_age_seconds": 424.224453,
+    "watchdog_age_seconds": 95310.400589
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2646,7 +2646,70 @@
   "trading": {
     "recent": [
       {
-        "entry_utc": "2026-09-10T01:33:39.435000Z",
+        "entry_utc": "2026-09-11T04:01:18.152000Z",
+        "exit_utc": null,
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "FLAT",
+        "profit": 0.0,
+        "reason": "OPEN"
+      },
+      {
+        "entry_utc": "2026-09-11T03:47:39.378000Z",
+        "exit_utc": "2026-09-11T04:00:10.288000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -42.2,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-11T02:36:15.927000Z",
+        "exit_utc": "2026-09-11T03:05:52.419000Z",
+        "side": "BUY",
+        "family": "LIQUIDITY_SWEEP_REVERSAL",
+        "result": "LOSS",
+        "profit": -39.34,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-11T02:16:05.470000Z",
+        "exit_utc": "2026-09-11T02:26:45.695000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "WIN",
+        "profit": 54.01,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-11T02:01:08.178000Z",
+        "exit_utc": "2026-09-11T02:05:02.093000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -31.07,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-11T01:01:10.437000Z",
+        "exit_utc": "2026-09-11T01:21:55.990000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -58.25,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-11T00:41:20.077000Z",
+        "exit_utc": "2026-09-11T00:54:09.529000Z",
+        "side": "BUY",
+        "family": "BROKEN_ZONE_REBREAK",
+        "result": "WIN",
+        "profit": 43.61,
+        "reason": "5"
+      },
+      {
+        "entry_utc": "2026-09-10T23:08:40.262000Z",
         "exit_utc": null,
         "side": "SELL",
         "family": "GLOBAL",
@@ -2655,273 +2718,210 @@
         "reason": "OPEN"
       },
       {
-        "entry_utc": "2026-09-10T00:39:47.851000Z",
-        "exit_utc": "2026-09-10T00:47:02.928000Z",
+        "entry_utc": "2026-09-10T21:21:29.280000Z",
+        "exit_utc": "2026-09-10T22:10:44.291000Z",
         "side": "SELL",
         "family": "GLOBAL",
         "result": "WIN",
-        "profit": 2.18,
+        "profit": 3.45,
         "reason": "4"
       },
       {
-        "entry_utc": "2026-09-10T00:31:43.081000Z",
-        "exit_utc": "2026-09-10T00:39:21.809000Z",
+        "entry_utc": "2026-09-10T20:57:55.724000Z",
+        "exit_utc": "2026-09-10T21:10:04.134000Z",
         "side": "SELL",
         "family": "GLOBAL",
         "result": "LOSS",
-        "profit": -19.87,
+        "profit": -9.74,
         "reason": "4"
       },
       {
-        "entry_utc": "2026-09-10T00:02:42.260000Z",
-        "exit_utc": "2026-09-10T00:20:44.369000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -47.17,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T23:02:46.953000Z",
-        "exit_utc": "2026-09-09T23:33:01.489000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 68.64,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T22:30:39.152000Z",
-        "exit_utc": "2026-09-09T23:02:45.379000Z",
-        "side": "SELL",
-        "family": "CLEAN_CONTINUATION",
-        "result": "LOSS",
-        "profit": -15.93,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T22:02:25.360000Z",
-        "exit_utc": "2026-09-09T22:08:06.856000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 60.09,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T21:30:33.077000Z",
-        "exit_utc": "2026-09-09T21:36:10.292000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 26.43,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T21:10:25.094000Z",
-        "exit_utc": "2026-09-09T21:23:45.505000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 3.71,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T21:00:18.011000Z",
-        "exit_utc": "2026-09-09T21:05:24.641000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -29.29,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T20:47:37.719000Z",
-        "exit_utc": "2026-09-09T20:49:04.505000Z",
-        "side": "SELL",
-        "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "WIN",
-        "profit": 35.62,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T19:44:19.841000Z",
-        "exit_utc": "2026-09-09T20:29:21.291000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 73.77,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T19:31:33.519000Z",
-        "exit_utc": "2026-09-09T19:38:05.935000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 34.4,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T19:22:13.157000Z",
-        "exit_utc": "2026-09-09T19:23:04.217000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -15.03,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T19:03:52.303000Z",
-        "exit_utc": "2026-09-09T19:15:33.591000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -43.11,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T18:12:34.096000Z",
-        "exit_utc": "2026-09-09T19:03:51.622000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 68.95,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T18:02:47.137000Z",
-        "exit_utc": "2026-09-09T18:12:08.332000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 33.62,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T17:46:13.849000Z",
-        "exit_utc": "2026-09-09T17:53:09.647000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -29.37,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T16:28:19.383000Z",
-        "exit_utc": "2026-09-09T17:41:01.087000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 19.39,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T16:14:16.100000Z",
-        "exit_utc": "2026-09-09T16:23:21.588000Z",
-        "side": "BUY",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -56.48,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T16:07:38.309000Z",
-        "exit_utc": "2026-09-09T16:14:14.991000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "WIN",
-        "profit": 2.84,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T15:11:15.151000Z",
-        "exit_utc": "2026-09-09T15:31:01.896000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "FLAT",
-        "profit": 0.0,
-        "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-09T15:00:06.874000Z",
-        "exit_utc": "2026-09-09T15:00:51.192000Z",
-        "side": "BUY",
-        "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "WIN",
-        "profit": 39.39,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T14:05:51.876000Z",
-        "exit_utc": "2026-09-09T14:11:14.187000Z",
-        "side": "SELL",
-        "family": "CLEAN_CONTINUATION",
-        "result": "WIN",
-        "profit": 50.04,
-        "reason": "5"
-      },
-      {
-        "entry_utc": "2026-09-09T12:34:58.649000Z",
-        "exit_utc": "2026-09-09T13:35:57.369000Z",
+        "entry_utc": "2026-09-10T20:11:54.176000Z",
+        "exit_utc": null,
         "side": "BUY",
         "family": "GLOBAL",
         "result": "FLAT",
         "profit": 0.0,
+        "reason": "OPEN"
+      },
+      {
+        "entry_utc": "2026-09-10T19:15:19.477000Z",
+        "exit_utc": "2026-09-10T19:47:03.187000Z",
+        "side": "BUY",
+        "family": "CLEAN_CONTINUATION",
+        "result": "LOSS",
+        "profit": -24.91,
         "reason": "4"
       },
       {
-        "entry_utc": "2026-09-09T09:17:55.225000Z",
-        "exit_utc": "2026-09-09T09:33:51.142000Z",
-        "side": "SELL",
+        "entry_utc": "2026-09-10T18:36:55.793000Z",
+        "exit_utc": "2026-09-10T19:05:54.668000Z",
+        "side": "BUY",
         "family": "GLOBAL",
         "result": "WIN",
-        "profit": 25.96,
+        "profit": 5.71,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T17:46:09.141000Z",
+        "exit_utc": "2026-09-10T17:59:55.780000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -24.07,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T17:28:38.175000Z",
+        "exit_utc": "2026-09-10T17:39:09.230000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "WIN",
+        "profit": 6.72,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T15:57:00.181000Z",
+        "exit_utc": "2026-09-10T16:03:01.457000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -24.98,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T14:47:00.305000Z",
+        "exit_utc": "2026-09-10T15:20:54.187000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -84.07,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T14:38:44.245000Z",
+        "exit_utc": "2026-09-10T14:46:53.481000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -42.45,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T14:11:57.158000Z",
+        "exit_utc": "2026-09-10T14:24:40.924000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "WIN",
+        "profit": 92.51,
         "reason": "5"
       },
       {
-        "entry_utc": "2026-09-09T09:00:30.650000Z",
-        "exit_utc": "2026-09-09T09:10:18.653000Z",
+        "entry_utc": "2026-09-10T13:47:07.230000Z",
+        "exit_utc": "2026-09-10T14:08:22.683000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -33.84,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T11:32:54.272000Z",
+        "exit_utc": "2026-09-10T11:47:21.991000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -50.39,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T10:14:09.616000Z",
+        "exit_utc": "2026-09-10T10:25:10.709000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -36.98,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T08:37:37.931000Z",
+        "exit_utc": "2026-09-10T09:38:44.874000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -64.91,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T08:29:57.192000Z",
+        "exit_utc": "2026-09-10T08:32:49.613000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -49.39,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T08:08:49.958000Z",
+        "exit_utc": "2026-09-10T08:13:42.809000Z",
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -44.8,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T08:00:28.497000Z",
+        "exit_utc": "2026-09-10T08:08:46.894000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -35.93,
+        "reason": "4"
+      },
+      {
+        "entry_utc": "2026-09-10T07:21:28.465000Z",
+        "exit_utc": "2026-09-10T07:33:15.031000Z",
         "side": "SELL",
         "family": "GLOBAL",
         "result": "WIN",
-        "profit": 30.7,
+        "profit": 61.54,
         "reason": "5"
       },
       {
-        "entry_utc": "2026-09-09T06:48:33.789000Z",
-        "exit_utc": "2026-09-09T07:04:58.791000Z",
-        "side": "SELL",
+        "entry_utc": "2026-09-10T07:19:11.238000Z",
+        "exit_utc": "2026-09-10T07:21:14.946000Z",
+        "side": "BUY",
         "family": "GLOBAL",
         "result": "LOSS",
-        "profit": -16.98,
+        "profit": -30.24,
         "reason": "4"
       },
       {
-        "entry_utc": "2026-09-09T05:40:34.664000Z",
-        "exit_utc": "2026-09-09T06:10:30.247000Z",
+        "entry_utc": "2026-09-10T07:01:01.768000Z",
+        "exit_utc": "2026-09-10T07:05:14.585000Z",
         "side": "SELL",
         "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -15.36,
-        "reason": "4"
+        "result": "WIN",
+        "profit": 62.76,
+        "reason": "5"
       },
       {
-        "entry_utc": "2026-09-09T05:11:25.610000Z",
-        "exit_utc": "2026-09-09T05:13:00.163000Z",
-        "side": "SELL",
-        "family": "LIQUIDITY_SWEEP_REVERSAL",
-        "result": "LOSS",
-        "profit": -16.4,
-        "reason": "4"
+        "entry_utc": "2026-09-10T05:54:33.469000Z",
+        "exit_utc": null,
+        "side": "BUY",
+        "family": "GLOBAL",
+        "result": "FLAT",
+        "profit": 0.0,
+        "reason": "OPEN"
       }
     ],
     "summary": {
       "trades": 30,
-      "wins": 16,
-      "losses": 11,
-      "win_rate": 59.3,
-      "net_profit": 270.74
+      "wins": 8,
+      "losses": 18,
+      "win_rate": 30.8,
+      "net_profit": -397.25
     }
   },
   "health": [
@@ -2970,8 +2970,8 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 84.1,
-      "detail": "LOOP_START"
+      "age_seconds": 18.3,
+      "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
 }
