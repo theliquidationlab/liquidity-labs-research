@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T08:14:57.391428+00:00",
+  "generated_utc": "2026-09-11T08:20:07.665018+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -286,30 +286,30 @@
     "running": true,
     "demo_only": true,
     "dry_run": false,
-    "decision": "OWNED_POSITION_EXISTS",
+    "decision": "WAIT_5M_PULLBACK",
     "signal_ready": false,
     "side": "SELL",
     "path": "NONE",
-    "reason": "WAIT_1M_BOS",
-    "five_minute_phase": "BEARISH_PULLBACK",
+    "reason": "WAIT_5M_PULLBACK",
+    "five_minute_phase": "BEARISH_IMPULSE",
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 17.0,
-    "updated_utc": "2026-09-11T08:14:51.537098Z",
+    "spread": 17.069999999992433,
+    "updated_utc": "2026-09-11T08:19:59.217457Z",
     "zones": {
       "demand": {
         "state": "BROKEN",
-        "age_min": 94.859,
-        "last_touch_age_min": 0.859,
-        "touch_bars": 32,
+        "age_min": 99.987,
+        "last_touch_age_min": 0.987,
+        "touch_bars": 37,
         "touch_episodes": 4,
         "broken": true
       },
       "supply": {
         "state": "WEAKENED",
-        "age_min": 44.859,
-        "last_touch_age_min": 40.859,
+        "age_min": 49.987,
+        "last_touch_age_min": 45.987,
         "touch_bars": 3,
         "touch_episodes": 2,
         "broken": false
@@ -327,25 +327,25 @@
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "pressure_now": 0.921121,
-      "pressure_1s": 0.785155,
-      "pressure_3s": -1.707636
+      "pressure_now": 0.185603,
+      "pressure_1s": 0.090515,
+      "pressure_3s": 0.066264
     },
     "futures_flow": {
       "ready": true,
       "stale": false,
       "age_ms": 0,
-      "flow_30s": -0.272982,
-      "flow_1m": 0.572069,
-      "flow_3m": 0.309943,
-      "flow_5m": -0.662468,
-      "accel_30s_vs_3m": -0.582925,
-      "accel_1m_vs_5m": 1.234537
+      "flow_30s": -0.515135,
+      "flow_1m": -0.19587,
+      "flow_3m": 0.177704,
+      "flow_5m": 1.424278,
+      "accel_30s_vs_3m": -0.692839,
+      "accel_1m_vs_5m": -1.620148
     },
     "open_interest": {
       "ready": true,
       "stale": false,
-      "change_pct": -0.0019
+      "change_pct": 0.0
     }
   },
   "research": {
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 3139.080265,
-    "mt5_sync_age_seconds": 3139.080265,
-    "watchdog_age_seconds": 8172.307203
+    "collector_age_seconds": 64.715579,
+    "mt5_sync_age_seconds": 64.715579,
+    "watchdog_age_seconds": 3449.381909
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2646,6 +2646,15 @@
   "trading": {
     "recent": [
       {
+        "entry_utc": "2026-09-11T08:11:39.746000Z",
+        "exit_utc": "2026-09-11T08:15:23.909000Z",
+        "side": "SELL",
+        "family": "GLOBAL",
+        "result": "LOSS",
+        "profit": -42.17,
+        "reason": "4"
+      },
+      {
         "entry_utc": "2026-09-11T06:13:25.606000Z",
         "exit_utc": "2026-09-11T06:32:49.187000Z",
         "side": "BUY",
@@ -2905,15 +2914,6 @@
         "result": "LOSS",
         "profit": -44.8,
         "reason": "4"
-      },
-      {
-        "entry_utc": "2026-09-10T08:00:28.497000Z",
-        "exit_utc": "2026-09-10T08:08:46.894000Z",
-        "side": "SELL",
-        "family": "GLOBAL",
-        "result": "LOSS",
-        "profit": -35.93,
-        "reason": "4"
       }
     ],
     "summary": {
@@ -2921,7 +2921,7 @@
       "wins": 8,
       "losses": 20,
       "win_rate": 28.6,
-      "net_profit": -460.05
+      "net_profit": -466.29
     }
   },
   "health": [
@@ -2958,7 +2958,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 139827.1,
+      "age_seconds": 144860.4,
       "detail": "STALE"
     },
     {
@@ -2970,7 +2970,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 27.6,
+      "age_seconds": 9.7,
       "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
