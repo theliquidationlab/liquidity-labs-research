@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-12T08:58:21.971646+00:00",
+  "generated_utc": "2026-09-12T09:03:31.064618+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -295,23 +295,23 @@
     "trigger": "NEUTRAL",
     "trigger_kind": "NONE",
     "quote_age_ms": 0.0,
-    "spread": 16.99000000000524,
-    "updated_utc": "2026-09-12T08:58:16.278777Z",
+    "spread": 16.94999999999709,
+    "updated_utc": "2026-09-12T09:03:26.897520Z",
     "zones": {
       "demand": {
         "state": "WEAKENED",
-        "age_min": 68.271,
-        "last_touch_age_min": 44.271,
+        "age_min": 73.448,
+        "last_touch_age_min": 49.448,
         "touch_bars": 13,
         "touch_episodes": 3,
         "broken": false
       },
       "supply": {
         "state": "BROKEN",
-        "age_min": 38.271,
-        "last_touch_age_min": 0.271,
-        "touch_bars": 14,
-        "touch_episodes": 3,
+        "age_min": 43.448,
+        "last_touch_age_min": 1.448,
+        "touch_bars": 16,
+        "touch_episodes": 4,
         "broken": true
       }
     },
@@ -336,11 +336,11 @@
       "stale": false,
       "age_ms": 0,
       "flow_30s": 2.5,
-      "flow_1m": -0.509861,
-      "flow_3m": 0.054348,
-      "flow_5m": -0.332196,
-      "accel_30s_vs_3m": 2.445652,
-      "accel_1m_vs_5m": -0.177665
+      "flow_1m": 1.989099,
+      "flow_3m": 0.465823,
+      "flow_5m": 0.837538,
+      "accel_30s_vs_3m": 2.034177,
+      "accel_1m_vs_5m": 1.151561
     },
     "open_interest": {
       "ready": false,
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 75366.938197,
-    "mt5_sync_age_seconds": 75366.938197,
-    "watchdog_age_seconds": 76423.408118
+    "collector_age_seconds": 75676.04256,
+    "mt5_sync_age_seconds": 75676.04256,
+    "watchdog_age_seconds": 76732.512481
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2969,8 +2969,8 @@
     },
     {
       "name": "Research supervisor",
-      "state": "GREEN",
-      "age_seconds": 35.7,
+      "state": "AMBER",
+      "age_seconds": 104.7,
       "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
