@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-13T04:32:19.035790+00:00",
+  "generated_utc": "2026-09-13T04:37:25.291210+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -354,7 +354,7 @@
     "model_state": "PREFERRED_MODEL_RESIDENT",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_AGGRESSIVE_LEARNING",
+    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CHOP_RELEASE_REBREAK",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 52181.986921,
-    "mt5_sync_age_seconds": 52181.986921,
-    "watchdog_age_seconds": 52879.463041
+    "collector_age_seconds": 158.714296,
+    "mt5_sync_age_seconds": 158.714296,
+    "watchdog_age_seconds": 53185.769552
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2961,9 +2961,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "RED",
-      "age_seconds": 26934.5,
-      "detail": "BUSY_AGGRESSIVE_LEARNING"
+      "state": "GREEN",
+      "age_seconds": 19.2,
+      "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
 }
