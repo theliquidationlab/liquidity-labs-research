@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-15T09:21:37.727720+00:00",
+  "generated_utc": "2026-09-15T09:26:46.970733+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 8200.038695,
-    "mt5_sync_age_seconds": 8200.038695,
-    "watchdog_age_seconds": 10230.721546
+    "collector_age_seconds": 8509.286701,
+    "mt5_sync_age_seconds": 8509.286701,
+    "watchdog_age_seconds": 10539.969552
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2962,7 +2962,7 @@
     {
       "name": "Research supervisor",
       "state": "RED",
-      "age_seconds": 1560.6,
+      "age_seconds": 1869.8,
       "detail": "BUSY_AGGRESSIVE_LEARNING"
     }
   ]
