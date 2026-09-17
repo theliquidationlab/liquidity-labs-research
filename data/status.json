@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-17T01:04:09.969465+00:00",
+  "generated_utc": "2026-09-17T01:10:18.126387+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 1713.305525,
-    "mt5_sync_age_seconds": 1713.305525,
-    "watchdog_age_seconds": 4891.722911
+    "collector_age_seconds": 2070.376996,
+    "mt5_sync_age_seconds": 2070.376996,
+    "watchdog_age_seconds": 5248.794382
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2962,7 +2962,7 @@
     {
       "name": "Research supervisor",
       "state": "GREEN",
-      "age_seconds": 11.0,
+      "age_seconds": 26.3,
       "detail": "BUSY_OPPORTUNITY_CENSUS"
     }
   ]
