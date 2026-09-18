@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-18T20:28:36.768403+00:00",
+  "generated_utc": "2026-09-18T23:04:49.266969+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -354,7 +354,7 @@
     "model_state": "PRIMARY_UNAVAILABLE:ConnectionError:LOCAL_EMERGENCY_READY",
     "gpu_endpoint": "LOCAL_EMERGENCY",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
+    "research_phase": "STARTING",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CHOP_RELEASE_REBREAK",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 13529.860937,
-    "mt5_sync_age_seconds": 13529.860937,
-    "watchdog_age_seconds": 25104.542959
+    "collector_age_seconds": 22902.433112,
+    "mt5_sync_age_seconds": 22902.433112,
+    "watchdog_age_seconds": 22902.433112
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2920,13 +2920,13 @@
     {
       "name": "Bot heartbeat",
       "state": "RED",
-      "age_seconds": 465170.8,
+      "age_seconds": 476745.5,
       "detail": "STALE"
     },
     {
       "name": "Bot status",
       "state": "RED",
-      "age_seconds": 465170.8,
+      "age_seconds": 476745.5,
       "detail": "STALE"
     },
     {
@@ -2950,7 +2950,7 @@
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 518895.7,
+      "age_seconds": 530470.3,
       "detail": "STALE"
     },
     {
@@ -2961,9 +2961,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "GREEN",
-      "age_seconds": 7.8,
-      "detail": "BUSY_OPPORTUNITY_CENSUS"
+      "state": "RED",
+      "age_seconds": 189.6,
+      "detail": "STARTING"
     }
   ]
 }
