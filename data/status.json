@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-18T02:23:22.489845+00:00",
+  "generated_utc": "2026-09-18T02:28:40.145377+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -354,7 +354,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
+    "research_phase": "LOOP_START",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CHOP_RELEASE_REBREAK",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 8834.959678,
-    "mt5_sync_age_seconds": 8834.959678,
-    "watchdog_age_seconds": 16667.258338
+    "collector_age_seconds": 9152.572945,
+    "mt5_sync_age_seconds": 9152.572945,
+    "watchdog_age_seconds": 16984.871605
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2961,9 +2961,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "RED",
-      "age_seconds": 1766.3,
-      "detail": "BUSY_OPPORTUNITY_CENSUS"
+      "state": "AMBER",
+      "age_seconds": 154.9,
+      "detail": "LOOP_START"
     }
   ]
 }
