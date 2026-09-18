@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-18T08:25:06.532068+00:00",
+  "generated_utc": "2026-09-18T08:43:06.017938+00:00",
   "system": {
     "working": false,
     "label": "READY FOR NEXT STAGE",
@@ -354,7 +354,7 @@
     "model_state": "GPU_CAPACITY_HEALTHY",
     "gpu_endpoint": "PRIMARY_GPU",
     "supervisor_status": "OK",
-    "research_phase": "BUSY_OPPORTUNITY_CENSUS",
+    "research_phase": "LOOP_START",
     "last_deep_search_utc": "2026-09-07T02:51:21.333909Z",
     "last_directed_family": "CHOP_RELEASE_REBREAK",
     "last_directed_outcome": "REJECTED",
@@ -363,9 +363,9 @@
     "full_promotions": 0,
     "canary_promotions": 1,
     "overall": "FAIL",
-    "collector_age_seconds": 20201.186095,
-    "mt5_sync_age_seconds": 20201.186095,
-    "watchdog_age_seconds": 38371.41971
+    "collector_age_seconds": 691.662587,
+    "mt5_sync_age_seconds": 691.662587,
+    "watchdog_age_seconds": 21280.541926
   },
   "signals": {
     "updated_utc": "2026-09-07T02:51:21.333909Z",
@@ -2920,13 +2920,13 @@
     {
       "name": "Bot heartbeat",
       "state": "RED",
-      "age_seconds": 408493.9,
+      "age_seconds": 426664.1,
       "detail": "STALE"
     },
     {
       "name": "Bot status",
       "state": "RED",
-      "age_seconds": 408493.9,
+      "age_seconds": 426664.1,
       "detail": "STALE"
     },
     {
@@ -2945,12 +2945,12 @@
       "name": "GPU tunnel",
       "state": "GREEN",
       "age_seconds": 0.0,
-      "detail": "ERROR_STATUS"
+      "detail": "FRESH"
     },
     {
       "name": "Hourly research",
       "state": "RED",
-      "age_seconds": 462218.7,
+      "age_seconds": 480388.9,
       "detail": "STALE"
     },
     {
@@ -2961,9 +2961,9 @@
     },
     {
       "name": "Research supervisor",
-      "state": "GREEN",
-      "age_seconds": 2.7,
-      "detail": "BUSY_OPPORTUNITY_CENSUS"
+      "state": "RED",
+      "age_seconds": 694.4,
+      "detail": "LOOP_START"
     }
   ]
 }
